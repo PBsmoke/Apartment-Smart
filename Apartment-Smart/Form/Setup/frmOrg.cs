@@ -119,14 +119,20 @@ namespace ApartmentSmart
 
         }
 
-        private void txtTaxRate_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtWater_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
 
-        private void gbOrg_Enter(object sender, EventArgs e)
+        private void txtPower_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

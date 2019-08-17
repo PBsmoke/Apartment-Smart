@@ -165,6 +165,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form\Payment\frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Payment\frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Renter\frmContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Renter\frmContract.Designer.cs">
+      <DependentUpon>frmContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Room\frmRoomSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Room\frmRoomSearch.Designer.cs">
+      <DependentUpon>frmRoomSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Room\frmRecordSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Room\frmRecordSearch.Designer.cs">
+      <DependentUpon>frmRecordSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Room\frmRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Room\frmRecord.Designer.cs">
+      <DependentUpon>frmRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Setup\DBConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +227,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Form\Renter\frmRenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Renter\frmRenter.Designer.cs">
+      <DependentUpon>frmRenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Room\frmRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Room\frmRoom.Designer.cs">
+      <DependentUpon>frmRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Room\frmRoomList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Room\frmRoomList.Designer.cs">
+      <DependentUpon>frmRoomList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Baseform\BaseInfo.resx">
       <DependentUpon>BaseInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +253,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Baseform\BaseList.resx">
       <DependentUpon>BaseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Renter\frmContract.resx">
+      <DependentUpon>frmContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Room\frmRoomSearch.resx">
+      <DependentUpon>frmRoomSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Room\frmRecordSearch.resx">
+      <DependentUpon>frmRecordSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Room\frmRecord.resx">
+      <DependentUpon>frmRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Setup\DBConfig.resx">
       <DependentUpon>DBConfig.cs</DependentUpon>
@@ -231,6 +291,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Form\Renter\frmRenter.resx">
+      <DependentUpon>frmRenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Room\frmRoom.resx">
+      <DependentUpon>frmRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Room\frmRoomList.resx">
+      <DependentUpon>frmRoomList.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Data\ApartmentDB.xsc">
       <DependentUpon>ApartmentDB.xsd</DependentUpon>
@@ -287,6 +356,8 @@
     <None Include="icon\store.ico" />
     <Content Include="icon\dollars.png" />
     <Content Include="icon\printers_and_faxes.png" />
+    <None Include="Resources\icons8-search-64.png" />
+    <None Include="Resources\icons8-search-50.png" />
     <Content Include="store.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -311,7 +382,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Report\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

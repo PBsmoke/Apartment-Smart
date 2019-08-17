@@ -101,10 +101,9 @@
             this.gbOrg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbOrg.Location = new System.Drawing.Point(0, 39);
             this.gbOrg.Name = "gbOrg";
-            this.gbOrg.Size = new System.Drawing.Size(673, 500);
+            this.gbOrg.Size = new System.Drawing.Size(673, 394);
             this.gbOrg.TabIndex = 124;
             this.gbOrg.TabStop = false;
-            this.gbOrg.Enter += new System.EventHandler(this.gbOrg_Enter);
             // 
             // txtZipcode
             // 
@@ -202,6 +201,7 @@
             this.txtWater.Size = new System.Drawing.Size(260, 24);
             this.txtWater.TabIndex = 142;
             this.txtWater.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtWater.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWater_KeyPress);
             // 
             // lblPower
             // 
@@ -219,6 +219,7 @@
             this.txtPower.Size = new System.Drawing.Size(260, 24);
             this.txtPower.TabIndex = 140;
             this.txtPower.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPower_KeyPress);
             // 
             // lblTel
             // 
@@ -272,7 +273,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 467);
+            this.label2.Location = new System.Drawing.Point(21, 380);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 17);
             this.label2.TabIndex = 124;
@@ -281,7 +282,7 @@
             // 
             // txtTraderName
             // 
-            this.txtTraderName.Location = new System.Drawing.Point(211, 464);
+            this.txtTraderName.Location = new System.Drawing.Point(230, 377);
             this.txtTraderName.Name = "txtTraderName";
             this.txtTraderName.Size = new System.Drawing.Size(393, 24);
             this.txtTraderName.TabIndex = 125;
@@ -291,7 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 539);
+            this.ClientSize = new System.Drawing.Size(673, 433);
             this.Controls.Add(this.gbOrg);
             this.Name = "frmOrg";
             this.Text = "ข้อมูลหอพัก";

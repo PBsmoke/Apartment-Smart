@@ -116,8 +116,10 @@ namespace ApartmentSmart
                         //        dbConString.IsUsing = tblUser.tblDrawerSetting[0].IsUsing;
 
                         //        ((frmMain)this.Owner).rbMenuOnEnabled = true;
-                        //        this.Close();
+                        //        
                         //    }
+
+                        this.Close();
                     }
                     else
                     {
@@ -240,8 +242,10 @@ namespace ApartmentSmart
                             //        dbConString.IsUsing = tblUser.tblDrawerSetting[0].IsUsing;
 
                             //        ((frmMain)this.Owner).rbMenuOnEnabled = true;
-                            //        this.Close();
                             //    }
+
+                            this.Close();
+
                         }
                         else
                         {

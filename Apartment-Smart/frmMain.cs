@@ -44,9 +44,9 @@ namespace ApartmentSmart
 
             rbMenu.Enabled = true;
 
-            //frmLogin fMenu = new frmLogin();
-            //fMenu.StartPosition = FormStartPosition.CenterScreen;
-            //fMenu.Show(this);
+            frmLogin fMenu = new frmLogin();
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show(this);
         }       
 
         private void rbtSetup_Exit_Click(object sender, EventArgs e)
