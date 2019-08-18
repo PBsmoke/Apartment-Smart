@@ -36,9 +36,6 @@ namespace ApartmentSmart
 
         protected override void DoLoadForm()
         {
-            Renter_ID = "7d353de7-1d7d-44ff-a481-eb138f8f821b";
-            FormState = "EDIT";
-
             if (!string.IsNullOrEmpty(Renter_ID))
             {
                 ShowData(Renter_ID);

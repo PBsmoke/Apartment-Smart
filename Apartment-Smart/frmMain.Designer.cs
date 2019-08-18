@@ -38,14 +38,14 @@
             this.radialMenuItem6 = new DevComponents.DotNetBar.RadialMenuItem();
             this.radialMenuItem7 = new DevComponents.DotNetBar.RadialMenuItem();
             this.rbMenu = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.rbaSetup = new DevComponents.DotNetBar.RibbonBar();
+            this.rbtOrg = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.rbaRoom = new DevComponents.DotNetBar.RibbonBar();
             this.rbtProduct = new DevComponents.DotNetBar.ButtonItem();
             this.rbtOrder = new DevComponents.DotNetBar.ButtonItem();
             this.rbtReceiver = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
-            this.rbaSetup = new DevComponents.DotNetBar.RibbonBar();
-            this.rbtOrg = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.rbaTenant = new DevComponents.DotNetBar.RibbonBar();
             this.rbtTenant = new DevComponents.DotNetBar.ButtonItem();
@@ -61,8 +61,8 @@
             this.rbtSetup_Exit = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.rbMenu.SuspendLayout();
-            this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
+            this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
             this.SuspendLayout();
@@ -164,6 +164,68 @@
             this.rbMenu.TabIndex = 3;
             this.rbMenu.Text = "rbHome";
             // 
+            // ribbonPanel1
+            // 
+            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel1.Controls.Add(this.rbaSetup);
+            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 27);
+            this.ribbonPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonPanel1.Name = "ribbonPanel1";
+            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.ribbonPanel1.Size = new System.Drawing.Size(798, 64);
+            // 
+            // 
+            // 
+            this.ribbonPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel1.TabIndex = 1;
+            // 
+            // rbaSetup
+            // 
+            this.rbaSetup.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.rbaSetup.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rbaSetup.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rbaSetup.ContainerControlProcessDialogKey = true;
+            this.rbaSetup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbaSetup.DragDropSupport = true;
+            this.rbaSetup.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.rbtOrg});
+            this.rbaSetup.Location = new System.Drawing.Point(0, 0);
+            this.rbaSetup.Name = "rbaSetup";
+            this.rbaSetup.Size = new System.Drawing.Size(798, 61);
+            this.rbaSetup.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.rbaSetup.TabIndex = 1;
+            this.rbaSetup.Text = "ข้อมูลพื้นฐาน";
+            // 
+            // 
+            // 
+            this.rbaSetup.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rbaSetup.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // rbtOrg
+            // 
+            this.rbtOrg.Name = "rbtOrg";
+            this.rbtOrg.SubItemsExpandWidth = 14;
+            this.rbtOrg.Text = "ข้อมูลหอพัก";
+            this.rbtOrg.Click += new System.EventHandler(this.rbtOrg_Click);
+            // 
             // ribbonPanel2
             // 
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -238,68 +300,6 @@
             this.rbtReceiver.Name = "rbtReceiver";
             this.rbtReceiver.SubItemsExpandWidth = 14;
             this.rbtReceiver.Text = "ข้อมูลค่าน้ำ / ค่าไฟ";
-            // 
-            // ribbonPanel1
-            // 
-            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel1.Controls.Add(this.rbaSetup);
-            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 27);
-            this.ribbonPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(798, 64);
-            // 
-            // 
-            // 
-            this.ribbonPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel1.TabIndex = 1;
-            // 
-            // rbaSetup
-            // 
-            this.rbaSetup.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.rbaSetup.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rbaSetup.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.rbaSetup.ContainerControlProcessDialogKey = true;
-            this.rbaSetup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbaSetup.DragDropSupport = true;
-            this.rbaSetup.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.rbtOrg});
-            this.rbaSetup.Location = new System.Drawing.Point(0, 0);
-            this.rbaSetup.Name = "rbaSetup";
-            this.rbaSetup.Size = new System.Drawing.Size(798, 61);
-            this.rbaSetup.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.rbaSetup.TabIndex = 1;
-            this.rbaSetup.Text = "ข้อมูลพื้นฐาน";
-            // 
-            // 
-            // 
-            this.rbaSetup.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rbaSetup.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // rbtOrg
-            // 
-            this.rbtOrg.Name = "rbtOrg";
-            this.rbtOrg.SubItemsExpandWidth = 14;
-            this.rbtOrg.Text = "ข้อมูลหอพัก";
-            this.rbtOrg.Click += new System.EventHandler(this.rbtOrg_Click);
             // 
             // ribbonPanel3
             // 
@@ -517,8 +517,8 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.rbMenu.ResumeLayout(false);
             this.rbMenu.PerformLayout();
-            this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel1.ResumeLayout(false);
+            this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel4.ResumeLayout(false);
             this.ResumeLayout(false);

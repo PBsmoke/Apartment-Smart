@@ -51,7 +51,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>store.ico</ApplicationIcon>
+    <ApplicationIcon>apartment.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>114E2904AD359F1ED1682C2C70D600E857C8E403</ManifestCertificateThumbprint>
@@ -177,6 +177,18 @@
     <Compile Include="Form\Renter\frmContract.Designer.cs">
       <DependentUpon>frmContract.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\Renter\frmRenterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Renter\frmRenterList.Designer.cs">
+      <DependentUpon>frmRenterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Renter\frmRenterSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Renter\frmRenterSearch.Designer.cs">
+      <DependentUpon>frmRenterSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Room\frmRoomSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +268,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Renter\frmContract.resx">
       <DependentUpon>frmContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Renter\frmRenterList.resx">
+      <DependentUpon>frmRenterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Renter\frmRenterSearch.resx">
+      <DependentUpon>frmRenterSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Room\frmRoomSearch.resx">
       <DependentUpon>frmRoomSearch.cs</DependentUpon>
@@ -354,6 +372,7 @@
     <None Include="icon\Reset.png" />
     <None Include="icon\Save.png" />
     <None Include="icon\store.ico" />
+    <Content Include="apartment.ico" />
     <Content Include="icon\dollars.png" />
     <Content Include="icon\printers_and_faxes.png" />
     <None Include="Resources\icons8-search-64.png" />

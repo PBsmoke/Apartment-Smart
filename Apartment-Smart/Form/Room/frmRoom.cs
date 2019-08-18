@@ -62,99 +62,102 @@ namespace ApartmentSmart
             Success = true;
             CheckData();
 
-            if (MessageBox.Show("คุณต้องการบันทึกข้อมูล ใช่หรือไม่ ?", dbConString.xMessage, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+            if (Success)
             {
-                return;
-            }
+                if (MessageBox.Show("คุณต้องการบันทึกข้อมูล ใช่หรือไม่ ?", dbConString.xMessage, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+                {
+                    return;
+                }
 
-            if (FormState == "NEW")
-            {
-                #region Save
-                if (Success)
+                if (FormState == "NEW")
                 {
-                    try
+                    #region Save
+                    if (Success)
                     {
-                        Room_ID = Guid.NewGuid().ToString();
-                        dbConString.Transaction = dbConString.mySQLConn.BeginTransaction();
-                        StringBuilder StringBd = new StringBuilder();
-                        string sqlTmp = string.Empty;
-                        StringBd.Append("INSERT INTO tblRoom(Room_ID, Room_number, Room_floor, Room_Type, Room_Price_daily, Room_Price_monthly, Room_MetersNo, Room_Remark, Room_status) ");
-                        StringBd.Append("VALUES(@Room_ID, @Room_number, @Room_floor, @Room_Type, @Room_Price_daily, @Room_Price_monthly, @Room_MetersNo, @Room_Remark, (select StatusID from tblStatus where Name = 'ว่าง')) ");
-                        sqlTmp = "";
-                        sqlTmp = StringBd.ToString();
-                        dbConString.Com = new SqlCommand();
-                        dbConString.Com.CommandText = sqlTmp;
-                        dbConString.Com.CommandType = CommandType.Text;
-                        dbConString.Com.Connection = dbConString.mySQLConn;
-                        dbConString.Com.Transaction = dbConString.Transaction;
-                        dbConString.Com.Parameters.Clear();
-                        dbConString.Com.Parameters.Add("@Room_ID", SqlDbType.VarChar).Value = Room_ID;
-                        dbConString.Com.Parameters.Add("@Room_number", SqlDbType.VarChar).Value = txtRoom_number.Text;
-                        dbConString.Com.Parameters.Add("@Room_floor", SqlDbType.VarChar).Value = txtRoom_floor.Text;
-                        dbConString.Com.Parameters.Add("@Room_Type", SqlDbType.VarChar).Value = cboRoomType.SelectedValue;
-                        dbConString.Com.Parameters.Add("@Room_Price_daily", SqlDbType.Decimal).Value = Convert.ToDecimal(txtPrice_daily.Text);
-                        dbConString.Com.Parameters.Add("@Room_Price_monthly", SqlDbType.Decimal).Value = Convert.ToDecimal(txtPrice_monthly.Text);
-                        dbConString.Com.Parameters.Add("@Room_MetersNo", SqlDbType.VarChar).Value = txtMetersNo.Text;
-                        dbConString.Com.Parameters.Add("@Room_Remark", SqlDbType.VarChar).Value = txtRemark.Text;
-                        dbConString.Com.ExecuteNonQuery();
-                        dbConString.Transaction.Commit();
-                        MessageBox.Show("บันทึกค่าเรียบร้อย", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        try
+                        {
+                            Room_ID = Guid.NewGuid().ToString();
+                            dbConString.Transaction = dbConString.mySQLConn.BeginTransaction();
+                            StringBuilder StringBd = new StringBuilder();
+                            string sqlTmp = string.Empty;
+                            StringBd.Append("INSERT INTO tblRoom(Room_ID, Room_number, Room_floor, Room_Type, Room_Price_daily, Room_Price_monthly, Room_MetersNo, Room_Remark, Room_status) ");
+                            StringBd.Append("VALUES(@Room_ID, @Room_number, @Room_floor, @Room_Type, @Room_Price_daily, @Room_Price_monthly, @Room_MetersNo, @Room_Remark, (select StatusID from tblStatus where Name = 'ว่าง')) ");
+                            sqlTmp = "";
+                            sqlTmp = StringBd.ToString();
+                            dbConString.Com = new SqlCommand();
+                            dbConString.Com.CommandText = sqlTmp;
+                            dbConString.Com.CommandType = CommandType.Text;
+                            dbConString.Com.Connection = dbConString.mySQLConn;
+                            dbConString.Com.Transaction = dbConString.Transaction;
+                            dbConString.Com.Parameters.Clear();
+                            dbConString.Com.Parameters.Add("@Room_ID", SqlDbType.VarChar).Value = Room_ID;
+                            dbConString.Com.Parameters.Add("@Room_number", SqlDbType.VarChar).Value = txtRoom_number.Text;
+                            dbConString.Com.Parameters.Add("@Room_floor", SqlDbType.VarChar).Value = txtRoom_floor.Text;
+                            dbConString.Com.Parameters.Add("@Room_Type", SqlDbType.VarChar).Value = cboRoomType.SelectedValue;
+                            dbConString.Com.Parameters.Add("@Room_Price_daily", SqlDbType.Decimal).Value = Convert.ToDecimal(txtPrice_daily.Text);
+                            dbConString.Com.Parameters.Add("@Room_Price_monthly", SqlDbType.Decimal).Value = Convert.ToDecimal(txtPrice_monthly.Text);
+                            dbConString.Com.Parameters.Add("@Room_MetersNo", SqlDbType.VarChar).Value = txtMetersNo.Text;
+                            dbConString.Com.Parameters.Add("@Room_Remark", SqlDbType.VarChar).Value = txtRemark.Text;
+                            dbConString.Com.ExecuteNonQuery();
+                            dbConString.Transaction.Commit();
+                            MessageBox.Show("บันทึกค่าเรียบร้อย", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch
+                        {
+                            dbConString.Transaction.Rollback();
+                        }
                     }
-                    catch
+                    else
                     {
-                        dbConString.Transaction.Rollback();
+                        return;
                     }
+                    #endregion
                 }
-                else
+                else if (FormState == "EDIT")
                 {
-                    return;
-                }
-                #endregion
-            }
-            else if (FormState == "EDIT")
-            {
-                #region Edit
-                if (Success)
-                {
-                    try
+                    #region Edit
+                    if (Success)
                     {
-                        dbConString.Transaction = dbConString.mySQLConn.BeginTransaction();
-                        StringBuilder StringBd = new StringBuilder();
-                        //dbConString.Transaction = new SqlTransaction();
-                        string sqlTmp = string.Empty;
-                        StringBd.Append("UPDATE tblRoom SET Room_number = @Room_number, Room_floor = @Room_floor, Room_Type = @Room_Type, ");
-                        StringBd.Append(" Room_Price_daily = @Room_Price_daily, Room_Price_monthly = @Room_Price_monthly, Room_MetersNo = @Room_MetersNo, ");
-                        StringBd.Append(" Room_Remark = @Room_Remark WHERE Room_ID = @Room_ID");
-                        sqlTmp = "";
-                        sqlTmp = StringBd.ToString();
-                        dbConString.Com = new SqlCommand();
-                        dbConString.Com.CommandText = sqlTmp;
-                        dbConString.Com.CommandType = CommandType.Text;
-                        dbConString.Com.Connection = dbConString.mySQLConn;
-                        dbConString.Com.Transaction = dbConString.Transaction;
-                        dbConString.Com.Parameters.Clear();
-                        dbConString.Com.Parameters.Add("@Room_ID", SqlDbType.VarChar).Value = Room_ID;
-                        dbConString.Com.Parameters.Add("@Room_number", SqlDbType.VarChar).Value = txtRoom_number.Text;
-                        dbConString.Com.Parameters.Add("@Room_floor", SqlDbType.VarChar).Value = txtRoom_floor.Text;
-                        dbConString.Com.Parameters.Add("@Room_Type", SqlDbType.VarChar).Value = cboRoomType.SelectedValue;
-                        dbConString.Com.Parameters.Add("@Room_Price_daily", SqlDbType.Decimal).Value = Convert.ToDecimal(txtPrice_daily.Text);
-                        dbConString.Com.Parameters.Add("@Room_Price_monthly", SqlDbType.Decimal).Value = Convert.ToDecimal(txtPrice_monthly.Text);
-                        dbConString.Com.Parameters.Add("@Room_MetersNo", SqlDbType.VarChar).Value = txtMetersNo.Text;
-                        dbConString.Com.Parameters.Add("@Room_Remark", SqlDbType.VarChar).Value = txtRemark.Text;
-                        dbConString.Com.ExecuteNonQuery();
-                        dbConString.Transaction.Commit();
-                        MessageBox.Show("บันทึกค่าเรียบร้อย", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        try
+                        {
+                            dbConString.Transaction = dbConString.mySQLConn.BeginTransaction();
+                            StringBuilder StringBd = new StringBuilder();
+                            //dbConString.Transaction = new SqlTransaction();
+                            string sqlTmp = string.Empty;
+                            StringBd.Append("UPDATE tblRoom SET Room_number = @Room_number, Room_floor = @Room_floor, Room_Type = @Room_Type, ");
+                            StringBd.Append(" Room_Price_daily = @Room_Price_daily, Room_Price_monthly = @Room_Price_monthly, Room_MetersNo = @Room_MetersNo, ");
+                            StringBd.Append(" Room_Remark = @Room_Remark WHERE Room_ID = @Room_ID");
+                            sqlTmp = "";
+                            sqlTmp = StringBd.ToString();
+                            dbConString.Com = new SqlCommand();
+                            dbConString.Com.CommandText = sqlTmp;
+                            dbConString.Com.CommandType = CommandType.Text;
+                            dbConString.Com.Connection = dbConString.mySQLConn;
+                            dbConString.Com.Transaction = dbConString.Transaction;
+                            dbConString.Com.Parameters.Clear();
+                            dbConString.Com.Parameters.Add("@Room_ID", SqlDbType.VarChar).Value = Room_ID;
+                            dbConString.Com.Parameters.Add("@Room_number", SqlDbType.VarChar).Value = txtRoom_number.Text;
+                            dbConString.Com.Parameters.Add("@Room_floor", SqlDbType.VarChar).Value = txtRoom_floor.Text;
+                            dbConString.Com.Parameters.Add("@Room_Type", SqlDbType.VarChar).Value = cboRoomType.SelectedValue;
+                            dbConString.Com.Parameters.Add("@Room_Price_daily", SqlDbType.Decimal).Value = Convert.ToDecimal(txtPrice_daily.Text);
+                            dbConString.Com.Parameters.Add("@Room_Price_monthly", SqlDbType.Decimal).Value = Convert.ToDecimal(txtPrice_monthly.Text);
+                            dbConString.Com.Parameters.Add("@Room_MetersNo", SqlDbType.VarChar).Value = txtMetersNo.Text;
+                            dbConString.Com.Parameters.Add("@Room_Remark", SqlDbType.VarChar).Value = txtRemark.Text;
+                            dbConString.Com.ExecuteNonQuery();
+                            dbConString.Transaction.Commit();
+                            MessageBox.Show("บันทึกค่าเรียบร้อย", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            dbConString.Transaction.Rollback();
+                        }
                     }
-                    catch(Exception ex)
+                    else
                     {
-                        dbConString.Transaction.Rollback();
+                        return;
                     }
+                    #endregion
                 }
-                else
-                {
-                    return;
-                }
-                #endregion
             }
         }
 
