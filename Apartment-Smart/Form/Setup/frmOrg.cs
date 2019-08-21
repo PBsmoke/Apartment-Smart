@@ -107,6 +107,7 @@ namespace ApartmentSmart
                     txtAmphur.Text = aprtmentDB.tblOwner[0].Owner_Amphur;
                     txtProvince.Text = aprtmentDB.tblOwner[0].Owner_Province;
                     txtZipcode.Text = aprtmentDB.tblOwner[0].Owner_Zip;
+                    txtTel.Text = aprtmentDB.tblOwner[0].Owner_Tel;
                     txtPower.Text = aprtmentDB.tblOwner[0].Record_power.ToString("##0.00");
                     txtWater.Text = aprtmentDB.tblOwner[0].Record_water.ToString("##0.00");
                 }

@@ -73,6 +73,8 @@ namespace ApartmentSmart
 
         protected override void DoLoadForm()
         {
+            FormState = "EDIT";
+            Contract_ID = "53a45e09-572f-4370-8866-36a318b82396";
             LoadCombo();
             if (!string.IsNullOrEmpty(Contract_ID))
             {
@@ -118,9 +120,9 @@ namespace ApartmentSmart
                             StringBuilder StringBd = new StringBuilder();
                             string sqlTmp = string.Empty;
                             StringBd.Append(" INSERT INTO tblContract(Contract_ID, Renter_ID, Room_ID, Contract_No, Contract_Date, Contract_Recognizance, ");
-                            StringBd.Append(" Contract_Status, Contract_Type, date_Checkin, date_Checkout, power_first, water_first, room_price) ");
+                            StringBd.Append(" Contract_Status, Contract_Type, date_Checkin, date_Checkout, power_first, water_first, room_price, Remark) ");
                             StringBd.Append(" VALUES(@Contract_ID, @Renter_ID, @Room_ID, @Contract_No, @Contract_Date, @Contract_Recognizance, @Contract_Status,");
-                            StringBd.Append(" @Contract_Type, @date_Checkin, @date_Checkout, @power_first, @water_first, @room_price) ");
+                            StringBd.Append(" @Contract_Type, @date_Checkin, @date_Checkout, @power_first, @water_first, @room_price, @Remark) ");
                             sqlTmp = "";
                             sqlTmp = StringBd.ToString();
                             dbConString.Com = new SqlCommand();
@@ -142,6 +144,8 @@ namespace ApartmentSmart
                             dbConString.Com.Parameters.Add("@power_first", SqlDbType.VarChar).Value = txt_power_first.Text;
                             dbConString.Com.Parameters.Add("@water_first", SqlDbType.VarChar).Value = txt_water_first.Text;
                             dbConString.Com.Parameters.Add("@room_price", SqlDbType.Decimal).Value = Convert.ToDecimal(txt_room_price.Text);
+                            dbConString.Com.Parameters.Add("@Remark", SqlDbType.VarChar).Value = txtRemark.Text;
+
                             dbConString.Com.ExecuteNonQuery();
                             dbConString.Transaction.Commit();
                             MessageBox.Show("บันทึกค่าเรียบร้อย", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -165,7 +169,8 @@ namespace ApartmentSmart
                     string sqlTmp = string.Empty;
                     StringBd.Append(" UPDATE tblContract SET Renter_ID = @Renter_ID, Room_ID = @Room_ID, Contract_No = @Contract_No, Contract_Date = @Contract_Date, ");
                     StringBd.Append(" Contract_Recognizance = @Contract_Recognizance, Contract_Status = @Contract_Status, Contract_Type = @Contract_Type, date_Checkin = @date_Checkin, ");
-                    StringBd.Append(" date_Checkout = @date_Checkout, power_first = @power_first, water_first = @water_first, room_price = @room_price WHERE Contract_ID = @Contract_ID ");
+                    StringBd.Append(" date_Checkout = @date_Checkout, power_first = @power_first, water_first = @water_first, room_price = @room_price, Remark = @Remark WHERE Contract_ID = @Contract_ID ");
+
                     sqlTmp = "";
                     sqlTmp = StringBd.ToString();
                     dbConString.Com = new SqlCommand();
@@ -187,6 +192,8 @@ namespace ApartmentSmart
                     dbConString.Com.Parameters.Add("@power_first", SqlDbType.VarChar).Value = txt_power_first.Text;
                     dbConString.Com.Parameters.Add("@water_first", SqlDbType.VarChar).Value = txt_water_first.Text;
                     dbConString.Com.Parameters.Add("@room_price", SqlDbType.Decimal).Value = Convert.ToDecimal(txt_room_price.Text);
+                    dbConString.Com.Parameters.Add("@Remark", SqlDbType.VarChar).Value = txtRemark.Text;
+
                     dbConString.Com.ExecuteNonQuery();
                     dbConString.Transaction.Commit();
                     MessageBox.Show("บันทึกค่าเรียบร้อย", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -199,10 +206,12 @@ namespace ApartmentSmart
         {
             if (!string.IsNullOrEmpty(Contract_ID))
             {
+
+                string sqlTmp = "";
                 #region Get data contract
                 try
                 {
-                    string sqlTmp = "";
+                    sqlTmp = "";
                     sqlTmp = "SELECT * FROM tblContract WHERE Contract_ID = '" + Contract_ID + "'";
                     DataSet Ds = new DataSet();
                     dbConString.Com = new SqlCommand();
@@ -210,7 +219,6 @@ namespace ApartmentSmart
                     dbConString.Com.CommandText = sqlTmp;
                     dbConString.Com.Connection = dbConString.mySQLConn;
                     dbConString.Com.Parameters.Clear();
-                    dbConString.Com.Parameters.Add("@Contract_ID", SqlDbType.VarChar).Value = Contract_ID;
                     SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     tblContract.Clear();
@@ -222,7 +230,66 @@ namespace ApartmentSmart
                     MessageBox.Show(ex.ToString());
                 }
                 #endregion
-               
+
+                if (tblContract.tblContract.Rows.Count > 0)
+                {
+                    txtContractNo.Text = tblContract.tblContract[0].Contract_No;
+                    dtpContractDate.Value = tblContract.tblContract[0].Contract_Date;
+                    txtRecognizance.Text = tblContract.tblContract[0].Contract_Recognizance.ToString("###0.00");
+                    txt_room_price.Text = tblContract.tblContract[0].room_price.ToString("###0.00");
+                    cboContractType.SelectedValue = tblContract.tblContract[0].Contract_Status;
+                    dtpcheckin.Value = tblContract.tblContract[0].Date_Checkin;
+                    dtpcheckout.Value = tblContract.tblContract[0].Date_Checkout;
+                    txt_power_first.Text = tblContract.tblContract[0].power_first.ToString("###0.00"); 
+                    txt_water_first.Text = tblContract.tblContract[0].water_first.ToString("###0.00");
+                    txtRemark.Text = tblContract.tblContract[0].Remark;
+                    Room_ID = tblContract.tblContract[0].Room_ID;
+                    Renter_ID = tblContract.tblContract[0].Renter_ID;
+
+                    sqlTmp = "";
+                    sqlTmp = "select r.Room_ID,	r.Room_number, r.Room_floor, s.Name AS Room_Type, r.Room_Price_daily, r.Room_Price_monthly, ";
+                    sqlTmp += "	r.Room_status, r.Room_MetersNo, r.Room_Remark from tblRoom r INNER JOIN tblStatus s ON r.Room_Type = s.StatusID ";
+                    sqlTmp += " WHERE Room_ID = '" + Room_ID + "'";
+                    DataSet Ds = new DataSet();
+                    dbConString.Com = new SqlCommand();
+                    dbConString.Com.CommandType = CommandType.Text;
+                    dbConString.Com.CommandText = sqlTmp;
+                    dbConString.Com.Connection = dbConString.mySQLConn;
+                    dbConString.Com.Parameters.Clear();
+                    SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(tblContract, "tblRoom");
+                    da.Dispose();
+
+                    if(tblContract.tblRoom.Count > 0)
+                    {
+                        txtRoom.Text = tblContract.tblRoom[0].Room_number;
+                        txtRoomType.Text = tblContract.tblRoom[0].Room_Type;
+                        txtPrice_daily.Text = tblContract.tblRoom[0].Room_Price_daily.ToString("###0.00");
+                        txtPrice_monthly.Text = tblContract.tblRoom[0].Room_Price_monthly.ToString("###0.00");
+                    }
+
+                    sqlTmp = "";
+                    sqlTmp = "SELECT * FROM tblRenter WHERE Renter_ID = '" + Renter_ID + "'";
+                    Ds = new DataSet();
+                    dbConString.Com = new SqlCommand();
+                    dbConString.Com.CommandType = CommandType.Text;
+                    dbConString.Com.CommandText = sqlTmp;
+                    dbConString.Com.Connection = dbConString.mySQLConn;
+                    dbConString.Com.Parameters.Clear();
+                    cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
+                    da = new SqlDataAdapter(cmd);
+                    da.Fill(tblContract, "tblRenter");
+                    da.Dispose();
+
+                    if (tblContract.tblRenter.Count > 0)
+                    {
+                        string Renter_TitleName = tblContract.tblRenter[0].Renter_TitleName;
+                        string Renter_Name = tblContract.tblRenter[0].Renter_Name;
+                        string Renter_LastName = tblContract.tblRenter[0].Renter_Lastname;
+                        txtRenterName.Text = Renter_TitleName + " " + Renter_Name + " " + Renter_LastName;
+                    }
+                }
             }
 
            
@@ -302,6 +369,8 @@ namespace ApartmentSmart
             txtRoom.Text = frmSearch.Room_Number;
             txtRoomType.Text = frmSearch.Room_Type;
             Room_ID = frmSearch.Room_ID;
+            txtPrice_daily.Text = frmSearch.Price_daily.ToString("###0.00");
+            txtPrice_monthly.Text = frmSearch.Price_monthly.ToString("###0.00");
         }
 
         private void btnAddRenter_Click(object sender, EventArgs e)

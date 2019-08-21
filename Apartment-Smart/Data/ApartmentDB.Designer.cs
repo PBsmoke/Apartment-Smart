@@ -26,19 +26,19 @@ namespace ApartmentSmart.Data {
         
         private tblUserDataTable tabletblUser;
         
-        private tblContractDataTable tabletblContract;
-        
         private tblOwnerDataTable tabletblOwner;
         
         private tblPaymentDataTable tabletblPayment;
-        
-        private tblRecordDataTable tabletblRecord;
         
         private tblRenterDataTable tabletblRenter;
         
         private tblRoomDataTable tabletblRoom;
         
         private tblStatusDataTable tabletblStatus;
+        
+        private tblContractDataTable tabletblContract;
+        
+        private tblRecordDataTable tabletblRecord;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -71,17 +71,11 @@ namespace ApartmentSmart.Data {
                 if ((ds.Tables["tblUser"] != null)) {
                     base.Tables.Add(new tblUserDataTable(ds.Tables["tblUser"]));
                 }
-                if ((ds.Tables["tblContract"] != null)) {
-                    base.Tables.Add(new tblContractDataTable(ds.Tables["tblContract"]));
-                }
                 if ((ds.Tables["tblOwner"] != null)) {
                     base.Tables.Add(new tblOwnerDataTable(ds.Tables["tblOwner"]));
                 }
                 if ((ds.Tables["tblPayment"] != null)) {
                     base.Tables.Add(new tblPaymentDataTable(ds.Tables["tblPayment"]));
-                }
-                if ((ds.Tables["tblRecord"] != null)) {
-                    base.Tables.Add(new tblRecordDataTable(ds.Tables["tblRecord"]));
                 }
                 if ((ds.Tables["tblRenter"] != null)) {
                     base.Tables.Add(new tblRenterDataTable(ds.Tables["tblRenter"]));
@@ -91,6 +85,12 @@ namespace ApartmentSmart.Data {
                 }
                 if ((ds.Tables["tblStatus"] != null)) {
                     base.Tables.Add(new tblStatusDataTable(ds.Tables["tblStatus"]));
+                }
+                if ((ds.Tables["tblContract"] != null)) {
+                    base.Tables.Add(new tblContractDataTable(ds.Tables["tblContract"]));
+                }
+                if ((ds.Tables["tblRecord"] != null)) {
+                    base.Tables.Add(new tblRecordDataTable(ds.Tables["tblRecord"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -124,16 +124,6 @@ namespace ApartmentSmart.Data {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tblContractDataTable tblContract {
-            get {
-                return this.tabletblContract;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public tblOwnerDataTable tblOwner {
             get {
                 return this.tabletblOwner;
@@ -147,16 +137,6 @@ namespace ApartmentSmart.Data {
         public tblPaymentDataTable tblPayment {
             get {
                 return this.tabletblPayment;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tblRecordDataTable tblRecord {
-            get {
-                return this.tabletblRecord;
             }
         }
         
@@ -187,6 +167,26 @@ namespace ApartmentSmart.Data {
         public tblStatusDataTable tblStatus {
             get {
                 return this.tabletblStatus;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public tblContractDataTable tblContract {
+            get {
+                return this.tabletblContract;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public tblRecordDataTable tblRecord {
+            get {
+                return this.tabletblRecord;
             }
         }
         
@@ -260,17 +260,11 @@ namespace ApartmentSmart.Data {
                 if ((ds.Tables["tblUser"] != null)) {
                     base.Tables.Add(new tblUserDataTable(ds.Tables["tblUser"]));
                 }
-                if ((ds.Tables["tblContract"] != null)) {
-                    base.Tables.Add(new tblContractDataTable(ds.Tables["tblContract"]));
-                }
                 if ((ds.Tables["tblOwner"] != null)) {
                     base.Tables.Add(new tblOwnerDataTable(ds.Tables["tblOwner"]));
                 }
                 if ((ds.Tables["tblPayment"] != null)) {
                     base.Tables.Add(new tblPaymentDataTable(ds.Tables["tblPayment"]));
-                }
-                if ((ds.Tables["tblRecord"] != null)) {
-                    base.Tables.Add(new tblRecordDataTable(ds.Tables["tblRecord"]));
                 }
                 if ((ds.Tables["tblRenter"] != null)) {
                     base.Tables.Add(new tblRenterDataTable(ds.Tables["tblRenter"]));
@@ -280,6 +274,12 @@ namespace ApartmentSmart.Data {
                 }
                 if ((ds.Tables["tblStatus"] != null)) {
                     base.Tables.Add(new tblStatusDataTable(ds.Tables["tblStatus"]));
+                }
+                if ((ds.Tables["tblContract"] != null)) {
+                    base.Tables.Add(new tblContractDataTable(ds.Tables["tblContract"]));
+                }
+                if ((ds.Tables["tblRecord"] != null)) {
+                    base.Tables.Add(new tblRecordDataTable(ds.Tables["tblRecord"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -320,12 +320,6 @@ namespace ApartmentSmart.Data {
                     this.tabletblUser.InitVars();
                 }
             }
-            this.tabletblContract = ((tblContractDataTable)(base.Tables["tblContract"]));
-            if ((initTable == true)) {
-                if ((this.tabletblContract != null)) {
-                    this.tabletblContract.InitVars();
-                }
-            }
             this.tabletblOwner = ((tblOwnerDataTable)(base.Tables["tblOwner"]));
             if ((initTable == true)) {
                 if ((this.tabletblOwner != null)) {
@@ -336,12 +330,6 @@ namespace ApartmentSmart.Data {
             if ((initTable == true)) {
                 if ((this.tabletblPayment != null)) {
                     this.tabletblPayment.InitVars();
-                }
-            }
-            this.tabletblRecord = ((tblRecordDataTable)(base.Tables["tblRecord"]));
-            if ((initTable == true)) {
-                if ((this.tabletblRecord != null)) {
-                    this.tabletblRecord.InitVars();
                 }
             }
             this.tabletblRenter = ((tblRenterDataTable)(base.Tables["tblRenter"]));
@@ -362,6 +350,18 @@ namespace ApartmentSmart.Data {
                     this.tabletblStatus.InitVars();
                 }
             }
+            this.tabletblContract = ((tblContractDataTable)(base.Tables["tblContract"]));
+            if ((initTable == true)) {
+                if ((this.tabletblContract != null)) {
+                    this.tabletblContract.InitVars();
+                }
+            }
+            this.tabletblRecord = ((tblRecordDataTable)(base.Tables["tblRecord"]));
+            if ((initTable == true)) {
+                if ((this.tabletblRecord != null)) {
+                    this.tabletblRecord.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -374,31 +374,25 @@ namespace ApartmentSmart.Data {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tabletblUser = new tblUserDataTable();
             base.Tables.Add(this.tabletblUser);
-            this.tabletblContract = new tblContractDataTable();
-            base.Tables.Add(this.tabletblContract);
             this.tabletblOwner = new tblOwnerDataTable();
             base.Tables.Add(this.tabletblOwner);
             this.tabletblPayment = new tblPaymentDataTable();
             base.Tables.Add(this.tabletblPayment);
-            this.tabletblRecord = new tblRecordDataTable();
-            base.Tables.Add(this.tabletblRecord);
             this.tabletblRenter = new tblRenterDataTable();
             base.Tables.Add(this.tabletblRenter);
             this.tabletblRoom = new tblRoomDataTable();
             base.Tables.Add(this.tabletblRoom);
             this.tabletblStatus = new tblStatusDataTable();
             base.Tables.Add(this.tabletblStatus);
+            this.tabletblContract = new tblContractDataTable();
+            base.Tables.Add(this.tabletblContract);
+            this.tabletblRecord = new tblRecordDataTable();
+            base.Tables.Add(this.tabletblRecord);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializetblUser() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializetblContract() {
             return false;
         }
         
@@ -411,12 +405,6 @@ namespace ApartmentSmart.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializetblPayment() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializetblRecord() {
             return false;
         }
         
@@ -435,6 +423,18 @@ namespace ApartmentSmart.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializetblStatus() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializetblContract() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializetblRecord() {
             return false;
         }
         
@@ -497,16 +497,10 @@ namespace ApartmentSmart.Data {
         public delegate void tblUserRowChangeEventHandler(object sender, tblUserRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void tblContractRowChangeEventHandler(object sender, tblContractRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tblOwnerRowChangeEventHandler(object sender, tblOwnerRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tblPaymentRowChangeEventHandler(object sender, tblPaymentRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void tblRecordRowChangeEventHandler(object sender, tblRecordRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tblRenterRowChangeEventHandler(object sender, tblRenterRowChangeEvent e);
@@ -516,6 +510,12 @@ namespace ApartmentSmart.Data {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tblStatusRowChangeEventHandler(object sender, tblStatusRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void tblContractRowChangeEventHandler(object sender, tblContractRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void tblRecordRowChangeEventHandler(object sender, tblRecordRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -786,414 +786,6 @@ namespace ApartmentSmart.Data {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "tblUserDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tblContractDataTable : global::System.Data.TypedTableBase<tblContractRow> {
-            
-            private global::System.Data.DataColumn columnContract_ID;
-            
-            private global::System.Data.DataColumn columnRenter_ID;
-            
-            private global::System.Data.DataColumn columnRoom_ID;
-            
-            private global::System.Data.DataColumn columnContract_No;
-            
-            private global::System.Data.DataColumn columnContract_Date;
-            
-            private global::System.Data.DataColumn columnContract_Recognizance;
-            
-            private global::System.Data.DataColumn columnContract_Status;
-            
-            private global::System.Data.DataColumn columnContract_Type;
-            
-            private global::System.Data.DataColumn columnDate_Checkin;
-            
-            private global::System.Data.DataColumn columnDate_Checkout;
-            
-            private global::System.Data.DataColumn columnpower_first;
-            
-            private global::System.Data.DataColumn columnwater_first;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblContractDataTable() {
-                this.TableName = "tblContract";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tblContractDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected tblContractDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Contract_IDColumn {
-                get {
-                    return this.columnContract_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Renter_IDColumn {
-                get {
-                    return this.columnRenter_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Room_IDColumn {
-                get {
-                    return this.columnRoom_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Contract_NoColumn {
-                get {
-                    return this.columnContract_No;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Contract_DateColumn {
-                get {
-                    return this.columnContract_Date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Contract_RecognizanceColumn {
-                get {
-                    return this.columnContract_Recognizance;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Contract_StatusColumn {
-                get {
-                    return this.columnContract_Status;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Contract_TypeColumn {
-                get {
-                    return this.columnContract_Type;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Date_CheckinColumn {
-                get {
-                    return this.columnDate_Checkin;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Date_CheckoutColumn {
-                get {
-                    return this.columnDate_Checkout;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn power_firstColumn {
-                get {
-                    return this.columnpower_first;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn water_firstColumn {
-                get {
-                    return this.columnwater_first;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblContractRow this[int index] {
-                get {
-                    return ((tblContractRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblContractRowChangeEventHandler tblContractRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblContractRowChangeEventHandler tblContractRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblContractRowChangeEventHandler tblContractRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblContractRowChangeEventHandler tblContractRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddtblContractRow(tblContractRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblContractRow AddtblContractRow(string Contract_ID, string Renter_ID, string Room_ID, string Contract_No, System.DateTime Contract_Date, decimal Contract_Recognizance, string Contract_Status, string Contract_Type, System.DateTime Date_Checkin, System.DateTime Date_Checkout, double power_first, double water_first) {
-                tblContractRow rowtblContractRow = ((tblContractRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Contract_ID,
-                        Renter_ID,
-                        Room_ID,
-                        Contract_No,
-                        Contract_Date,
-                        Contract_Recognizance,
-                        Contract_Status,
-                        Contract_Type,
-                        Date_Checkin,
-                        Date_Checkout,
-                        power_first,
-                        water_first};
-                rowtblContractRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtblContractRow);
-                return rowtblContractRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                tblContractDataTable cln = ((tblContractDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new tblContractDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnContract_ID = base.Columns["Contract_ID"];
-                this.columnRenter_ID = base.Columns["Renter_ID"];
-                this.columnRoom_ID = base.Columns["Room_ID"];
-                this.columnContract_No = base.Columns["Contract_No"];
-                this.columnContract_Date = base.Columns["Contract_Date"];
-                this.columnContract_Recognizance = base.Columns["Contract_Recognizance"];
-                this.columnContract_Status = base.Columns["Contract_Status"];
-                this.columnContract_Type = base.Columns["Contract_Type"];
-                this.columnDate_Checkin = base.Columns["Date_Checkin"];
-                this.columnDate_Checkout = base.Columns["Date_Checkout"];
-                this.columnpower_first = base.Columns["power_first"];
-                this.columnwater_first = base.Columns["water_first"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnContract_ID = new global::System.Data.DataColumn("Contract_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnContract_ID);
-                this.columnRenter_ID = new global::System.Data.DataColumn("Renter_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRenter_ID);
-                this.columnRoom_ID = new global::System.Data.DataColumn("Room_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRoom_ID);
-                this.columnContract_No = new global::System.Data.DataColumn("Contract_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnContract_No);
-                this.columnContract_Date = new global::System.Data.DataColumn("Contract_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnContract_Date);
-                this.columnContract_Recognizance = new global::System.Data.DataColumn("Contract_Recognizance", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnContract_Recognizance);
-                this.columnContract_Status = new global::System.Data.DataColumn("Contract_Status", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnContract_Status);
-                this.columnContract_Type = new global::System.Data.DataColumn("Contract_Type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnContract_Type);
-                this.columnDate_Checkin = new global::System.Data.DataColumn("Date_Checkin", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate_Checkin);
-                this.columnDate_Checkout = new global::System.Data.DataColumn("Date_Checkout", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate_Checkout);
-                this.columnpower_first = new global::System.Data.DataColumn("power_first", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpower_first);
-                this.columnwater_first = new global::System.Data.DataColumn("water_first", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnwater_first);
-                this.columnContract_ID.AllowDBNull = false;
-                this.columnContract_ID.MaxLength = 36;
-                this.columnRenter_ID.MaxLength = 36;
-                this.columnRoom_ID.MaxLength = 36;
-                this.columnContract_No.MaxLength = 20;
-                this.columnContract_Status.MaxLength = 36;
-                this.columnContract_Type.MaxLength = 36;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblContractRow NewtblContractRow() {
-                return ((tblContractRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tblContractRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(tblContractRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.tblContractRowChanged != null)) {
-                    this.tblContractRowChanged(this, new tblContractRowChangeEvent(((tblContractRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.tblContractRowChanging != null)) {
-                    this.tblContractRowChanging(this, new tblContractRowChangeEvent(((tblContractRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.tblContractRowDeleted != null)) {
-                    this.tblContractRowDeleted(this, new tblContractRowChangeEvent(((tblContractRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.tblContractRowDeleting != null)) {
-                    this.tblContractRowDeleting(this, new tblContractRowChangeEvent(((tblContractRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovetblContractRow(tblContractRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ApartmentDB ds = new ApartmentDB();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tblContractDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1955,355 +1547,6 @@ namespace ApartmentSmart.Data {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "tblPaymentDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tblRecordDataTable : global::System.Data.TypedTableBase<tblRecordRow> {
-            
-            private global::System.Data.DataColumn columnRecord_ID;
-            
-            private global::System.Data.DataColumn columnRenter_ID;
-            
-            private global::System.Data.DataColumn columnRoom_ID;
-            
-            private global::System.Data.DataColumn columnNum_Water;
-            
-            private global::System.Data.DataColumn columnNum_Power;
-            
-            private global::System.Data.DataColumn columnRecord_water;
-            
-            private global::System.Data.DataColumn columnRecord_power;
-            
-            private global::System.Data.DataColumn columnRecord_date;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblRecordDataTable() {
-                this.TableName = "tblRecord";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tblRecordDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected tblRecordDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Record_IDColumn {
-                get {
-                    return this.columnRecord_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Renter_IDColumn {
-                get {
-                    return this.columnRenter_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Room_IDColumn {
-                get {
-                    return this.columnRoom_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Num_WaterColumn {
-                get {
-                    return this.columnNum_Water;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Num_PowerColumn {
-                get {
-                    return this.columnNum_Power;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Record_waterColumn {
-                get {
-                    return this.columnRecord_water;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Record_powerColumn {
-                get {
-                    return this.columnRecord_power;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Record_dateColumn {
-                get {
-                    return this.columnRecord_date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblRecordRow this[int index] {
-                get {
-                    return ((tblRecordRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblRecordRowChangeEventHandler tblRecordRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblRecordRowChangeEventHandler tblRecordRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblRecordRowChangeEventHandler tblRecordRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblRecordRowChangeEventHandler tblRecordRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddtblRecordRow(tblRecordRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblRecordRow AddtblRecordRow(string Record_ID, string Renter_ID, string Room_ID, double Num_Water, double Num_Power, double Record_water, double Record_power, System.DateTime Record_date) {
-                tblRecordRow rowtblRecordRow = ((tblRecordRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Record_ID,
-                        Renter_ID,
-                        Room_ID,
-                        Num_Water,
-                        Num_Power,
-                        Record_water,
-                        Record_power,
-                        Record_date};
-                rowtblRecordRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtblRecordRow);
-                return rowtblRecordRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                tblRecordDataTable cln = ((tblRecordDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new tblRecordDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnRecord_ID = base.Columns["Record_ID"];
-                this.columnRenter_ID = base.Columns["Renter_ID"];
-                this.columnRoom_ID = base.Columns["Room_ID"];
-                this.columnNum_Water = base.Columns["Num_Water"];
-                this.columnNum_Power = base.Columns["Num_Power"];
-                this.columnRecord_water = base.Columns["Record_water"];
-                this.columnRecord_power = base.Columns["Record_power"];
-                this.columnRecord_date = base.Columns["Record_date"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnRecord_ID = new global::System.Data.DataColumn("Record_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRecord_ID);
-                this.columnRenter_ID = new global::System.Data.DataColumn("Renter_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRenter_ID);
-                this.columnRoom_ID = new global::System.Data.DataColumn("Room_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRoom_ID);
-                this.columnNum_Water = new global::System.Data.DataColumn("Num_Water", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNum_Water);
-                this.columnNum_Power = new global::System.Data.DataColumn("Num_Power", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNum_Power);
-                this.columnRecord_water = new global::System.Data.DataColumn("Record_water", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRecord_water);
-                this.columnRecord_power = new global::System.Data.DataColumn("Record_power", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRecord_power);
-                this.columnRecord_date = new global::System.Data.DataColumn("Record_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRecord_date);
-                this.columnRecord_ID.AllowDBNull = false;
-                this.columnRecord_ID.MaxLength = 36;
-                this.columnRenter_ID.MaxLength = 36;
-                this.columnRoom_ID.MaxLength = 36;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblRecordRow NewtblRecordRow() {
-                return ((tblRecordRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tblRecordRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(tblRecordRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.tblRecordRowChanged != null)) {
-                    this.tblRecordRowChanged(this, new tblRecordRowChangeEvent(((tblRecordRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.tblRecordRowChanging != null)) {
-                    this.tblRecordRowChanging(this, new tblRecordRowChangeEvent(((tblRecordRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.tblRecordRowDeleted != null)) {
-                    this.tblRecordRowDeleted(this, new tblRecordRowChangeEvent(((tblRecordRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.tblRecordRowDeleting != null)) {
-                    this.tblRecordRowDeleting(this, new tblRecordRowChangeEvent(((tblRecordRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovetblRecordRow(tblRecordRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ApartmentDB ds = new ApartmentDB();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tblRecordDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3384,6 +2627,832 @@ namespace ApartmentSmart.Data {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tblContractDataTable : global::System.Data.TypedTableBase<tblContractRow> {
+            
+            private global::System.Data.DataColumn columnContract_ID;
+            
+            private global::System.Data.DataColumn columnRenter_ID;
+            
+            private global::System.Data.DataColumn columnRoom_ID;
+            
+            private global::System.Data.DataColumn columnContract_No;
+            
+            private global::System.Data.DataColumn columnContract_Date;
+            
+            private global::System.Data.DataColumn columnContract_Recognizance;
+            
+            private global::System.Data.DataColumn columnContract_Status;
+            
+            private global::System.Data.DataColumn columnContract_Type;
+            
+            private global::System.Data.DataColumn columnDate_Checkin;
+            
+            private global::System.Data.DataColumn columnDate_Checkout;
+            
+            private global::System.Data.DataColumn columnpower_first;
+            
+            private global::System.Data.DataColumn columnwater_first;
+            
+            private global::System.Data.DataColumn columnroom_price;
+            
+            private global::System.Data.DataColumn columnRemark;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblContractDataTable() {
+                this.TableName = "tblContract";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tblContractDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected tblContractDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Contract_IDColumn {
+                get {
+                    return this.columnContract_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Renter_IDColumn {
+                get {
+                    return this.columnRenter_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Room_IDColumn {
+                get {
+                    return this.columnRoom_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Contract_NoColumn {
+                get {
+                    return this.columnContract_No;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Contract_DateColumn {
+                get {
+                    return this.columnContract_Date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Contract_RecognizanceColumn {
+                get {
+                    return this.columnContract_Recognizance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Contract_StatusColumn {
+                get {
+                    return this.columnContract_Status;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Contract_TypeColumn {
+                get {
+                    return this.columnContract_Type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Date_CheckinColumn {
+                get {
+                    return this.columnDate_Checkin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Date_CheckoutColumn {
+                get {
+                    return this.columnDate_Checkout;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn power_firstColumn {
+                get {
+                    return this.columnpower_first;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn water_firstColumn {
+                get {
+                    return this.columnwater_first;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn room_priceColumn {
+                get {
+                    return this.columnroom_price;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RemarkColumn {
+                get {
+                    return this.columnRemark;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblContractRow this[int index] {
+                get {
+                    return ((tblContractRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblContractRowChangeEventHandler tblContractRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblContractRowChangeEventHandler tblContractRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblContractRowChangeEventHandler tblContractRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblContractRowChangeEventHandler tblContractRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddtblContractRow(tblContractRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblContractRow AddtblContractRow(string Contract_ID, string Renter_ID, string Room_ID, string Contract_No, System.DateTime Contract_Date, decimal Contract_Recognizance, string Contract_Status, string Contract_Type, System.DateTime Date_Checkin, System.DateTime Date_Checkout, double power_first, double water_first, decimal room_price, string Remark) {
+                tblContractRow rowtblContractRow = ((tblContractRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Contract_ID,
+                        Renter_ID,
+                        Room_ID,
+                        Contract_No,
+                        Contract_Date,
+                        Contract_Recognizance,
+                        Contract_Status,
+                        Contract_Type,
+                        Date_Checkin,
+                        Date_Checkout,
+                        power_first,
+                        water_first,
+                        room_price,
+                        Remark};
+                rowtblContractRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtblContractRow);
+                return rowtblContractRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tblContractDataTable cln = ((tblContractDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tblContractDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnContract_ID = base.Columns["Contract_ID"];
+                this.columnRenter_ID = base.Columns["Renter_ID"];
+                this.columnRoom_ID = base.Columns["Room_ID"];
+                this.columnContract_No = base.Columns["Contract_No"];
+                this.columnContract_Date = base.Columns["Contract_Date"];
+                this.columnContract_Recognizance = base.Columns["Contract_Recognizance"];
+                this.columnContract_Status = base.Columns["Contract_Status"];
+                this.columnContract_Type = base.Columns["Contract_Type"];
+                this.columnDate_Checkin = base.Columns["Date_Checkin"];
+                this.columnDate_Checkout = base.Columns["Date_Checkout"];
+                this.columnpower_first = base.Columns["power_first"];
+                this.columnwater_first = base.Columns["water_first"];
+                this.columnroom_price = base.Columns["room_price"];
+                this.columnRemark = base.Columns["Remark"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnContract_ID = new global::System.Data.DataColumn("Contract_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContract_ID);
+                this.columnRenter_ID = new global::System.Data.DataColumn("Renter_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRenter_ID);
+                this.columnRoom_ID = new global::System.Data.DataColumn("Room_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoom_ID);
+                this.columnContract_No = new global::System.Data.DataColumn("Contract_No", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContract_No);
+                this.columnContract_Date = new global::System.Data.DataColumn("Contract_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContract_Date);
+                this.columnContract_Recognizance = new global::System.Data.DataColumn("Contract_Recognizance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContract_Recognizance);
+                this.columnContract_Status = new global::System.Data.DataColumn("Contract_Status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContract_Status);
+                this.columnContract_Type = new global::System.Data.DataColumn("Contract_Type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContract_Type);
+                this.columnDate_Checkin = new global::System.Data.DataColumn("Date_Checkin", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate_Checkin);
+                this.columnDate_Checkout = new global::System.Data.DataColumn("Date_Checkout", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate_Checkout);
+                this.columnpower_first = new global::System.Data.DataColumn("power_first", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpower_first);
+                this.columnwater_first = new global::System.Data.DataColumn("water_first", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwater_first);
+                this.columnroom_price = new global::System.Data.DataColumn("room_price", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroom_price);
+                this.columnRemark = new global::System.Data.DataColumn("Remark", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRemark);
+                this.columnContract_ID.AllowDBNull = false;
+                this.columnContract_ID.DefaultValue = ((string)(""));
+                this.columnContract_ID.MaxLength = 36;
+                this.columnRenter_ID.DefaultValue = ((string)(""));
+                this.columnRenter_ID.MaxLength = 36;
+                this.columnRoom_ID.DefaultValue = ((string)(""));
+                this.columnRoom_ID.MaxLength = 36;
+                this.columnContract_No.DefaultValue = ((string)(""));
+                this.columnContract_No.MaxLength = 20;
+                this.columnContract_Recognizance.DefaultValue = ((decimal)(0m));
+                this.columnContract_Status.MaxLength = 36;
+                this.columnContract_Type.MaxLength = 36;
+                this.columnRemark.DefaultValue = ((string)(""));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblContractRow NewtblContractRow() {
+                return ((tblContractRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tblContractRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tblContractRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tblContractRowChanged != null)) {
+                    this.tblContractRowChanged(this, new tblContractRowChangeEvent(((tblContractRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tblContractRowChanging != null)) {
+                    this.tblContractRowChanging(this, new tblContractRowChangeEvent(((tblContractRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tblContractRowDeleted != null)) {
+                    this.tblContractRowDeleted(this, new tblContractRowChangeEvent(((tblContractRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tblContractRowDeleting != null)) {
+                    this.tblContractRowDeleting(this, new tblContractRowChangeEvent(((tblContractRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovetblContractRow(tblContractRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ApartmentDB ds = new ApartmentDB();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tblContractDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tblRecordDataTable : global::System.Data.TypedTableBase<tblRecordRow> {
+            
+            private global::System.Data.DataColumn columnRecord_ID;
+            
+            private global::System.Data.DataColumn columnRenter_ID;
+            
+            private global::System.Data.DataColumn columnRoom_ID;
+            
+            private global::System.Data.DataColumn columnNum_Water;
+            
+            private global::System.Data.DataColumn columnNum_Power;
+            
+            private global::System.Data.DataColumn columnRecord_water;
+            
+            private global::System.Data.DataColumn columnRecord_power;
+            
+            private global::System.Data.DataColumn columnRecord_date;
+            
+            private global::System.Data.DataColumn columnYear;
+            
+            private global::System.Data.DataColumn columnMonth;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblRecordDataTable() {
+                this.TableName = "tblRecord";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tblRecordDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected tblRecordDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Record_IDColumn {
+                get {
+                    return this.columnRecord_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Renter_IDColumn {
+                get {
+                    return this.columnRenter_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Room_IDColumn {
+                get {
+                    return this.columnRoom_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Num_WaterColumn {
+                get {
+                    return this.columnNum_Water;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Num_PowerColumn {
+                get {
+                    return this.columnNum_Power;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Record_waterColumn {
+                get {
+                    return this.columnRecord_water;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Record_powerColumn {
+                get {
+                    return this.columnRecord_power;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Record_dateColumn {
+                get {
+                    return this.columnRecord_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn YearColumn {
+                get {
+                    return this.columnYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MonthColumn {
+                get {
+                    return this.columnMonth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblRecordRow this[int index] {
+                get {
+                    return ((tblRecordRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblRecordRowChangeEventHandler tblRecordRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblRecordRowChangeEventHandler tblRecordRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblRecordRowChangeEventHandler tblRecordRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblRecordRowChangeEventHandler tblRecordRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddtblRecordRow(tblRecordRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblRecordRow AddtblRecordRow(string Record_ID, string Renter_ID, string Room_ID, double Num_Water, double Num_Power, double Record_water, double Record_power, System.DateTime Record_date, int Year, int Month) {
+                tblRecordRow rowtblRecordRow = ((tblRecordRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Record_ID,
+                        Renter_ID,
+                        Room_ID,
+                        Num_Water,
+                        Num_Power,
+                        Record_water,
+                        Record_power,
+                        Record_date,
+                        Year,
+                        Month};
+                rowtblRecordRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtblRecordRow);
+                return rowtblRecordRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tblRecordDataTable cln = ((tblRecordDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tblRecordDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnRecord_ID = base.Columns["Record_ID"];
+                this.columnRenter_ID = base.Columns["Renter_ID"];
+                this.columnRoom_ID = base.Columns["Room_ID"];
+                this.columnNum_Water = base.Columns["Num_Water"];
+                this.columnNum_Power = base.Columns["Num_Power"];
+                this.columnRecord_water = base.Columns["Record_water"];
+                this.columnRecord_power = base.Columns["Record_power"];
+                this.columnRecord_date = base.Columns["Record_date"];
+                this.columnYear = base.Columns["Year"];
+                this.columnMonth = base.Columns["Month"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnRecord_ID = new global::System.Data.DataColumn("Record_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRecord_ID);
+                this.columnRenter_ID = new global::System.Data.DataColumn("Renter_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRenter_ID);
+                this.columnRoom_ID = new global::System.Data.DataColumn("Room_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoom_ID);
+                this.columnNum_Water = new global::System.Data.DataColumn("Num_Water", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNum_Water);
+                this.columnNum_Power = new global::System.Data.DataColumn("Num_Power", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNum_Power);
+                this.columnRecord_water = new global::System.Data.DataColumn("Record_water", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRecord_water);
+                this.columnRecord_power = new global::System.Data.DataColumn("Record_power", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRecord_power);
+                this.columnRecord_date = new global::System.Data.DataColumn("Record_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRecord_date);
+                this.columnYear = new global::System.Data.DataColumn("Year", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYear);
+                this.columnMonth = new global::System.Data.DataColumn("Month", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMonth);
+                this.columnRecord_ID.AllowDBNull = false;
+                this.columnRecord_ID.DefaultValue = ((string)(""));
+                this.columnRecord_ID.MaxLength = 36;
+                this.columnRenter_ID.DefaultValue = ((string)(""));
+                this.columnRenter_ID.MaxLength = 36;
+                this.columnRoom_ID.DefaultValue = ((string)(""));
+                this.columnRoom_ID.MaxLength = 36;
+                this.columnNum_Water.DefaultValue = ((double)(0D));
+                this.columnNum_Power.DefaultValue = ((double)(0D));
+                this.columnRecord_water.DefaultValue = ((double)(0D));
+                this.columnRecord_power.DefaultValue = ((double)(0D));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblRecordRow NewtblRecordRow() {
+                return ((tblRecordRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tblRecordRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tblRecordRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tblRecordRowChanged != null)) {
+                    this.tblRecordRowChanged(this, new tblRecordRowChangeEvent(((tblRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tblRecordRowChanging != null)) {
+                    this.tblRecordRowChanging(this, new tblRecordRowChangeEvent(((tblRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tblRecordRowDeleted != null)) {
+                    this.tblRecordRowDeleted(this, new tblRecordRowChangeEvent(((tblRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tblRecordRowDeleting != null)) {
+                    this.tblRecordRowDeleting(this, new tblRecordRowChangeEvent(((tblRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovetblRecordRow(tblRecordRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ApartmentDB ds = new ApartmentDB();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tblRecordDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class tblUserRow : global::System.Data.DataRow {
@@ -3518,340 +3587,6 @@ namespace ApartmentSmart.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUser_typeNull() {
                 this[this.tabletblUser.User_typeColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class tblContractRow : global::System.Data.DataRow {
-            
-            private tblContractDataTable tabletblContract;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tblContractRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tabletblContract = ((tblContractDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Contract_ID {
-                get {
-                    return ((string)(this[this.tabletblContract.Contract_IDColumn]));
-                }
-                set {
-                    this[this.tabletblContract.Contract_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Renter_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tabletblContract.Renter_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Renter_ID\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.Renter_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Room_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tabletblContract.Room_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Room_ID\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.Room_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Contract_No {
-                get {
-                    try {
-                        return ((string)(this[this.tabletblContract.Contract_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Contract_No\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.Contract_NoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Contract_Date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabletblContract.Contract_DateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Contract_Date\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.Contract_DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Contract_Recognizance {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabletblContract.Contract_RecognizanceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Contract_Recognizance\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.Contract_RecognizanceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Contract_Status {
-                get {
-                    try {
-                        return ((string)(this[this.tabletblContract.Contract_StatusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Contract_Status\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.Contract_StatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Contract_Type {
-                get {
-                    try {
-                        return ((string)(this[this.tabletblContract.Contract_TypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Contract_Type\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.Contract_TypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Date_Checkin {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabletblContract.Date_CheckinColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Date_Checkin\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.Date_CheckinColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Date_Checkout {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabletblContract.Date_CheckoutColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Date_Checkout\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.Date_CheckoutColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double power_first {
-                get {
-                    try {
-                        return ((double)(this[this.tabletblContract.power_firstColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'power_first\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.power_firstColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double water_first {
-                get {
-                    try {
-                        return ((double)(this[this.tabletblContract.water_firstColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'water_first\' in table \'tblContract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblContract.water_firstColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRenter_IDNull() {
-                return this.IsNull(this.tabletblContract.Renter_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRenter_IDNull() {
-                this[this.tabletblContract.Renter_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRoom_IDNull() {
-                return this.IsNull(this.tabletblContract.Room_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRoom_IDNull() {
-                this[this.tabletblContract.Room_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsContract_NoNull() {
-                return this.IsNull(this.tabletblContract.Contract_NoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetContract_NoNull() {
-                this[this.tabletblContract.Contract_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsContract_DateNull() {
-                return this.IsNull(this.tabletblContract.Contract_DateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetContract_DateNull() {
-                this[this.tabletblContract.Contract_DateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsContract_RecognizanceNull() {
-                return this.IsNull(this.tabletblContract.Contract_RecognizanceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetContract_RecognizanceNull() {
-                this[this.tabletblContract.Contract_RecognizanceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsContract_StatusNull() {
-                return this.IsNull(this.tabletblContract.Contract_StatusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetContract_StatusNull() {
-                this[this.tabletblContract.Contract_StatusColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsContract_TypeNull() {
-                return this.IsNull(this.tabletblContract.Contract_TypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetContract_TypeNull() {
-                this[this.tabletblContract.Contract_TypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDate_CheckinNull() {
-                return this.IsNull(this.tabletblContract.Date_CheckinColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDate_CheckinNull() {
-                this[this.tabletblContract.Date_CheckinColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDate_CheckoutNull() {
-                return this.IsNull(this.tabletblContract.Date_CheckoutColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDate_CheckoutNull() {
-                this[this.tabletblContract.Date_CheckoutColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Ispower_firstNull() {
-                return this.IsNull(this.tabletblContract.power_firstColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setpower_firstNull() {
-                this[this.tabletblContract.power_firstColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iswater_firstNull() {
-                return this.IsNull(this.tabletblContract.water_firstColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setwater_firstNull() {
-                this[this.tabletblContract.water_firstColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4346,228 +4081,6 @@ namespace ApartmentSmart.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUserIDNull() {
                 this[this.tabletblPayment.UserIDColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class tblRecordRow : global::System.Data.DataRow {
-            
-            private tblRecordDataTable tabletblRecord;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tblRecordRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tabletblRecord = ((tblRecordDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Record_ID {
-                get {
-                    return ((string)(this[this.tabletblRecord.Record_IDColumn]));
-                }
-                set {
-                    this[this.tabletblRecord.Record_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Renter_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tabletblRecord.Renter_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Renter_ID\' in table \'tblRecord\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblRecord.Renter_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Room_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tabletblRecord.Room_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Room_ID\' in table \'tblRecord\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblRecord.Room_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Num_Water {
-                get {
-                    try {
-                        return ((double)(this[this.tabletblRecord.Num_WaterColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Num_Water\' in table \'tblRecord\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblRecord.Num_WaterColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Num_Power {
-                get {
-                    try {
-                        return ((double)(this[this.tabletblRecord.Num_PowerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Num_Power\' in table \'tblRecord\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblRecord.Num_PowerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Record_water {
-                get {
-                    try {
-                        return ((double)(this[this.tabletblRecord.Record_waterColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Record_water\' in table \'tblRecord\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblRecord.Record_waterColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Record_power {
-                get {
-                    try {
-                        return ((double)(this[this.tabletblRecord.Record_powerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Record_power\' in table \'tblRecord\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblRecord.Record_powerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Record_date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabletblRecord.Record_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Record_date\' in table \'tblRecord\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblRecord.Record_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRenter_IDNull() {
-                return this.IsNull(this.tabletblRecord.Renter_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRenter_IDNull() {
-                this[this.tabletblRecord.Renter_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRoom_IDNull() {
-                return this.IsNull(this.tabletblRecord.Room_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRoom_IDNull() {
-                this[this.tabletblRecord.Room_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNum_WaterNull() {
-                return this.IsNull(this.tabletblRecord.Num_WaterColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNum_WaterNull() {
-                this[this.tabletblRecord.Num_WaterColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNum_PowerNull() {
-                return this.IsNull(this.tabletblRecord.Num_PowerColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNum_PowerNull() {
-                this[this.tabletblRecord.Num_PowerColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRecord_waterNull() {
-                return this.IsNull(this.tabletblRecord.Record_waterColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRecord_waterNull() {
-                this[this.tabletblRecord.Record_waterColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRecord_powerNull() {
-                return this.IsNull(this.tabletblRecord.Record_powerColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRecord_powerNull() {
-                this[this.tabletblRecord.Record_powerColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRecord_dateNull() {
-                return this.IsNull(this.tabletblRecord.Record_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRecord_dateNull() {
-                this[this.tabletblRecord.Record_dateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5182,6 +4695,674 @@ namespace ApartmentSmart.Data {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class tblContractRow : global::System.Data.DataRow {
+            
+            private tblContractDataTable tabletblContract;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tblContractRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletblContract = ((tblContractDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Contract_ID {
+                get {
+                    return ((string)(this[this.tabletblContract.Contract_IDColumn]));
+                }
+                set {
+                    this[this.tabletblContract.Contract_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Renter_ID {
+                get {
+                    if (this.IsRenter_IDNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tabletblContract.Renter_IDColumn]));
+                    }
+                }
+                set {
+                    this[this.tabletblContract.Renter_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Room_ID {
+                get {
+                    if (this.IsRoom_IDNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tabletblContract.Room_IDColumn]));
+                    }
+                }
+                set {
+                    this[this.tabletblContract.Room_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Contract_No {
+                get {
+                    if (this.IsContract_NoNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tabletblContract.Contract_NoColumn]));
+                    }
+                }
+                set {
+                    this[this.tabletblContract.Contract_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Contract_Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletblContract.Contract_DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Contract_Date\' in table \'tblContract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblContract.Contract_DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Contract_Recognizance {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabletblContract.Contract_RecognizanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Contract_Recognizance\' in table \'tblContract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblContract.Contract_RecognizanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Contract_Status {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblContract.Contract_StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Contract_Status\' in table \'tblContract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblContract.Contract_StatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Contract_Type {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblContract.Contract_TypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Contract_Type\' in table \'tblContract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblContract.Contract_TypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Date_Checkin {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletblContract.Date_CheckinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date_Checkin\' in table \'tblContract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblContract.Date_CheckinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Date_Checkout {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletblContract.Date_CheckoutColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date_Checkout\' in table \'tblContract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblContract.Date_CheckoutColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double power_first {
+                get {
+                    try {
+                        return ((double)(this[this.tabletblContract.power_firstColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'power_first\' in table \'tblContract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblContract.power_firstColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double water_first {
+                get {
+                    try {
+                        return ((double)(this[this.tabletblContract.water_firstColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'water_first\' in table \'tblContract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblContract.water_firstColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal room_price {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabletblContract.room_priceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'room_price\' in table \'tblContract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblContract.room_priceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Remark {
+                get {
+                    if (this.IsRemarkNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tabletblContract.RemarkColumn]));
+                    }
+                }
+                set {
+                    this[this.tabletblContract.RemarkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRenter_IDNull() {
+                return this.IsNull(this.tabletblContract.Renter_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRenter_IDNull() {
+                this[this.tabletblContract.Renter_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRoom_IDNull() {
+                return this.IsNull(this.tabletblContract.Room_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRoom_IDNull() {
+                this[this.tabletblContract.Room_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsContract_NoNull() {
+                return this.IsNull(this.tabletblContract.Contract_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetContract_NoNull() {
+                this[this.tabletblContract.Contract_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsContract_DateNull() {
+                return this.IsNull(this.tabletblContract.Contract_DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetContract_DateNull() {
+                this[this.tabletblContract.Contract_DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsContract_RecognizanceNull() {
+                return this.IsNull(this.tabletblContract.Contract_RecognizanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetContract_RecognizanceNull() {
+                this[this.tabletblContract.Contract_RecognizanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsContract_StatusNull() {
+                return this.IsNull(this.tabletblContract.Contract_StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetContract_StatusNull() {
+                this[this.tabletblContract.Contract_StatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsContract_TypeNull() {
+                return this.IsNull(this.tabletblContract.Contract_TypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetContract_TypeNull() {
+                this[this.tabletblContract.Contract_TypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDate_CheckinNull() {
+                return this.IsNull(this.tabletblContract.Date_CheckinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDate_CheckinNull() {
+                this[this.tabletblContract.Date_CheckinColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDate_CheckoutNull() {
+                return this.IsNull(this.tabletblContract.Date_CheckoutColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDate_CheckoutNull() {
+                this[this.tabletblContract.Date_CheckoutColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispower_firstNull() {
+                return this.IsNull(this.tabletblContract.power_firstColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpower_firstNull() {
+                this[this.tabletblContract.power_firstColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iswater_firstNull() {
+                return this.IsNull(this.tabletblContract.water_firstColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setwater_firstNull() {
+                this[this.tabletblContract.water_firstColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isroom_priceNull() {
+                return this.IsNull(this.tabletblContract.room_priceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setroom_priceNull() {
+                this[this.tabletblContract.room_priceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRemarkNull() {
+                return this.IsNull(this.tabletblContract.RemarkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRemarkNull() {
+                this[this.tabletblContract.RemarkColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class tblRecordRow : global::System.Data.DataRow {
+            
+            private tblRecordDataTable tabletblRecord;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tblRecordRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletblRecord = ((tblRecordDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Record_ID {
+                get {
+                    return ((string)(this[this.tabletblRecord.Record_IDColumn]));
+                }
+                set {
+                    this[this.tabletblRecord.Record_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Renter_ID {
+                get {
+                    if (this.IsRenter_IDNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tabletblRecord.Renter_IDColumn]));
+                    }
+                }
+                set {
+                    this[this.tabletblRecord.Renter_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Room_ID {
+                get {
+                    if (this.IsRoom_IDNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tabletblRecord.Room_IDColumn]));
+                    }
+                }
+                set {
+                    this[this.tabletblRecord.Room_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Num_Water {
+                get {
+                    try {
+                        return ((double)(this[this.tabletblRecord.Num_WaterColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Num_Water\' in table \'tblRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblRecord.Num_WaterColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Num_Power {
+                get {
+                    try {
+                        return ((double)(this[this.tabletblRecord.Num_PowerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Num_Power\' in table \'tblRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblRecord.Num_PowerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Record_water {
+                get {
+                    try {
+                        return ((double)(this[this.tabletblRecord.Record_waterColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Record_water\' in table \'tblRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblRecord.Record_waterColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Record_power {
+                get {
+                    try {
+                        return ((double)(this[this.tabletblRecord.Record_powerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Record_power\' in table \'tblRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblRecord.Record_powerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Record_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletblRecord.Record_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Record_date\' in table \'tblRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblRecord.Record_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Year {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblRecord.YearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Year\' in table \'tblRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblRecord.YearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Month {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblRecord.MonthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Month\' in table \'tblRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblRecord.MonthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRenter_IDNull() {
+                return this.IsNull(this.tabletblRecord.Renter_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRenter_IDNull() {
+                this[this.tabletblRecord.Renter_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRoom_IDNull() {
+                return this.IsNull(this.tabletblRecord.Room_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRoom_IDNull() {
+                this[this.tabletblRecord.Room_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNum_WaterNull() {
+                return this.IsNull(this.tabletblRecord.Num_WaterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNum_WaterNull() {
+                this[this.tabletblRecord.Num_WaterColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNum_PowerNull() {
+                return this.IsNull(this.tabletblRecord.Num_PowerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNum_PowerNull() {
+                this[this.tabletblRecord.Num_PowerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRecord_waterNull() {
+                return this.IsNull(this.tabletblRecord.Record_waterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRecord_waterNull() {
+                this[this.tabletblRecord.Record_waterColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRecord_powerNull() {
+                return this.IsNull(this.tabletblRecord.Record_powerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRecord_powerNull() {
+                this[this.tabletblRecord.Record_powerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRecord_dateNull() {
+                return this.IsNull(this.tabletblRecord.Record_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRecord_dateNull() {
+                this[this.tabletblRecord.Record_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsYearNull() {
+                return this.IsNull(this.tabletblRecord.YearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetYearNull() {
+                this[this.tabletblRecord.YearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMonthNull() {
+                return this.IsNull(this.tabletblRecord.MonthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMonthNull() {
+                this[this.tabletblRecord.MonthColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -5201,40 +5382,6 @@ namespace ApartmentSmart.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblUserRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class tblContractRowChangeEvent : global::System.EventArgs {
-            
-            private tblContractRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblContractRowChangeEvent(tblContractRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblContractRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5303,40 +5450,6 @@ namespace ApartmentSmart.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblPaymentRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class tblRecordRowChangeEvent : global::System.EventArgs {
-            
-            private tblRecordRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblRecordRowChangeEvent(tblRecordRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblRecordRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5439,6 +5552,74 @@ namespace ApartmentSmart.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblStatusRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class tblContractRowChangeEvent : global::System.EventArgs {
+            
+            private tblContractRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblContractRowChangeEvent(tblContractRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblContractRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class tblRecordRowChangeEvent : global::System.EventArgs {
+            
+            private tblRecordRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblRecordRowChangeEvent(tblRecordRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblRecordRow Row {
                 get {
                     return this.eventRow;
                 }

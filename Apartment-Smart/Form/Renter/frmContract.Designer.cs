@@ -30,7 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContract));
             this.gbProduct = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPrice_monthly = new System.Windows.Forms.TextBox();
+            this.txt_room_price = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_water_first = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_power_first = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPrice_daily = new System.Windows.Forms.TextBox();
             this.txtRoomType = new System.Windows.Forms.TextBox();
             this.btnAddRoom = new System.Windows.Forms.Button();
             this.btnAddRenter = new System.Windows.Forms.Button();
@@ -52,24 +61,21 @@
             this.lblRemark = new System.Windows.Forms.Label();
             this.txtContractNo = new System.Windows.Forms.TextBox();
             this.lblContractNo = new System.Windows.Forms.Label();
-            this.txt_power_first = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_water_first = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_room_price = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.gbProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbProduct
             // 
+            this.gbProduct.Controls.Add(this.label5);
+            this.gbProduct.Controls.Add(this.label4);
+            this.gbProduct.Controls.Add(this.txtPrice_monthly);
             this.gbProduct.Controls.Add(this.txt_room_price);
             this.gbProduct.Controls.Add(this.label3);
             this.gbProduct.Controls.Add(this.txt_water_first);
             this.gbProduct.Controls.Add(this.label2);
             this.gbProduct.Controls.Add(this.txt_power_first);
             this.gbProduct.Controls.Add(this.label1);
-            this.gbProduct.Controls.Add(this.textBox2);
+            this.gbProduct.Controls.Add(this.txtPrice_daily);
             this.gbProduct.Controls.Add(this.txtRoomType);
             this.gbProduct.Controls.Add(this.btnAddRoom);
             this.gbProduct.Controls.Add(this.btnAddRenter);
@@ -96,22 +102,106 @@
             this.gbProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbProduct.Name = "gbProduct";
             this.gbProduct.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbProduct.Size = new System.Drawing.Size(636, 359);
+            this.gbProduct.Size = new System.Drawing.Size(636, 388);
             this.gbProduct.TabIndex = 10;
             this.gbProduct.TabStop = false;
             // 
-            // textBox2
+            // label5
             // 
-            this.textBox2.Location = new System.Drawing.Point(332, 127);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(91, 24);
-            this.textBox2.TabIndex = 177;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(237, 162);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 17);
+            this.label5.TabIndex = 186;
+            this.label5.Text = "ราคารายเดือน";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 162);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 17);
+            this.label4.TabIndex = 185;
+            this.label4.Text = "ราคารายวัน";
+            // 
+            // txtPrice_monthly
+            // 
+            this.txtPrice_monthly.Location = new System.Drawing.Point(332, 155);
+            this.txtPrice_monthly.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPrice_monthly.Name = "txtPrice_monthly";
+            this.txtPrice_monthly.ReadOnly = true;
+            this.txtPrice_monthly.Size = new System.Drawing.Size(91, 24);
+            this.txtPrice_monthly.TabIndex = 184;
+            this.txtPrice_monthly.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txt_room_price
+            // 
+            this.txt_room_price.Location = new System.Drawing.Point(426, 191);
+            this.txt_room_price.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_room_price.Name = "txt_room_price";
+            this.txt_room_price.Size = new System.Drawing.Size(190, 24);
+            this.txt_room_price.TabIndex = 182;
+            this.txt_room_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_room_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_room_price_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(341, 194);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 17);
+            this.label3.TabIndex = 183;
+            this.label3.Text = "ราคาห้องพัก";
+            // 
+            // txt_water_first
+            // 
+            this.txt_water_first.Location = new System.Drawing.Point(426, 283);
+            this.txt_water_first.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_water_first.Name = "txt_water_first";
+            this.txt_water_first.Size = new System.Drawing.Size(190, 24);
+            this.txt_water_first.TabIndex = 180;
+            this.txt_water_first.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(341, 286);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 17);
+            this.label2.TabIndex = 181;
+            this.label2.Text = "น้ำปะปา";
+            // 
+            // txt_power_first
+            // 
+            this.txt_power_first.Location = new System.Drawing.Point(136, 283);
+            this.txt_power_first.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_power_first.Name = "txt_power_first";
+            this.txt_power_first.Size = new System.Drawing.Size(190, 24);
+            this.txt_power_first.TabIndex = 178;
+            this.txt_power_first.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 286);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 17);
+            this.label1.TabIndex = 179;
+            this.label1.Text = "เลขมิเตอร์ไฟฟ้า";
+            // 
+            // txtPrice_daily
+            // 
+            this.txtPrice_daily.Location = new System.Drawing.Point(136, 159);
+            this.txtPrice_daily.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPrice_daily.Name = "txtPrice_daily";
+            this.txtPrice_daily.ReadOnly = true;
+            this.txtPrice_daily.Size = new System.Drawing.Size(91, 24);
+            this.txtPrice_daily.TabIndex = 177;
+            this.txtPrice_daily.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtRoomType
             // 
-            this.txtRoomType.Location = new System.Drawing.Point(235, 127);
+            this.txtRoomType.Location = new System.Drawing.Point(332, 123);
             this.txtRoomType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRoomType.Name = "txtRoomType";
             this.txtRoomType.ReadOnly = true;
@@ -146,7 +236,7 @@
             "นาย",
             "นาง",
             "นางสาว"});
-            this.cboContractType.Location = new System.Drawing.Point(136, 191);
+            this.cboContractType.Location = new System.Drawing.Point(136, 223);
             this.cboContractType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboContractType.Name = "cboContractType";
             this.cboContractType.Size = new System.Drawing.Size(190, 24);
@@ -154,8 +244,9 @@
             // 
             // dtpcheckout
             // 
+            this.dtpcheckout.CustomFormat = "dd/MM/yyyy";
             this.dtpcheckout.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpcheckout.Location = new System.Drawing.Point(426, 220);
+            this.dtpcheckout.Location = new System.Drawing.Point(426, 252);
             this.dtpcheckout.Name = "dtpcheckout";
             this.dtpcheckout.Size = new System.Drawing.Size(190, 24);
             this.dtpcheckout.TabIndex = 172;
@@ -163,7 +254,7 @@
             // lblcheckout
             // 
             this.lblcheckout.AutoSize = true;
-            this.lblcheckout.Location = new System.Drawing.Point(341, 224);
+            this.lblcheckout.Location = new System.Drawing.Point(341, 256);
             this.lblcheckout.Name = "lblcheckout";
             this.lblcheckout.Size = new System.Drawing.Size(58, 17);
             this.lblcheckout.TabIndex = 171;
@@ -171,8 +262,9 @@
             // 
             // dtpcheckin
             // 
+            this.dtpcheckin.CustomFormat = "dd/MM/yyyy";
             this.dtpcheckin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpcheckin.Location = new System.Drawing.Point(136, 220);
+            this.dtpcheckin.Location = new System.Drawing.Point(136, 252);
             this.dtpcheckin.Name = "dtpcheckin";
             this.dtpcheckin.Size = new System.Drawing.Size(190, 24);
             this.dtpcheckin.TabIndex = 170;
@@ -180,7 +272,7 @@
             // lblcheckin
             // 
             this.lblcheckin.AutoSize = true;
-            this.lblcheckin.Location = new System.Drawing.Point(14, 224);
+            this.lblcheckin.Location = new System.Drawing.Point(14, 256);
             this.lblcheckin.Name = "lblcheckin";
             this.lblcheckin.Size = new System.Drawing.Size(71, 17);
             this.lblcheckin.TabIndex = 169;
@@ -206,6 +298,7 @@
             // 
             // dtpContractDate
             // 
+            this.dtpContractDate.CustomFormat = "dd/MM/yyyy";
             this.dtpContractDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpContractDate.Location = new System.Drawing.Point(136, 64);
             this.dtpContractDate.Name = "dtpContractDate";
@@ -215,7 +308,7 @@
             // lblContractType
             // 
             this.lblContractType.AutoSize = true;
-            this.lblContractType.Location = new System.Drawing.Point(14, 193);
+            this.lblContractType.Location = new System.Drawing.Point(14, 225);
             this.lblContractType.Name = "lblContractType";
             this.lblContractType.Size = new System.Drawing.Size(93, 17);
             this.lblContractType.TabIndex = 153;
@@ -223,7 +316,7 @@
             // 
             // txtRecognizance
             // 
-            this.txtRecognizance.Location = new System.Drawing.Point(136, 159);
+            this.txtRecognizance.Location = new System.Drawing.Point(136, 191);
             this.txtRecognizance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRecognizance.Name = "txtRecognizance";
             this.txtRecognizance.Size = new System.Drawing.Size(190, 24);
@@ -234,7 +327,7 @@
             // lblRecognizance
             // 
             this.lblRecognizance.AutoSize = true;
-            this.lblRecognizance.Location = new System.Drawing.Point(14, 162);
+            this.lblRecognizance.Location = new System.Drawing.Point(14, 194);
             this.lblRecognizance.Name = "lblRecognizance";
             this.lblRecognizance.Size = new System.Drawing.Size(61, 17);
             this.lblRecognizance.TabIndex = 36;
@@ -269,7 +362,7 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(136, 283);
+            this.txtRemark.Location = new System.Drawing.Point(136, 315);
             this.txtRemark.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
@@ -279,7 +372,7 @@
             // lblRemark
             // 
             this.lblRemark.AutoSize = true;
-            this.lblRemark.Location = new System.Drawing.Point(14, 286);
+            this.lblRemark.Location = new System.Drawing.Point(14, 318);
             this.lblRemark.Name = "lblRemark";
             this.lblRemark.Size = new System.Drawing.Size(63, 17);
             this.lblRemark.TabIndex = 14;
@@ -303,66 +396,11 @@
             this.lblContractNo.TabIndex = 11;
             this.lblContractNo.Text = "เลขที่สัญญา";
             // 
-            // txt_power_first
-            // 
-            this.txt_power_first.Location = new System.Drawing.Point(136, 251);
-            this.txt_power_first.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_power_first.Name = "txt_power_first";
-            this.txt_power_first.Size = new System.Drawing.Size(190, 24);
-            this.txt_power_first.TabIndex = 178;
-            this.txt_power_first.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 254);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 17);
-            this.label1.TabIndex = 179;
-            this.label1.Text = "เลขมิเตอร์ไฟฟ้า";
-            // 
-            // txt_water_first
-            // 
-            this.txt_water_first.Location = new System.Drawing.Point(426, 251);
-            this.txt_water_first.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_water_first.Name = "txt_water_first";
-            this.txt_water_first.Size = new System.Drawing.Size(190, 24);
-            this.txt_water_first.TabIndex = 180;
-            this.txt_water_first.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(341, 254);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 17);
-            this.label2.TabIndex = 181;
-            this.label2.Text = "น้ำปะปา";
-            // 
-            // txt_room_price
-            // 
-            this.txt_room_price.Location = new System.Drawing.Point(426, 159);
-            this.txt_room_price.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_room_price.Name = "txt_room_price";
-            this.txt_room_price.Size = new System.Drawing.Size(190, 24);
-            this.txt_room_price.TabIndex = 182;
-            this.txt_room_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txt_room_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_room_price_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(341, 162);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 17);
-            this.label3.TabIndex = 183;
-            this.label3.Text = "ราคาห้องพัก";
-            // 
             // frmContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 395);
+            this.ClientSize = new System.Drawing.Size(636, 433);
             this.ControlBox = false;
             this.Controls.Add(this.gbProduct);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -410,7 +448,7 @@
         private System.Windows.Forms.ComboBox cboContractType;
         private System.Windows.Forms.Button btnAddRoom;
         private System.Windows.Forms.Button btnAddRenter;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPrice_daily;
         private System.Windows.Forms.TextBox txtRoomType;
         private System.Windows.Forms.TextBox txt_water_first;
         private System.Windows.Forms.Label label2;
@@ -418,5 +456,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_room_price;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPrice_monthly;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
