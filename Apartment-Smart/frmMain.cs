@@ -80,6 +80,69 @@ namespace ApartmentSmart
             fMenu.MdiParent = this;
             fMenu.StartPosition = FormStartPosition.CenterScreen;
             fMenu.Show();
-        }        
+        }
+
+        private void rbtProduct_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            frmRoomList fMenu = new frmRoomList();
+            fMenu.MdiParent = this;
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show();
+        }
+
+        private void rbtTenant_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            frmRenterList fMenu = new frmRenterList();
+            fMenu.MdiParent = this;
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show();
+        }
+
+        private void buttonItem5_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            frmContractList fMenu = new frmContractList();
+            fMenu.MdiParent = this;
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show();
+        }
+
+        private void rbtReceiver_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            frmRecord fMenu = new frmRecord();
+            fMenu.MdiParent = this;
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show();
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            frmPaymentList fMenu = new frmPaymentList();
+            fMenu.MdiParent = this;
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show();
+        }
+
+        private void btnCheckIn_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            frmContractList fMenu = new frmContractList();
+            fMenu.MdiParent = this;
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show();
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            frmContractList fMenu = new frmContractList();
+            fMenu.MdiParent = this;
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show();
+        }
     }
 }

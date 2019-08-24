@@ -17,7 +17,7 @@ namespace ApartmentSmart
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new DBConfig());
-            Application.Run(new frmContract());
+            Application.Run(new frmRecord());
         }
     }
 }

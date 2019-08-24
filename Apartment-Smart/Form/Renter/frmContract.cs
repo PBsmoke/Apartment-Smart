@@ -73,8 +73,6 @@ namespace ApartmentSmart
 
         protected override void DoLoadForm()
         {
-            FormState = "EDIT";
-            Contract_ID = "53a45e09-572f-4370-8866-36a318b82396";
             LoadCombo();
             if (!string.IsNullOrEmpty(Contract_ID))
             {
@@ -121,7 +119,7 @@ namespace ApartmentSmart
                             string sqlTmp = string.Empty;
                             StringBd.Append(" INSERT INTO tblContract(Contract_ID, Renter_ID, Room_ID, Contract_No, Contract_Date, Contract_Recognizance, ");
                             StringBd.Append(" Contract_Status, Contract_Type, date_Checkin, date_Checkout, power_first, water_first, room_price, Remark) ");
-                            StringBd.Append(" VALUES(@Contract_ID, @Renter_ID, @Room_ID, @Contract_No, @Contract_Date, @Contract_Recognizance, @Contract_Status,");
+                            StringBd.Append(" VALUES(@Contract_ID, @Renter_ID, @Room_ID, @Contract_No, @Contract_Date, @Contract_Recognizance, (select StatusID from tblStatus where Name = 'มัดจำ' and StatusType = 'ContractStatus'),");
                             StringBd.Append(" @Contract_Type, @date_Checkin, @date_Checkout, @power_first, @water_first, @room_price, @Remark) ");
                             sqlTmp = "";
                             sqlTmp = StringBd.ToString();
@@ -137,7 +135,7 @@ namespace ApartmentSmart
                             dbConString.Com.Parameters.Add("@Contract_No", SqlDbType.VarChar).Value = txtContractNo.Text;
                             dbConString.Com.Parameters.Add("@Contract_Date", SqlDbType.DateTime).Value = dtpContractDate.Value;
                             dbConString.Com.Parameters.Add("@Contract_Recognizance", SqlDbType.Decimal).Value = Convert.ToDecimal(txtRecognizance.Text);
-                            dbConString.Com.Parameters.Add("@Contract_Status", SqlDbType.VarChar).Value = cboContractType.SelectedValue;
+                            //dbConString.Com.Parameters.Add("@Contract_Status", SqlDbType.VarChar).Value = "มัดจำ";
                             dbConString.Com.Parameters.Add("@Contract_Type", SqlDbType.VarChar).Value = cboContractType.SelectedValue;
                             dbConString.Com.Parameters.Add("@date_Checkin", SqlDbType.DateTime).Value = dtpcheckin.Value;
                             dbConString.Com.Parameters.Add("@date_Checkout", SqlDbType.DateTime).Value = dtpcheckout.Value;
@@ -168,7 +166,7 @@ namespace ApartmentSmart
                     StringBuilder StringBd = new StringBuilder();
                     string sqlTmp = string.Empty;
                     StringBd.Append(" UPDATE tblContract SET Renter_ID = @Renter_ID, Room_ID = @Room_ID, Contract_No = @Contract_No, Contract_Date = @Contract_Date, ");
-                    StringBd.Append(" Contract_Recognizance = @Contract_Recognizance, Contract_Status = @Contract_Status, Contract_Type = @Contract_Type, date_Checkin = @date_Checkin, ");
+                    StringBd.Append(" Contract_Recognizance = @Contract_Recognizance, Contract_Type = @Contract_Type, date_Checkin = @date_Checkin, ");
                     StringBd.Append(" date_Checkout = @date_Checkout, power_first = @power_first, water_first = @water_first, room_price = @room_price, Remark = @Remark WHERE Contract_ID = @Contract_ID ");
 
                     sqlTmp = "";
@@ -185,7 +183,7 @@ namespace ApartmentSmart
                     dbConString.Com.Parameters.Add("@Contract_No", SqlDbType.VarChar).Value = txtContractNo.Text;
                     dbConString.Com.Parameters.Add("@Contract_Date", SqlDbType.DateTime).Value = dtpContractDate.Value;
                     dbConString.Com.Parameters.Add("@Contract_Recognizance", SqlDbType.Decimal).Value = Convert.ToDecimal(txtRecognizance.Text);
-                    dbConString.Com.Parameters.Add("@Contract_Status", SqlDbType.VarChar).Value = cboContractType.SelectedValue;
+                    //dbConString.Com.Parameters.Add("@Contract_Status", SqlDbType.VarChar).Value = cboContractType.SelectedValue;
                     dbConString.Com.Parameters.Add("@Contract_Type", SqlDbType.VarChar).Value = cboContractType.SelectedValue;
                     dbConString.Com.Parameters.Add("@date_Checkin", SqlDbType.DateTime).Value = dtpcheckin.Value;
                     dbConString.Com.Parameters.Add("@date_Checkout", SqlDbType.DateTime).Value = dtpcheckout.Value;
@@ -237,7 +235,7 @@ namespace ApartmentSmart
                     dtpContractDate.Value = tblContract.tblContract[0].Contract_Date;
                     txtRecognizance.Text = tblContract.tblContract[0].Contract_Recognizance.ToString("###0.00");
                     txt_room_price.Text = tblContract.tblContract[0].room_price.ToString("###0.00");
-                    cboContractType.SelectedValue = tblContract.tblContract[0].Contract_Status;
+                    cboContractType.SelectedValue = tblContract.tblContract[0].Contract_Type;
                     dtpcheckin.Value = tblContract.tblContract[0].Date_Checkin;
                     dtpcheckout.Value = tblContract.tblContract[0].Date_Checkout;
                     txt_power_first.Text = tblContract.tblContract[0].power_first.ToString("###0.00"); 

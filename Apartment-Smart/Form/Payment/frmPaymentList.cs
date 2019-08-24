@@ -13,17 +13,17 @@ using ApartmentSmart.Class;
 
 namespace ApartmentSmart
 {
-    public partial class frmContractList : BaseList
+    public partial class frmPaymentList : BaseList
     {
-        public frmContractList()
+        public frmPaymentList()
         {
             InitializeComponent();
         }
 
         #region Member
-        ApartmentDB tblRenter = new ApartmentDB();
+        ApartmentDB tblRoom = new ApartmentDB();
         bool Success = true;
-        string Contract_ID = string.Empty;
+        string Pay_ID = string.Empty;
         int SelectRowIndex = 0;
         #endregion Member
 
@@ -34,9 +34,9 @@ namespace ApartmentSmart
 
         protected override void DoNew()
         {
-            frmContract mForm = new frmContract();
-            mForm.FormState = "NEW";
-            mForm.ShowDialog();
+            frmPayment mForm = new frmPayment();
+            //mForm.FormState = "NEW";
+            //mForm.ShowDialog();
             btnStatus(true);
             ShowData();
         }
@@ -45,10 +45,10 @@ namespace ApartmentSmart
         {
             if (dgvShow.RowCount > 0)
             {
-                frmContract mForm = new frmContract();
-                mForm.FormState = "EDIT";
-                mForm.Contract_ID = dgvShow.Rows[SelectRowIndex].Cells[colContract_ID.Name].Value.ToString();
-                mForm.ShowDialog();
+                frmPayment mForm = new frmPayment();
+                //mForm.FormState = "EDIT";
+                //mForm.Room_ID = dgvShow.Rows[SelectRowIndex].Cells[colPay_ID.Name].Value.ToString();
+                //mForm.ShowDialog();
                 btnStatus(true);
             }
             txtSearch.Text = string.Empty;
@@ -68,8 +68,8 @@ namespace ApartmentSmart
                 StringBuilder StringBd = new StringBuilder();
                 //dbConString.Transaction = new SqlTransaction();
                 string sqlTmp = string.Empty;
-                Contract_ID = dgvShow.Rows[SelectRowIndex].Cells[colContract_ID.Name].Value.ToString();
-                StringBd.Append("DELETE tblContract WHERE Contract_ID = @Contract_ID;");
+                Pay_ID = dgvShow.Rows[SelectRowIndex].Cells[colPay_ID.Name].Value.ToString();
+                StringBd.Append("DELETE tblPayment WHERE Pay_ID = @Pay_ID;");
                 sqlTmp = "";
                 sqlTmp = StringBd.ToString();
                 dbConString.Com = new SqlCommand();
@@ -78,7 +78,7 @@ namespace ApartmentSmart
                 dbConString.Com.Connection = dbConString.mySQLConn;
                 dbConString.Com.Transaction = dbConString.Transaction;
                 dbConString.Com.Parameters.Clear();
-                dbConString.Com.Parameters.Add("@Contract_ID", SqlDbType.VarChar).Value = Contract_ID;
+                dbConString.Com.Parameters.Add("@Pay_ID", SqlDbType.VarChar).Value = Pay_ID;
                 dbConString.Com.ExecuteNonQuery();
                 dbConString.Transaction.Commit();
                 MessageBox.Show("บันทึกค่าเรียบร้อย", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -95,7 +95,7 @@ namespace ApartmentSmart
 
         private void ShowData()
         {
-            searchContract();
+            searchRoom();
         }
 
         private void dgvShow_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -106,7 +106,7 @@ namespace ApartmentSmart
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            searchContract();
+            searchRoom();
             SelectRowIndex = -1;
             btnStatus(true);
         }
@@ -115,7 +115,7 @@ namespace ApartmentSmart
         {
             if (e.KeyCode == Keys.Enter)
             {
-                searchContract();
+                searchRoom();
                 SelectRowIndex = -1;
                 btnStatus(true);
             }
@@ -123,7 +123,7 @@ namespace ApartmentSmart
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            searchContract();
+            searchRoom();
             SelectRowIndex = -1;
             btnStatus(true);
         }
@@ -132,9 +132,9 @@ namespace ApartmentSmart
         {
             if (dgvShow.RowCount > 0)
             {
-                frmContract mForm = new frmContract();
-                mForm.FormState = "EDIT";
-                mForm.Contract_ID = dgvShow.Rows[SelectRowIndex].Cells[colContract_ID.Name].Value.ToString();
+                frmPayment mForm = new frmPayment();
+                //mForm.FormState = "EDIT";
+                //mForm.Room_ID = dgvShow.Rows[SelectRowIndex].Cells[colRoom_ID.Name].Value.ToString();
                 mForm.ShowDialog();
                 btnStatus(true);
             }
@@ -143,43 +143,36 @@ namespace ApartmentSmart
             ShowData();
         }
 
-        private void searchContract()
+        private void searchRoom()
         {
-            string sqlTmp = string.Empty;
-            string Whereclause = string.Empty;
-            if (!string.IsNullOrEmpty(txtSearch.Text))
-            {
-                Whereclause = txtSearch.Text;
-            }
-            else
-            {
-                Whereclause = string.Empty;
-            }
-            sqlTmp = "SELECT c.Contract_ID, (rent.Renter_TitleName + ' ' + rent.Renter_Name + ' ' + rent.Renter_Lastname)AS Renter_ID, ";
-            sqlTmp += " r.Room_number AS Room_ID, c.Contract_No, c.Contract_Date, c.Contract_Recognizance, ";
-            sqlTmp += " cstatus.Name AS Contract_Status,ctype.Name AS Contract_Type,c.Date_Checkin,c.Date_Checkout,c.power_first, ";
-            sqlTmp += " c.water_first,c.room_price,c.Remark ";
-            sqlTmp += " FROM tblContract c ";
-            sqlTmp += " INNER JOIN tblRoom r on c.Room_ID = r.Room_ID ";
-            sqlTmp += " INNER JOIN tblStatus ctype on c.Contract_Type = ctype.StatusID ";
-            sqlTmp += " INNER JOIN tblStatus cstatus on c.Contract_Status = cstatus.StatusID ";
-            sqlTmp += " INNER JOIN tblRenter rent on c.Renter_ID = rent.Renter_ID ";
-
-            if (!string.IsNullOrEmpty(Whereclause))
-            {
-                sqlTmp += " where c.Contract_No LIKE '%" + Whereclause + "%' or r.Room_number LIKE '%" + Whereclause + "%' or rent.Renter_Name LIKE '%" + Whereclause + "%' ";
-            }
-            DataSet Ds = new DataSet();
-            dbConString.Com = new SqlCommand();
-            dbConString.Com.CommandType = CommandType.Text;
-            dbConString.Com.CommandText = sqlTmp;
-            dbConString.Com.Connection = dbConString.mySQLConn;
-            SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            tblRenter.Clear();
-            da.Fill(tblRenter, "tblRenter");
-            da.Dispose();
-            dgvShow.DataSource = tblRenter.tblRenter;
+            //string sqlTmp = string.Empty;
+            //string Whereclause = string.Empty;
+            //if (!string.IsNullOrEmpty(txtSearch.Text))
+            //{
+            //    Whereclause = txtSearch.Text;
+            //}
+            //else
+            //{
+            //    Whereclause = string.Empty;
+            //}
+            //sqlTmp = "select r.Room_ID,	r.Room_number, r.Room_floor, s.Name AS Room_Type, r.Room_Price_daily, r.Room_Price_monthly, ";
+            //sqlTmp += "	s1.Name AS Room_status, r.Room_MetersNo, r.Room_Remark from tblRoom r INNER JOIN tblStatus s ON r.Room_Type = s.StatusID ";
+            //sqlTmp += " INNER JOIN tblStatus s1 ON r.Room_status = s1.StatusID ";
+            //if (!string.IsNullOrEmpty(Whereclause))
+            //{
+            //    sqlTmp += " WHERE r.Room_number LIKE '%" + Whereclause + "%' OR s.Name LIKE '%" + Whereclause + "%' ";
+            //}
+            //DataSet Ds = new DataSet();
+            //dbConString.Com = new SqlCommand();
+            //dbConString.Com.CommandType = CommandType.Text;
+            //dbConString.Com.CommandText = sqlTmp;
+            //dbConString.Com.Connection = dbConString.mySQLConn;
+            //SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //tblRoom.Clear();
+            //da.Fill(tblRoom, "tblRoom");
+            //da.Dispose();
+            //dgvShow.DataSource = tblRoom.tblRoom;
         }
     }
 }
