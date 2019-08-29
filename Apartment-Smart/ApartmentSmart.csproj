@@ -355,7 +355,7 @@
     <None Include="Data\ApartmentDB.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ApartmentDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>ApartmentDB1.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\ApartmentDB.xss">
       <DependentUpon>ApartmentDB.xsd</DependentUpon>
