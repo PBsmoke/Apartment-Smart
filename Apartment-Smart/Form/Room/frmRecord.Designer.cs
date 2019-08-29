@@ -31,26 +31,28 @@
             this.components = new System.ComponentModel.Container();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvRecordDT = new System.Windows.Forms.DataGridView();
+            this.tblRecordDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboMonth = new System.Windows.Forms.ComboBox();
             this.cboYear = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tblRecordDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.recordDTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recordIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.renterIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numWaterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numPowerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recordwaterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recordpowerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recorddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPostPayment = new System.Windows.Forms.Button();
+            this.colRecordDT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRenter_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNum_Water = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNum_Power = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRecord_water = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRecord_power = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRecord_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecordDT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecordDTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblRecordDTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -72,22 +74,27 @@
             this.dgvRecordDT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecordDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecordDT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.recordDTIDDataGridViewTextBoxColumn,
-            this.recordIDDataGridViewTextBoxColumn,
-            this.renterIDDataGridViewTextBoxColumn,
-            this.roomIDDataGridViewTextBoxColumn,
-            this.numWaterDataGridViewTextBoxColumn,
-            this.numPowerDataGridViewTextBoxColumn,
-            this.recordwaterDataGridViewTextBoxColumn,
-            this.recordpowerDataGridViewTextBoxColumn,
-            this.recorddateDataGridViewTextBoxColumn});
+            this.colRecordDT_ID,
+            this.colRecord_ID,
+            this.colRenter_Name,
+            this.colRoom_ID,
+            this.colRoom_Number,
+            this.colNum_Water,
+            this.colNum_Power,
+            this.colRecord_water,
+            this.colRecord_power,
+            this.colRecord_date});
             this.dgvRecordDT.DataSource = this.tblRecordDTBindingSource;
             this.dgvRecordDT.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvRecordDT.Location = new System.Drawing.Point(0, 113);
             this.dgvRecordDT.Name = "dgvRecordDT";
-            this.dgvRecordDT.ReadOnly = true;
             this.dgvRecordDT.Size = new System.Drawing.Size(783, 169);
             this.dgvRecordDT.TabIndex = 126;
+            // 
+            // tblRecordDTBindingSource
+            // 
+            this.tblRecordDTBindingSource.DataMember = "tblRecordDT";
+            this.tblRecordDTBindingSource.DataSource = this.apartmentDB;
             // 
             // apartmentDB
             // 
@@ -154,6 +161,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnPostPayment);
             this.groupBox1.Controls.Add(this.cboYear);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.cboMonth);
@@ -166,73 +174,90 @@
             this.groupBox1.TabIndex = 128;
             this.groupBox1.TabStop = false;
             // 
-            // tblRecordDTBindingSource
+            // btnPostPayment
             // 
-            this.tblRecordDTBindingSource.DataMember = "tblRecordDT";
-            this.tblRecordDTBindingSource.DataSource = this.apartmentDB;
+            this.btnPostPayment.Location = new System.Drawing.Point(486, 30);
+            this.btnPostPayment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPostPayment.Name = "btnPostPayment";
+            this.btnPostPayment.Size = new System.Drawing.Size(291, 23);
+            this.btnPostPayment.TabIndex = 128;
+            this.btnPostPayment.Text = "บันทึกรายการชำระเงิน";
+            this.btnPostPayment.UseVisualStyleBackColor = true;
+            this.btnPostPayment.Click += new System.EventHandler(this.btnPostPayment_Click);
             // 
-            // recordDTIDDataGridViewTextBoxColumn
+            // colRecordDT_ID
             // 
-            this.recordDTIDDataGridViewTextBoxColumn.DataPropertyName = "RecordDT_ID";
-            this.recordDTIDDataGridViewTextBoxColumn.HeaderText = "RecordDT_ID";
-            this.recordDTIDDataGridViewTextBoxColumn.Name = "recordDTIDDataGridViewTextBoxColumn";
-            this.recordDTIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colRecordDT_ID.DataPropertyName = "RecordDT_ID";
+            this.colRecordDT_ID.HeaderText = "RecordDT_ID";
+            this.colRecordDT_ID.Name = "colRecordDT_ID";
+            this.colRecordDT_ID.ReadOnly = true;
+            this.colRecordDT_ID.Visible = false;
             // 
-            // recordIDDataGridViewTextBoxColumn
+            // colRecord_ID
             // 
-            this.recordIDDataGridViewTextBoxColumn.DataPropertyName = "Record_ID";
-            this.recordIDDataGridViewTextBoxColumn.HeaderText = "Record_ID";
-            this.recordIDDataGridViewTextBoxColumn.Name = "recordIDDataGridViewTextBoxColumn";
-            this.recordIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colRecord_ID.DataPropertyName = "Record_ID";
+            this.colRecord_ID.HeaderText = "Record_ID";
+            this.colRecord_ID.Name = "colRecord_ID";
+            this.colRecord_ID.ReadOnly = true;
+            this.colRecord_ID.Visible = false;
             // 
-            // renterIDDataGridViewTextBoxColumn
+            // colRenter_Name
             // 
-            this.renterIDDataGridViewTextBoxColumn.DataPropertyName = "Renter_ID";
-            this.renterIDDataGridViewTextBoxColumn.HeaderText = "Renter_ID";
-            this.renterIDDataGridViewTextBoxColumn.Name = "renterIDDataGridViewTextBoxColumn";
-            this.renterIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colRenter_Name.DataPropertyName = "Renter_Name";
+            this.colRenter_Name.HeaderText = "Renter_Name";
+            this.colRenter_Name.Name = "colRenter_Name";
+            this.colRenter_Name.ReadOnly = true;
             // 
-            // roomIDDataGridViewTextBoxColumn
+            // colRoom_ID
             // 
-            this.roomIDDataGridViewTextBoxColumn.DataPropertyName = "Room_ID";
-            this.roomIDDataGridViewTextBoxColumn.HeaderText = "Room_ID";
-            this.roomIDDataGridViewTextBoxColumn.Name = "roomIDDataGridViewTextBoxColumn";
-            this.roomIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colRoom_ID.DataPropertyName = "Room_ID";
+            this.colRoom_ID.HeaderText = "Room_ID";
+            this.colRoom_ID.Name = "colRoom_ID";
+            this.colRoom_ID.ReadOnly = true;
+            this.colRoom_ID.Visible = false;
             // 
-            // numWaterDataGridViewTextBoxColumn
+            // colRoom_Number
             // 
-            this.numWaterDataGridViewTextBoxColumn.DataPropertyName = "Num_Water";
-            this.numWaterDataGridViewTextBoxColumn.HeaderText = "Num_Water";
-            this.numWaterDataGridViewTextBoxColumn.Name = "numWaterDataGridViewTextBoxColumn";
-            this.numWaterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colRoom_Number.DataPropertyName = "Room_Number";
+            this.colRoom_Number.HeaderText = "Room_Number";
+            this.colRoom_Number.Name = "colRoom_Number";
+            this.colRoom_Number.ReadOnly = true;
             // 
-            // numPowerDataGridViewTextBoxColumn
+            // colNum_Water
             // 
-            this.numPowerDataGridViewTextBoxColumn.DataPropertyName = "Num_Power";
-            this.numPowerDataGridViewTextBoxColumn.HeaderText = "Num_Power";
-            this.numPowerDataGridViewTextBoxColumn.Name = "numPowerDataGridViewTextBoxColumn";
-            this.numPowerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNum_Water.DataPropertyName = "Num_Water";
+            this.colNum_Water.HeaderText = "Num_Water";
+            this.colNum_Water.Name = "colNum_Water";
             // 
-            // recordwaterDataGridViewTextBoxColumn
+            // colNum_Power
             // 
-            this.recordwaterDataGridViewTextBoxColumn.DataPropertyName = "Record_water";
-            this.recordwaterDataGridViewTextBoxColumn.HeaderText = "Record_water";
-            this.recordwaterDataGridViewTextBoxColumn.Name = "recordwaterDataGridViewTextBoxColumn";
-            this.recordwaterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNum_Power.DataPropertyName = "Num_Power";
+            this.colNum_Power.HeaderText = "Num_Power";
+            this.colNum_Power.Name = "colNum_Power";
             // 
-            // recordpowerDataGridViewTextBoxColumn
+            // colRecord_water
             // 
-            this.recordpowerDataGridViewTextBoxColumn.DataPropertyName = "Record_power";
-            this.recordpowerDataGridViewTextBoxColumn.HeaderText = "Record_power";
-            this.recordpowerDataGridViewTextBoxColumn.Name = "recordpowerDataGridViewTextBoxColumn";
-            this.recordpowerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colRecord_water.DataPropertyName = "Record_water";
+            this.colRecord_water.HeaderText = "Record_water";
+            this.colRecord_water.Name = "colRecord_water";
+            this.colRecord_water.ReadOnly = true;
+            this.colRecord_water.Visible = false;
             // 
-            // recorddateDataGridViewTextBoxColumn
+            // colRecord_power
             // 
-            this.recorddateDataGridViewTextBoxColumn.DataPropertyName = "Record_date";
-            this.recorddateDataGridViewTextBoxColumn.HeaderText = "Record_date";
-            this.recorddateDataGridViewTextBoxColumn.Name = "recorddateDataGridViewTextBoxColumn";
-            this.recorddateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colRecord_power.DataPropertyName = "Record_power";
+            this.colRecord_power.HeaderText = "Record_power";
+            this.colRecord_power.Name = "colRecord_power";
+            this.colRecord_power.ReadOnly = true;
+            this.colRecord_power.Visible = false;
+            // 
+            // colRecord_date
+            // 
+            this.colRecord_date.DataPropertyName = "Record_date";
+            this.colRecord_date.HeaderText = "Record_date";
+            this.colRecord_date.Name = "colRecord_date";
+            this.colRecord_date.ReadOnly = true;
+            this.colRecord_date.Visible = false;
             // 
             // frmRecord
             // 
@@ -249,10 +274,10 @@
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.dgvRecordDT, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecordDT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRecordDTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblRecordDTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,15 +292,18 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox1;
         private Data.ApartmentDB apartmentDB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recordDTIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recordIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn renterIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roomIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numWaterDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numPowerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recordwaterDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recordpowerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recorddateDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource tblRecordDTBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn renterIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnPostPayment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRecordDT_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRecord_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRenter_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNum_Water;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNum_Power;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRecord_water;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRecord_power;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRecord_date;
     }
 }

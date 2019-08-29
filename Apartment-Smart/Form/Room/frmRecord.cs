@@ -78,8 +78,8 @@ namespace ApartmentSmart
                             dbConString.Transaction = dbConString.mySQLConn.BeginTransaction();
                             StringBd.Clear();
                             sqlTmp = string.Empty;
-                            StringBd.Append("INSERT INTO tblRecordDT (RecordDT_ID,Record_ID,Renter_ID,Room_ID,Num_Water,Num_Power,Record_water,Record_power,Record_date)");
-                            StringBd.Append(" VALUES (@RecordDT_ID,@Record_ID,@Renter_ID,@Room_ID,@Num_Water,@Num_Power,@Record_water,@Record_power,@Record_date)");
+                            StringBd.Append("INSERT INTO tblRecordDT (RecordDT_ID,Record_ID,Contract_ID,Room_ID,Num_Water,Num_Power,Record_water,Record_power,Record_date)");
+                            StringBd.Append(" VALUES (@RecordDT_ID,@Record_ID,@Contract_ID,@Room_ID,@Num_Water,@Num_Power,@Record_water,@Record_power,@Record_date)");
                             sqlTmp = "";
                             sqlTmp = StringBd.ToString();
                             dbConString.Com = new SqlCommand();
@@ -90,7 +90,7 @@ namespace ApartmentSmart
                             dbConString.Com.Parameters.Clear();
                             dbConString.Com.Parameters.Add("@RecordDT_ID", SqlDbType.VarChar).Value = Guid.NewGuid().ToString();
                             dbConString.Com.Parameters.Add("@Record_ID", SqlDbType.VarChar).Value = Record_ID;
-                            dbConString.Com.Parameters.Add("@Renter_ID", SqlDbType.VarChar).Value = dr.Renter_ID;
+                            dbConString.Com.Parameters.Add("@Contract_ID", SqlDbType.VarChar).Value = dr.Contract_ID;
                             dbConString.Com.Parameters.Add("@Room_ID", SqlDbType.VarChar).Value = dr.Room_ID;
                             dbConString.Com.Parameters.Add("@Num_Water", SqlDbType.Float).Value = dr.Num_Water;
                             dbConString.Com.Parameters.Add("@Num_Power", SqlDbType.Float).Value = dr.Num_Power;
@@ -150,8 +150,8 @@ namespace ApartmentSmart
                             //dbConString.Transaction = dbConString.mySQLConn.BeginTransaction();
                             StringBd.Clear();
                             sqlTmp = string.Empty;
-                            StringBd.Append("INSERT INTO tblRecordDT (RecordDT_ID,Record_ID,Renter_ID,Room_ID,Num_Water,Num_Power,Record_water,Record_power,Record_date)");
-                            StringBd.Append(" VALUES (@RecordDT_ID,@Record_ID,@Renter_ID,@Room_ID,@Num_Water,@Num_Power,@Record_water,@Record_power,Record_date)");
+                            StringBd.Append("INSERT INTO tblRecordDT (RecordDT_ID,Record_ID,Contract_ID,Room_ID,Num_Water,Num_Power,Record_water,Record_power,Record_date)");
+                            StringBd.Append(" VALUES (@RecordDT_ID,@Record_ID,@Contract_ID,@Room_ID,@Num_Water,@Num_Power,@Record_water,@Record_power,Record_date)");
                             sqlTmp = "";
                             sqlTmp = StringBd.ToString();
                             dbConString.Com = new SqlCommand();
@@ -162,7 +162,7 @@ namespace ApartmentSmart
                             dbConString.Com.Parameters.Clear();
                             dbConString.Com.Parameters.Add("@RecordDT_ID", SqlDbType.VarChar).Value = Guid.NewGuid().ToString();
                             dbConString.Com.Parameters.Add("@Record_ID", SqlDbType.VarChar).Value = Record_ID;
-                            dbConString.Com.Parameters.Add("@Renter_ID", SqlDbType.VarChar).Value = dr.Renter_ID;
+                            dbConString.Com.Parameters.Add("@Contract_ID", SqlDbType.VarChar).Value = dr.Contract_ID;
                             dbConString.Com.Parameters.Add("@Room_ID", SqlDbType.VarChar).Value = dr.Room_ID;
                             dbConString.Com.Parameters.Add("@Num_Water", SqlDbType.Float).Value = dr.Num_Water;
                             dbConString.Com.Parameters.Add("@Num_Power", SqlDbType.Float).Value = dr.Num_Power;
@@ -205,15 +205,15 @@ namespace ApartmentSmart
             sqlTmp += " ISNULL(recDT.Num_Water, 0) AS Num_Water, ";
             sqlTmp += " recDT.Record_date, ";
             sqlTmp += " rent.Renter_TitleName + ' ' + rent.Renter_Name + ' ' + rent.Renter_Lastname AS Renter_Name, ";
-            sqlTmp += " rent.Renter_ID, ";
+            sqlTmp += " c.Contract_ID, ";
             sqlTmp += " r.Room_number AS Room_Number, ";
             sqlTmp += " r.Room_ID AS Room_ID, ";
             sqlTmp += " 0 AS Record_water, ";
             sqlTmp += " 0 AS Record_power ";
-            sqlTmp += " FROM tblRenter rent ";
-            sqlTmp += " LEFT OUTER JOIN tblRecordDT recDT on recDT.Renter_ID = rent.Renter_ID ";
+            sqlTmp += " FROM tblContract c ";
+            sqlTmp += " INNER JOIN tblRenter rent on c.Renter_ID = rent.Renter_ID ";
+            sqlTmp += " LEFT OUTER JOIN tblRecordDT recDT on recDT.Contract_ID = c.Contract_ID ";
             sqlTmp += " LEFT OUTER JOIN tblRecord rec on rec.Record_ID = recDT.Record_ID ";
-            sqlTmp += " LEFT JOIN tblContract c on c.Renter_ID = rent.Renter_ID ";
             sqlTmp += " INNER JOIN tblRoom r on c.Room_ID = r.Room_ID ";
             sqlTmp += " WHERE c.Contract_Type = (select StatusID from tblStatus where Name = 'รายเดือน') ";
 
@@ -239,6 +239,14 @@ namespace ApartmentSmart
 
             cboYear.DataSource = Enumerable.Range(2019, DateTime.Now.Year - 2019 + 1).ToList();
             cboYear.SelectedItem = DateTime.Now.Year;
+        }
+
+        private void btnPostPayment_Click(object sender, EventArgs e)
+        {
+            foreach (ApartmentDB.tblRecordDTRow dr in tblRecord.tblRecordDT)
+            {
+               
+            }
         }
     }
 }
