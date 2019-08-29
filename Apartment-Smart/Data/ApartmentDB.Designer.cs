@@ -3345,6 +3345,11 @@ namespace ApartmentSmart.Data {
                 this.columnRenter_ID.MaxLength = 36;
                 this.columnRoom_ID.DefaultValue = ((string)(""));
                 this.columnRoom_ID.MaxLength = 36;
+                this.columnNum_Water.DefaultValue = ((double)(0D));
+                this.columnNum_Power.DefaultValue = ((double)(0D));
+                this.columnRecord_water.DefaultValue = ((double)(0D));
+                this.columnRecord_power.DefaultValue = ((double)(0D));
+                this.CaseSensitive = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3484,6 +3489,8 @@ namespace ApartmentSmart.Data {
             
             private global::System.Data.DataColumn columnMonth;
             
+            private global::System.Data.DataColumn columnRecordStatus;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblRecordDataTable() {
@@ -3543,6 +3550,14 @@ namespace ApartmentSmart.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RecordStatusColumn {
+                get {
+                    return this.columnRecordStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3578,12 +3593,13 @@ namespace ApartmentSmart.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblRecordRow AddtblRecordRow(string Record_ID, int Year, int Month) {
+            public tblRecordRow AddtblRecordRow(string Record_ID, int Year, int Month, string RecordStatus) {
                 tblRecordRow rowtblRecordRow = ((tblRecordRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Record_ID,
                         Year,
-                        Month};
+                        Month,
+                        RecordStatus};
                 rowtblRecordRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblRecordRow);
                 return rowtblRecordRow;
@@ -3609,6 +3625,7 @@ namespace ApartmentSmart.Data {
                 this.columnRecord_ID = base.Columns["Record_ID"];
                 this.columnYear = base.Columns["Year"];
                 this.columnMonth = base.Columns["Month"];
+                this.columnRecordStatus = base.Columns["RecordStatus"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3620,9 +3637,12 @@ namespace ApartmentSmart.Data {
                 base.Columns.Add(this.columnYear);
                 this.columnMonth = new global::System.Data.DataColumn("Month", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMonth);
+                this.columnRecordStatus = new global::System.Data.DataColumn("RecordStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRecordStatus);
                 this.columnRecord_ID.AllowDBNull = false;
                 this.columnRecord_ID.DefaultValue = ((string)(""));
                 this.columnRecord_ID.MaxLength = 36;
+                this.columnRecordStatus.DefaultValue = ((string)(""));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5690,6 +5710,22 @@ namespace ApartmentSmart.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string RecordStatus {
+                get {
+                    if (this.IsRecordStatusNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tabletblRecord.RecordStatusColumn]));
+                    }
+                }
+                set {
+                    this[this.tabletblRecord.RecordStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsYearNull() {
                 return this.IsNull(this.tabletblRecord.YearColumn);
             }
@@ -5710,6 +5746,18 @@ namespace ApartmentSmart.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMonthNull() {
                 this[this.tabletblRecord.MonthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRecordStatusNull() {
+                return this.IsNull(this.tabletblRecord.RecordStatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRecordStatusNull() {
+                this[this.tabletblRecord.RecordStatusColumn] = global::System.Convert.DBNull;
             }
         }
         

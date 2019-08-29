@@ -380,6 +380,22 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tblRecord" msprop:Generator_TableClassName="tblRecordDataTable" msprop:Generator_TableVarName="tabletblRecord" msprop:Generator_TablePropName="tblRecord" msprop:Generator_RowDeletingName="tblRecordRowDeleting" msprop:Generator_RowChangingName="tblRecordRowChanging" msprop:Generator_RowEvHandlerName="tblRecordRowChangeEventHandler" msprop:Generator_RowDeletedName="tblRecordRowDeleted" msprop:Generator_UserTableName="tblRecord" msprop:Generator_RowChangedName="tblRecordRowChanged" msprop:Generator_RowEvArgName="tblRecordRowChangeEvent" msprop:Generator_RowClassName="tblRecordRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Record_ID" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Record_ID" msprop:Generator_ColumnVarNameInTable="columnRecord_ID" msprop:Generator_ColumnPropNameInTable="Record_IDColumn" msprop:Generator_UserColumnName="Record_ID" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="36" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_UserColumnName="Year" type="xs:int" minOccurs="0" />
+              <xs:element name="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_UserColumnName="Month" type="xs:int" minOccurs="0" />
+              <xs:element name="RecordStatus" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="RecordStatus" msprop:Generator_ColumnVarNameInTable="columnRecordStatus" msprop:Generator_ColumnPropNameInTable="RecordStatusColumn" msprop:Generator_UserColumnName="RecordStatus" type="xs:string" default="" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="tblRecordDT" msprop:Generator_TableClassName="tblRecordDTDataTable" msprop:Generator_TableVarName="tabletblRecordDT" msprop:Generator_TablePropName="tblRecordDT" msprop:Generator_RowDeletingName="tblRecordDTRowDeleting" msprop:Generator_RowChangingName="tblRecordDTRowChanging" msprop:Generator_RowEvHandlerName="tblRecordDTRowChangeEventHandler" msprop:Generator_RowDeletedName="tblRecordDTRowDeleted" msprop:Generator_UserTableName="tblRecordDT" msprop:Generator_RowChangedName="tblRecordDTRowChanged" msprop:Generator_RowEvArgName="tblRecordDTRowChangeEvent" msprop:Generator_RowClassName="tblRecordDTRow">
           <xs:complexType>
             <xs:sequence>
@@ -411,26 +427,25 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Num_Water" msprop:Generator_ColumnVarNameInTable="columnNum_Water" msprop:Generator_ColumnPropNameInRow="Num_Water" msprop:Generator_ColumnPropNameInTable="Num_WaterColumn" msprop:Generator_UserColumnName="Num_Water" type="xs:double" minOccurs="0" />
-              <xs:element name="Num_Power" msprop:Generator_ColumnVarNameInTable="columnNum_Power" msprop:Generator_ColumnPropNameInRow="Num_Power" msprop:Generator_ColumnPropNameInTable="Num_PowerColumn" msprop:Generator_UserColumnName="Num_Power" type="xs:double" minOccurs="0" />
-              <xs:element name="Record_water" msprop:Generator_ColumnVarNameInTable="columnRecord_water" msprop:Generator_ColumnPropNameInRow="Record_water" msprop:Generator_ColumnPropNameInTable="Record_waterColumn" msprop:Generator_UserColumnName="Record_water" type="xs:double" minOccurs="0" />
-              <xs:element name="Record_power" msprop:Generator_ColumnVarNameInTable="columnRecord_power" msprop:Generator_ColumnPropNameInRow="Record_power" msprop:Generator_ColumnPropNameInTable="Record_powerColumn" msprop:Generator_UserColumnName="Record_power" type="xs:double" minOccurs="0" />
+              <xs:element name="Num_Water" msprop:Generator_ColumnVarNameInTable="columnNum_Water" msprop:Generator_ColumnPropNameInRow="Num_Water" msprop:Generator_ColumnPropNameInTable="Num_WaterColumn" msprop:Generator_UserColumnName="Num_Water" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="Num_Power" msprop:Generator_ColumnVarNameInTable="columnNum_Power" msprop:Generator_ColumnPropNameInRow="Num_Power" msprop:Generator_ColumnPropNameInTable="Num_PowerColumn" msprop:Generator_UserColumnName="Num_Power" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="Record_water" msprop:Generator_ColumnVarNameInTable="columnRecord_water" msprop:Generator_ColumnPropNameInRow="Record_water" msprop:Generator_ColumnPropNameInTable="Record_waterColumn" msprop:Generator_UserColumnName="Record_water" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="Record_power" msprop:Generator_ColumnVarNameInTable="columnRecord_power" msprop:Generator_ColumnPropNameInRow="Record_power" msprop:Generator_ColumnPropNameInTable="Record_powerColumn" msprop:Generator_UserColumnName="Record_power" type="xs:double" default="0" minOccurs="0" />
               <xs:element name="Record_date" msprop:Generator_ColumnVarNameInTable="columnRecord_date" msprop:Generator_ColumnPropNameInRow="Record_date" msprop:Generator_ColumnPropNameInTable="Record_dateColumn" msprop:Generator_UserColumnName="Record_date" type="xs:dateTime" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="tblRecord" msprop:Generator_TableClassName="tblRecordDataTable" msprop:Generator_TableVarName="tabletblRecord" msprop:Generator_TablePropName="tblRecord" msprop:Generator_RowDeletingName="tblRecordRowDeleting" msprop:Generator_RowChangingName="tblRecordRowChanging" msprop:Generator_RowEvHandlerName="tblRecordRowChangeEventHandler" msprop:Generator_RowDeletedName="tblRecordRowDeleted" msprop:Generator_UserTableName="tblRecord" msprop:Generator_RowChangedName="tblRecordRowChanged" msprop:Generator_RowEvArgName="tblRecordRowChangeEvent" msprop:Generator_RowClassName="tblRecordRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Record_ID" msprop:Generator_ColumnVarNameInTable="columnRecord_ID" msprop:Generator_ColumnPropNameInRow="Record_ID" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="Record_IDColumn" msprop:Generator_UserColumnName="Record_ID" default="">
+              <xs:element name="Renter_Name" msprop:Generator_ColumnVarNameInTable="columnRenter_Name" msprop:Generator_ColumnPropNameInRow="Renter_Name" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="Renter_NameColumn" msprop:Generator_UserColumnName="Renter_Name" default="" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="36" />
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_UserColumnName="Year" type="xs:int" minOccurs="0" />
-              <xs:element name="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_UserColumnName="Month" type="xs:int" minOccurs="0" />
+              <xs:element name="Room_Number" msprop:Generator_ColumnVarNameInTable="columnRoom_Number" msprop:Generator_ColumnPropNameInRow="Room_Number" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="Room_NumberColumn" msprop:Generator_UserColumnName="Room_Number" default="" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
