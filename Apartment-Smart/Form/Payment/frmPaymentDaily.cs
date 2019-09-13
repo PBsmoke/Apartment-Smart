@@ -106,11 +106,11 @@ namespace ApartmentSmart
 
                     if (Contract_TypeName.Equals("รายเดือน"))
                     {
-                        txtDateCheckOut.Visible = true;
-                        txtNumberDay.Visible = true;
-                        label4.Visible = true;
-                        label5.Visible = true;
-                        label6.Visible = true;
+                        txtDateCheckOut.Visible = false;
+                        txtNumberDay.Visible = false;
+                        label4.Visible = false;
+                        label5.Visible = false;
+                        label6.Visible = false;
                     }
 
                     SumPrice();
