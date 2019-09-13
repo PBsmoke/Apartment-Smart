@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContract));
             this.gbProduct = new System.Windows.Forms.GroupBox();
+            this.btnPrintContract = new System.Windows.Forms.Button();
+            this.cboStatus = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPrice_monthly = new System.Windows.Forms.TextBox();
@@ -66,6 +69,9 @@
             // 
             // gbProduct
             // 
+            this.gbProduct.Controls.Add(this.btnPrintContract);
+            this.gbProduct.Controls.Add(this.cboStatus);
+            this.gbProduct.Controls.Add(this.label6);
             this.gbProduct.Controls.Add(this.label5);
             this.gbProduct.Controls.Add(this.label4);
             this.gbProduct.Controls.Add(this.txtPrice_monthly);
@@ -105,6 +111,41 @@
             this.gbProduct.Size = new System.Drawing.Size(636, 388);
             this.gbProduct.TabIndex = 10;
             this.gbProduct.TabStop = false;
+            // 
+            // btnPrintContract
+            // 
+            this.btnPrintContract.Image = global::ApartmentSmart.Properties.Resources.document;
+            this.btnPrintContract.Location = new System.Drawing.Point(506, 24);
+            this.btnPrintContract.Name = "btnPrintContract";
+            this.btnPrintContract.Size = new System.Drawing.Size(110, 127);
+            this.btnPrintContract.TabIndex = 189;
+            this.btnPrintContract.Text = "พิมพ์สัญญา";
+            this.btnPrintContract.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrintContract.UseVisualStyleBackColor = true;
+            this.btnPrintContract.Click += new System.EventHandler(this.btnPrintContract_Click);
+            // 
+            // cboStatus
+            // 
+            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Items.AddRange(new object[] {
+            "นาย",
+            "นาง",
+            "นางสาว"});
+            this.cboStatus.Location = new System.Drawing.Point(426, 222);
+            this.cboStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(190, 24);
+            this.cboStatus.TabIndex = 188;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(341, 225);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 17);
+            this.label6.TabIndex = 187;
+            this.label6.Text = "สถานะ";
             // 
             // label5
             // 
@@ -241,6 +282,7 @@
             this.cboContractType.Name = "cboContractType";
             this.cboContractType.Size = new System.Drawing.Size(190, 24);
             this.cboContractType.TabIndex = 173;
+            this.cboContractType.SelectedIndexChanged += new System.EventHandler(this.cboContractType_SelectedIndexChanged);
             // 
             // dtpcheckout
             // 
@@ -459,5 +501,8 @@
         private System.Windows.Forms.TextBox txtPrice_monthly;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboStatus;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnPrintContract;
     }
 }

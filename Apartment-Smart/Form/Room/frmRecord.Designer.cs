@@ -204,7 +204,7 @@
             // colRenter_Name
             // 
             this.colRenter_Name.DataPropertyName = "Renter_Name";
-            this.colRenter_Name.HeaderText = "Renter_Name";
+            this.colRenter_Name.HeaderText = "ชื่อผู้เช่า";
             this.colRenter_Name.Name = "colRenter_Name";
             this.colRenter_Name.ReadOnly = true;
             // 
@@ -219,20 +219,20 @@
             // colRoom_Number
             // 
             this.colRoom_Number.DataPropertyName = "Room_Number";
-            this.colRoom_Number.HeaderText = "Room_Number";
+            this.colRoom_Number.HeaderText = "เลขที่ห้องพัก";
             this.colRoom_Number.Name = "colRoom_Number";
             this.colRoom_Number.ReadOnly = true;
             // 
             // colNum_Water
             // 
             this.colNum_Water.DataPropertyName = "Num_Water";
-            this.colNum_Water.HeaderText = "Num_Water";
+            this.colNum_Water.HeaderText = "ค่าน้ำปะปา";
             this.colNum_Water.Name = "colNum_Water";
             // 
             // colNum_Power
             // 
             this.colNum_Power.DataPropertyName = "Num_Power";
-            this.colNum_Power.HeaderText = "Num_Power";
+            this.colNum_Power.HeaderText = "ค่าไฟฟ้า";
             this.colNum_Power.Name = "colNum_Power";
             // 
             // colRecord_water

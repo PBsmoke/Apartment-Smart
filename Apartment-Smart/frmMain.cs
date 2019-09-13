@@ -47,7 +47,7 @@ namespace ApartmentSmart
             frmLogin fMenu = new frmLogin();
             fMenu.StartPosition = FormStartPosition.CenterScreen;
             fMenu.Show(this);
-        }       
+        }
 
         private void rbtSetup_Exit_Click(object sender, EventArgs e)
         {
@@ -62,7 +62,7 @@ namespace ApartmentSmart
                 fMenu.Show(this);
                 //this.Close();
             }
-        }        
+        }
 
         private void rbtOrg_Click(object sender, EventArgs e)
         {
@@ -131,6 +131,7 @@ namespace ApartmentSmart
         {
             CloseAllChildForm();
             frmContractList fMenu = new frmContractList();
+            fMenu.ContractStatus = "PLEDGE";
             fMenu.MdiParent = this;
             fMenu.StartPosition = FormStartPosition.CenterScreen;
             fMenu.Show();
@@ -140,6 +141,16 @@ namespace ApartmentSmart
         {
             CloseAllChildForm();
             frmContractList fMenu = new frmContractList();
+            fMenu.ContractStatus = "STAY";
+            fMenu.MdiParent = this;
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show();
+        }
+
+        private void btnRptRoomList_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            frmrptRoomList fMenu = new frmrptRoomList();
             fMenu.MdiParent = this;
             fMenu.StartPosition = FormStartPosition.CenterScreen;
             fMenu.Show();

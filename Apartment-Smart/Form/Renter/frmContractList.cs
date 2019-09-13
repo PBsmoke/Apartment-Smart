@@ -21,6 +21,10 @@ namespace ApartmentSmart
         }
 
         #region Member
+
+        // PLEDGE มัดจำ
+        // STAY   เข้าพัก
+        public string ContractStatus = "ALL";
         ApartmentDB tblRenter = new ApartmentDB();
         bool Success = true;
         string Contract_ID = string.Empty;
@@ -155,20 +159,20 @@ namespace ApartmentSmart
             {
                 Whereclause = string.Empty;
             }
-            sqlTmp = "SELECT c.Contract_ID, (rent.Renter_TitleName + ' ' + rent.Renter_Name + ' ' + rent.Renter_Lastname)AS Renter_ID, ";
-            sqlTmp += " r.Room_number AS Room_ID, c.Contract_No, c.Contract_Date, c.Contract_Recognizance, ";
-            sqlTmp += " cstatus.Name AS Contract_Status,ctype.Name AS Contract_Type,c.Date_Checkin,c.Date_Checkout,c.power_first, ";
-            sqlTmp += " c.water_first,c.room_price,c.Remark ";
-            sqlTmp += " FROM tblContract c ";
-            sqlTmp += " INNER JOIN tblRoom r on c.Room_ID = r.Room_ID ";
-            sqlTmp += " INNER JOIN tblStatus ctype on c.Contract_Type = ctype.StatusID ";
-            sqlTmp += " INNER JOIN tblStatus cstatus on c.Contract_Status = cstatus.StatusID ";
-            sqlTmp += " INNER JOIN tblRenter rent on c.Renter_ID = rent.Renter_ID ";
+            sqlTmp = "SELECT * FROM uv_contract c where 1=1 ";
+
+            if (ContractStatus != "ALL")
+                if (ContractStatus == "PLEDGE")
+                    sqlTmp += " and Contract_Status = '01957AB2-0751-49A8-87DD-3471DFA47145' ";
+                else if (ContractStatus == "STAY")
+                    sqlTmp += " and Contract_Status = '5E6D9764-AFA4-4363-A08A-116A0C997414' ";
+
 
             if (!string.IsNullOrEmpty(Whereclause))
             {
-                sqlTmp += " where c.Contract_No LIKE '%" + Whereclause + "%' or r.Room_number LIKE '%" + Whereclause + "%' or rent.Renter_Name LIKE '%" + Whereclause + "%' ";
+                sqlTmp += " and Contract_No LIKE '%" + Whereclause + "%' or Room_number LIKE '%" + Whereclause + "%' or RenterFullname LIKE '%" + Whereclause + "%' ";
             }
+
             DataSet Ds = new DataSet();
             dbConString.Com = new SqlCommand();
             dbConString.Com.CommandType = CommandType.Text;

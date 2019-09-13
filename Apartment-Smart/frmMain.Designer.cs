@@ -54,7 +54,7 @@
             this.btnPayment = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.rbaReport = new DevComponents.DotNetBar.RibbonBar();
-            this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnRptRoomList = new DevComponents.DotNetBar.ButtonItem();
             this.rttFiles = new DevComponents.DotNetBar.RibbonTabItem();
             this.rttRoom = new DevComponents.DotNetBar.RibbonTabItem();
             this.rttTenant = new DevComponents.DotNetBar.RibbonTabItem();
@@ -129,10 +129,10 @@
             // 
             // 
             this.rbMenu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rbMenu.Controls.Add(this.ribbonPanel4);
             this.rbMenu.Controls.Add(this.ribbonPanel3);
             this.rbMenu.Controls.Add(this.ribbonPanel2);
             this.rbMenu.Controls.Add(this.ribbonPanel1);
-            this.rbMenu.Controls.Add(this.ribbonPanel4);
             this.rbMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbMenu.ForeColor = System.Drawing.Color.Black;
             this.rbMenu.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -188,6 +188,7 @@
             // 
             this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel3.TabIndex = 3;
+            this.ribbonPanel3.Visible = false;
             // 
             // rbaTenant
             // 
@@ -414,7 +415,6 @@
             // 
             this.ribbonPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel4.TabIndex = 4;
-            this.ribbonPanel4.Visible = false;
             // 
             // rbaReport
             // 
@@ -431,7 +431,7 @@
             this.rbaReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbaReport.DragDropSupport = true;
             this.rbaReport.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem4});
+            this.btnRptRoomList});
             this.rbaReport.Location = new System.Drawing.Point(3, 0);
             this.rbaReport.Name = "rbaReport";
             this.rbaReport.Size = new System.Drawing.Size(792, 61);
@@ -447,11 +447,12 @@
             // 
             this.rbaReport.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // buttonItem4
+            // btnRptRoomList
             // 
-            this.buttonItem4.Name = "buttonItem4";
-            this.buttonItem4.SubItemsExpandWidth = 14;
-            this.buttonItem4.Text = "buttonItem4";
+            this.btnRptRoomList.Name = "btnRptRoomList";
+            this.btnRptRoomList.SubItemsExpandWidth = 14;
+            this.btnRptRoomList.Text = "รายงานห้อง";
+            this.btnRptRoomList.Click += new System.EventHandler(this.btnRptRoomList_Click);
             // 
             // rttFiles
             // 
@@ -467,13 +468,13 @@
             // 
             // rttTenant
             // 
-            this.rttTenant.Checked = true;
             this.rttTenant.Name = "rttTenant";
             this.rttTenant.Panel = this.ribbonPanel3;
             this.rttTenant.Text = "ผู้เข่า";
             // 
             // rttReport
             // 
+            this.rttReport.Checked = true;
             this.rttReport.Name = "rttReport";
             this.rttReport.Panel = this.ribbonPanel4;
             this.rttReport.Text = "รายงาน";
@@ -580,7 +581,7 @@
         private DevComponents.DotNetBar.RibbonControl rbMenu;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel4;
         private DevComponents.DotNetBar.RibbonBar rbaReport;
-        private DevComponents.DotNetBar.ButtonItem buttonItem4;
+        private DevComponents.DotNetBar.ButtonItem btnRptRoomList;
         private DevComponents.DotNetBar.RibbonTabItem rttReport;
         private DevComponents.DotNetBar.ButtonItem buttonItem5;
         private DevComponents.DotNetBar.ButtonItem btnPayment;

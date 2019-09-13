@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ApartmentSmart.Data;
 using ApartmentSmart.Class;
+using ApartmentSmart.Report;
 
 namespace ApartmentSmart
 {
@@ -30,6 +31,7 @@ namespace ApartmentSmart
         int RowDtIndex = 0;
         SqlDataReader drTmp;
         ApartmentDB tblStatus = new ApartmentDB();
+        ApartmentDB tblStatus2 = new ApartmentDB();
         ApartmentDB tblContract = new ApartmentDB();
         #endregion Member
 
@@ -81,6 +83,7 @@ namespace ApartmentSmart
             else
             {
                 RunningNo();
+                cboStatus.Enabled = false;
                 dtpContractDate.Focus();
             }
 
@@ -135,10 +138,10 @@ namespace ApartmentSmart
                             dbConString.Com.Parameters.Add("@Contract_No", SqlDbType.VarChar).Value = txtContractNo.Text;
                             dbConString.Com.Parameters.Add("@Contract_Date", SqlDbType.DateTime).Value = dtpContractDate.Value;
                             dbConString.Com.Parameters.Add("@Contract_Recognizance", SqlDbType.Decimal).Value = Convert.ToDecimal(txtRecognizance.Text);
-                            //dbConString.Com.Parameters.Add("@Contract_Status", SqlDbType.VarChar).Value = "มัดจำ";
+                            dbConString.Com.Parameters.Add("@Contract_Status", SqlDbType.VarChar).Value = cboStatus.SelectedValue;
                             dbConString.Com.Parameters.Add("@Contract_Type", SqlDbType.VarChar).Value = cboContractType.SelectedValue;
                             dbConString.Com.Parameters.Add("@date_Checkin", SqlDbType.DateTime).Value = dtpcheckin.Value;
-                            dbConString.Com.Parameters.Add("@date_Checkout", SqlDbType.DateTime).Value = dtpcheckout.Value;
+                            dbConString.Com.Parameters.Add("@date_Checkout", SqlDbType.DateTime).Value = ((cboContractType.Text.Equals("รายเดือน")) ? DateTime.MaxValue.AddYears(-1) : dtpcheckout.Value); 
                             dbConString.Com.Parameters.Add("@power_first", SqlDbType.VarChar).Value = txt_power_first.Text;
                             dbConString.Com.Parameters.Add("@water_first", SqlDbType.VarChar).Value = txt_water_first.Text;
                             dbConString.Com.Parameters.Add("@room_price", SqlDbType.Decimal).Value = Convert.ToDecimal(txt_room_price.Text);
@@ -147,8 +150,10 @@ namespace ApartmentSmart
                             dbConString.Com.ExecuteNonQuery();
                             dbConString.Transaction.Commit();
                             MessageBox.Show("บันทึกค่าเรียบร้อย", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            cboStatus.Enabled = true;
+                            FormState = "EDIT";
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             dbConString.Transaction.Rollback();
                         }
@@ -166,7 +171,7 @@ namespace ApartmentSmart
                     StringBuilder StringBd = new StringBuilder();
                     string sqlTmp = string.Empty;
                     StringBd.Append(" UPDATE tblContract SET Renter_ID = @Renter_ID, Room_ID = @Room_ID, Contract_No = @Contract_No, Contract_Date = @Contract_Date, ");
-                    StringBd.Append(" Contract_Recognizance = @Contract_Recognizance, Contract_Type = @Contract_Type, date_Checkin = @date_Checkin, ");
+                    StringBd.Append(" Contract_Recognizance = @Contract_Recognizance, Contract_Status = @Contract_Status, Contract_Type = @Contract_Type, date_Checkin = @date_Checkin, ");
                     StringBd.Append(" date_Checkout = @date_Checkout, power_first = @power_first, water_first = @water_first, room_price = @room_price, Remark = @Remark WHERE Contract_ID = @Contract_ID ");
 
                     sqlTmp = "";
@@ -183,10 +188,10 @@ namespace ApartmentSmart
                     dbConString.Com.Parameters.Add("@Contract_No", SqlDbType.VarChar).Value = txtContractNo.Text;
                     dbConString.Com.Parameters.Add("@Contract_Date", SqlDbType.DateTime).Value = dtpContractDate.Value;
                     dbConString.Com.Parameters.Add("@Contract_Recognizance", SqlDbType.Decimal).Value = Convert.ToDecimal(txtRecognizance.Text);
-                    //dbConString.Com.Parameters.Add("@Contract_Status", SqlDbType.VarChar).Value = cboContractType.SelectedValue;
+                    dbConString.Com.Parameters.Add("@Contract_Status", SqlDbType.VarChar).Value = cboStatus.SelectedValue;
                     dbConString.Com.Parameters.Add("@Contract_Type", SqlDbType.VarChar).Value = cboContractType.SelectedValue;
                     dbConString.Com.Parameters.Add("@date_Checkin", SqlDbType.DateTime).Value = dtpcheckin.Value;
-                    dbConString.Com.Parameters.Add("@date_Checkout", SqlDbType.DateTime).Value = dtpcheckout.Value;
+                    dbConString.Com.Parameters.Add("@date_Checkout", SqlDbType.DateTime).Value = ((cboContractType.Text.Equals("รายเดือน")) ? DateTime.MaxValue.AddYears(-10) : dtpcheckout.Value);
                     dbConString.Com.Parameters.Add("@power_first", SqlDbType.VarChar).Value = txt_power_first.Text;
                     dbConString.Com.Parameters.Add("@water_first", SqlDbType.VarChar).Value = txt_water_first.Text;
                     dbConString.Com.Parameters.Add("@room_price", SqlDbType.Decimal).Value = Convert.ToDecimal(txt_room_price.Text);
@@ -194,6 +199,12 @@ namespace ApartmentSmart
 
                     dbConString.Com.ExecuteNonQuery();
                     dbConString.Transaction.Commit();
+
+                    if (cboStatus.Text.Equals("หมดสัญญา") && (cboContractType.Text.Equals("รายวัน")))
+                    {
+                        // Save Payment รายวัน
+                    }
+
                     MessageBox.Show("บันทึกค่าเรียบร้อย", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     #endregion
                 }
@@ -236,9 +247,10 @@ namespace ApartmentSmart
                     txtRecognizance.Text = tblContract.tblContract[0].Contract_Recognizance.ToString("###0.00");
                     txt_room_price.Text = tblContract.tblContract[0].room_price.ToString("###0.00");
                     cboContractType.SelectedValue = tblContract.tblContract[0].Contract_Type;
+                    cboStatus.SelectedValue = tblContract.tblContract[0].Contract_Status;
                     dtpcheckin.Value = tblContract.tblContract[0].Date_Checkin;
                     dtpcheckout.Value = tblContract.tblContract[0].Date_Checkout;
-                    txt_power_first.Text = tblContract.tblContract[0].power_first.ToString("###0.00"); 
+                    txt_power_first.Text = tblContract.tblContract[0].power_first.ToString("###0.00");
                     txt_water_first.Text = tblContract.tblContract[0].water_first.ToString("###0.00");
                     txtRemark.Text = tblContract.tblContract[0].Remark;
                     Room_ID = tblContract.tblContract[0].Room_ID;
@@ -259,7 +271,7 @@ namespace ApartmentSmart
                     da.Fill(tblContract, "tblRoom");
                     da.Dispose();
 
-                    if(tblContract.tblRoom.Count > 0)
+                    if (tblContract.tblRoom.Count > 0)
                     {
                         txtRoom.Text = tblContract.tblRoom[0].Room_number;
                         txtRoomType.Text = tblContract.tblRoom[0].Room_Type;
@@ -288,15 +300,26 @@ namespace ApartmentSmart
                         txtRenterName.Text = Renter_TitleName + " " + Renter_Name + " " + Renter_LastName;
                     }
                 }
+
+                if (cboContractType.Text.Equals("รายวัน"))
+                {
+                    dtpcheckout.Visible = true;
+                    lblcheckout.Visible = true;
+                }
+                else
+                {
+                    dtpcheckout.Visible = false;
+                    lblcheckout.Visible = false;
+                }
             }
 
-           
+
         }
 
         private void CheckData()
         {
 
-            if(string.IsNullOrEmpty(Renter_ID))
+            if (string.IsNullOrEmpty(Renter_ID))
             {
                 MessageBox.Show("กรุณาเลือกผู้เช่า", "คำเตือน", MessageBoxButtons.OK);
                 Success = false;
@@ -349,7 +372,34 @@ namespace ApartmentSmart
                 MessageBox.Show(ex.ToString());
             }
             #endregion
-        }     
+
+            #region ContractStatus
+            try
+            {
+
+                string sqlTmp = "";
+                sqlTmp = "SELECT * FROM tblStatus WHERE StatusType = 'ContractStatus'";
+                DataSet Ds = new DataSet();
+                dbConString.Com = new SqlCommand();
+                dbConString.Com.CommandType = CommandType.Text;
+                dbConString.Com.CommandText = sqlTmp;
+                dbConString.Com.Connection = dbConString.mySQLConn;
+                SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                tblStatus2.Clear();
+                da.Fill(tblStatus2, "tblStatus");
+                da.Dispose();
+                cboStatus.DataSource = tblStatus2.tblStatus;
+                cboStatus.DisplayMember = tblStatus2.tblStatus.NameColumn.ColumnName;
+                cboStatus.ValueMember = tblStatus2.tblStatus.StatusIDColumn.ColumnName;
+                cboStatus.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            #endregion
+        }
 
         private void txtRecognizance_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -385,6 +435,27 @@ namespace ApartmentSmart
             {
                 e.Handled = true;
             }
+        }
+
+        private void cboContractType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboContractType.Text.Equals("รายวัน"))
+            {
+                dtpcheckout.Visible = true;
+                lblcheckout.Visible = true;
+            }
+            else
+            {
+                dtpcheckout.Visible = false;
+                lblcheckout.Visible = false;
+            }
+        }
+
+        private void btnPrintContract_Click(object sender, EventArgs e)
+        {
+            frmrptContract form = new frmrptContract();
+            form.ContractID = Contract_ID;
+            form.ShowDialog();
         }
     }
 }

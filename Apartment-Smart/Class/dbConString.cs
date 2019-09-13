@@ -14,7 +14,7 @@ namespace ApartmentSmart.Class
 {
     public sealed class dbConString
     {
-        public static string ServerName = @".\SQL2017";
+        public static string ServerName = @".\SQLEXPRESS";
         public static string DBName = "ApartmentSmart";
         public static string Sa = "sa";
         public static string SaPassword = "1";

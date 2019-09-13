@@ -29,37 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvShow = new System.Windows.Forms.DataGridView();
-            this.tblContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uvcontractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
             this.colContract_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContract_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoom_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRenter_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colContract_Date = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
+            this.colContract_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContract_Recognizance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContract_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContract_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate_Checkin = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
-            this.colDate_Checkout = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
-            this.colPower_first = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colWater_first = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoom_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContract_TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate_Checkin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colroom_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRenter_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRenterFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRenter_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRenter_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom_floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContract_StatusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblContractBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvcontractBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,19 +101,24 @@
             this.dgvShow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colContract_ID,
             this.colContract_No,
-            this.colRoom_ID,
-            this.colRenter_ID,
             this.colContract_Date,
             this.colContract_Recognizance,
+            this.colRoom_number,
             this.colContract_Status,
             this.colContract_Type,
+            this.colContract_TypeName,
             this.colDate_Checkin,
-            this.colDate_Checkout,
-            this.colPower_first,
-            this.colWater_first,
-            this.colRoom_price,
-            this.colRemark});
-            this.dgvShow.DataSource = this.tblContractBindingSource;
+            this.colroom_price,
+            this.colRenter_ID,
+            this.colRenterFullname,
+            this.colRenter_Address,
+            this.colRenter_Tel,
+            this.colRoom_ID,
+            this.colRoom_floor,
+            this.colRoomType,
+            this.colRoomStatus,
+            this.colContract_StatusName});
+            this.dgvShow.DataSource = this.uvcontractBindingSource;
             this.dgvShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShow.Location = new System.Drawing.Point(0, 95);
             this.dgvShow.Name = "dgvShow";
@@ -127,10 +129,10 @@
             this.dgvShow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShow_CellClick);
             this.dgvShow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShow_CellDoubleClick);
             // 
-            // tblContractBindingSource
+            // uvcontractBindingSource
             // 
-            this.tblContractBindingSource.DataMember = "tblContract";
-            this.tblContractBindingSource.DataSource = this.apartmentDB;
+            this.uvcontractBindingSource.DataMember = "uv_contract";
+            this.uvcontractBindingSource.DataSource = this.apartmentDB;
             // 
             // apartmentDB
             // 
@@ -140,8 +142,6 @@
             // colContract_ID
             // 
             this.colContract_ID.DataPropertyName = "Contract_ID";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colContract_ID.DefaultCellStyle = dataGridViewCellStyle1;
             this.colContract_ID.HeaderText = "Contract_ID";
             this.colContract_ID.Name = "colContract_ID";
             this.colContract_ID.ReadOnly = true;
@@ -150,75 +150,31 @@
             // colContract_No
             // 
             this.colContract_No.DataPropertyName = "Contract_No";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colContract_No.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colContract_No.HeaderText = "เลขที่สัญญา";
+            this.colContract_No.HeaderText = "เลขที่สํญญา";
             this.colContract_No.Name = "colContract_No";
             this.colContract_No.ReadOnly = true;
             // 
-            // colRoom_ID
-            // 
-            this.colRoom_ID.DataPropertyName = "Room_ID";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colRoom_ID.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colRoom_ID.HeaderText = "เลขห้อง";
-            this.colRoom_ID.Name = "colRoom_ID";
-            this.colRoom_ID.ReadOnly = true;
-            // 
-            // colRenter_ID
-            // 
-            this.colRenter_ID.DataPropertyName = "Renter_ID";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colRenter_ID.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colRenter_ID.HeaderText = "ผู้เช่า";
-            this.colRenter_ID.Name = "colRenter_ID";
-            this.colRenter_ID.ReadOnly = true;
-            // 
             // colContract_Date
             // 
-            // 
-            // 
-            // 
-            this.colContract_Date.BackgroundStyle.Class = "DataGridViewDateTimeBorder";
-            this.colContract_Date.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colContract_Date.CustomFormat = "dd/MM/yyyy";
             this.colContract_Date.DataPropertyName = "Contract_Date";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colContract_Date.DefaultCellStyle = dataGridViewCellStyle5;
             this.colContract_Date.HeaderText = "วันที่ทำสัญญา";
-            this.colContract_Date.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
-            // 
-            // 
-            // 
-            this.colContract_Date.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.colContract_Date.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colContract_Date.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            // 
-            // 
-            // 
-            this.colContract_Date.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colContract_Date.MonthCalendar.DisplayMonth = new System.DateTime(2019, 8, 1, 0, 0, 0, 0);
-            this.colContract_Date.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.colContract_Date.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.colContract_Date.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colContract_Date.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.colContract_Date.Name = "colContract_Date";
             this.colContract_Date.ReadOnly = true;
-            this.colContract_Date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // colContract_Recognizance
             // 
             this.colContract_Recognizance.DataPropertyName = "Contract_Recognizance";
-            this.colContract_Recognizance.HeaderText = "มัดจำ";
+            this.colContract_Recognizance.HeaderText = "Contract_Recognizance";
             this.colContract_Recognizance.Name = "colContract_Recognizance";
             this.colContract_Recognizance.ReadOnly = true;
             this.colContract_Recognizance.Visible = false;
+            // 
+            // colRoom_number
+            // 
+            this.colRoom_number.DataPropertyName = "Room_number";
+            this.colRoom_number.HeaderText = "เลขที่ห้อง";
+            this.colRoom_number.Name = "colRoom_number";
+            this.colRoom_number.ReadOnly = true;
             // 
             // colContract_Status
             // 
@@ -231,117 +187,101 @@
             // colContract_Type
             // 
             this.colContract_Type.DataPropertyName = "Contract_Type";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colContract_Type.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colContract_Type.HeaderText = "ประเภทสัญญา";
+            this.colContract_Type.HeaderText = "Contract_Type";
             this.colContract_Type.Name = "colContract_Type";
             this.colContract_Type.ReadOnly = true;
+            this.colContract_Type.Visible = false;
+            // 
+            // colContract_TypeName
+            // 
+            this.colContract_TypeName.DataPropertyName = "Contract_TypeName";
+            this.colContract_TypeName.HeaderText = "ประเภทสัญญา";
+            this.colContract_TypeName.Name = "colContract_TypeName";
+            this.colContract_TypeName.ReadOnly = true;
             // 
             // colDate_Checkin
             // 
-            // 
-            // 
-            // 
-            this.colDate_Checkin.BackgroundStyle.Class = "DataGridViewDateTimeBorder";
-            this.colDate_Checkin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.colDate_Checkin.DataPropertyName = "Date_Checkin";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDate_Checkin.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colDate_Checkin.HeaderText = "วันที่เข้า";
-            this.colDate_Checkin.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
-            // 
-            // 
-            // 
-            this.colDate_Checkin.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.colDate_Checkin.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colDate_Checkin.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            // 
-            // 
-            // 
-            this.colDate_Checkin.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colDate_Checkin.MonthCalendar.DisplayMonth = new System.DateTime(2019, 8, 1, 0, 0, 0, 0);
-            this.colDate_Checkin.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.colDate_Checkin.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.colDate_Checkin.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colDate_Checkin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.colDate_Checkin.HeaderText = "วันที่เข้าพัก";
             this.colDate_Checkin.Name = "colDate_Checkin";
             this.colDate_Checkin.ReadOnly = true;
-            this.colDate_Checkin.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // colDate_Checkout
+            // colroom_price
             // 
+            this.colroom_price.DataPropertyName = "room_price";
+            this.colroom_price.HeaderText = "ราคาห้อง";
+            this.colroom_price.Name = "colroom_price";
+            this.colroom_price.ReadOnly = true;
             // 
+            // colRenter_ID
             // 
+            this.colRenter_ID.DataPropertyName = "Renter_ID";
+            this.colRenter_ID.HeaderText = "Renter_ID";
+            this.colRenter_ID.Name = "colRenter_ID";
+            this.colRenter_ID.ReadOnly = true;
+            this.colRenter_ID.Visible = false;
             // 
-            this.colDate_Checkout.BackgroundStyle.Class = "DataGridViewDateTimeBorder";
-            this.colDate_Checkout.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colDate_Checkout.DataPropertyName = "Date_Checkout";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDate_Checkout.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colDate_Checkout.HeaderText = "วันที่ออก";
-            this.colDate_Checkout.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            // colRenterFullname
             // 
+            this.colRenterFullname.DataPropertyName = "RenterFullname";
+            this.colRenterFullname.HeaderText = "ชื่อผู้เช่า";
+            this.colRenterFullname.Name = "colRenterFullname";
+            this.colRenterFullname.ReadOnly = true;
             // 
+            // colRenter_Address
             // 
-            this.colDate_Checkout.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.colRenter_Address.DataPropertyName = "Renter_Address";
+            this.colRenter_Address.HeaderText = "Renter_Address";
+            this.colRenter_Address.Name = "colRenter_Address";
+            this.colRenter_Address.ReadOnly = true;
+            this.colRenter_Address.Visible = false;
             // 
+            // colRenter_Tel
             // 
+            this.colRenter_Tel.DataPropertyName = "Renter_Tel";
+            this.colRenter_Tel.HeaderText = "Renter_Tel";
+            this.colRenter_Tel.Name = "colRenter_Tel";
+            this.colRenter_Tel.ReadOnly = true;
+            this.colRenter_Tel.Visible = false;
             // 
-            this.colDate_Checkout.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colDate_Checkout.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            // colRoom_ID
             // 
+            this.colRoom_ID.DataPropertyName = "Room_ID";
+            this.colRoom_ID.HeaderText = "Room_ID";
+            this.colRoom_ID.Name = "colRoom_ID";
+            this.colRoom_ID.ReadOnly = true;
+            this.colRoom_ID.Visible = false;
             // 
+            // colRoom_floor
             // 
-            this.colDate_Checkout.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colDate_Checkout.MonthCalendar.DisplayMonth = new System.DateTime(2019, 8, 1, 0, 0, 0, 0);
-            this.colDate_Checkout.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.colDate_Checkout.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.colRoom_floor.DataPropertyName = "Room_floor";
+            this.colRoom_floor.HeaderText = "Room_floor";
+            this.colRoom_floor.Name = "colRoom_floor";
+            this.colRoom_floor.ReadOnly = true;
+            this.colRoom_floor.Visible = false;
             // 
+            // colRoomType
             // 
+            this.colRoomType.DataPropertyName = "RoomType";
+            this.colRoomType.HeaderText = "RoomType";
+            this.colRoomType.Name = "colRoomType";
+            this.colRoomType.ReadOnly = true;
+            this.colRoomType.Visible = false;
             // 
-            this.colDate_Checkout.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.colDate_Checkout.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.colDate_Checkout.Name = "colDate_Checkout";
-            this.colDate_Checkout.ReadOnly = true;
-            this.colDate_Checkout.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // colRoomStatus
             // 
-            // colPower_first
+            this.colRoomStatus.DataPropertyName = "RoomStatus";
+            this.colRoomStatus.HeaderText = "RoomStatus";
+            this.colRoomStatus.Name = "colRoomStatus";
+            this.colRoomStatus.ReadOnly = true;
+            this.colRoomStatus.Visible = false;
             // 
-            this.colPower_first.DataPropertyName = "power_first";
-            this.colPower_first.HeaderText = "power_first";
-            this.colPower_first.Name = "colPower_first";
-            this.colPower_first.ReadOnly = true;
-            this.colPower_first.Visible = false;
+            // colContract_StatusName
             // 
-            // colWater_first
-            // 
-            this.colWater_first.DataPropertyName = "water_first";
-            this.colWater_first.HeaderText = "water_first";
-            this.colWater_first.Name = "colWater_first";
-            this.colWater_first.ReadOnly = true;
-            this.colWater_first.Visible = false;
-            // 
-            // colRoom_price
-            // 
-            this.colRoom_price.DataPropertyName = "room_price";
-            this.colRoom_price.HeaderText = "ราคาห้องพัก";
-            this.colRoom_price.Name = "colRoom_price";
-            this.colRoom_price.ReadOnly = true;
-            this.colRoom_price.Visible = false;
-            // 
-            // colRemark
-            // 
-            this.colRemark.DataPropertyName = "Remark";
-            this.colRemark.HeaderText = "Remark";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.ReadOnly = true;
-            this.colRemark.Visible = false;
+            this.colContract_StatusName.DataPropertyName = "Contract_StatusName";
+            this.colContract_StatusName.HeaderText = "สถานะ";
+            this.colContract_StatusName.Name = "colContract_StatusName";
+            this.colContract_StatusName.ReadOnly = true;
             // 
             // frmContractList
             // 
@@ -351,13 +291,13 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Name = "frmContractList";
-            this.Text = "ข้อมูลสัญยา";
+            this.Text = "ข้อมูลสัญญา";
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.dgvShow, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblContractBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvcontractBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -370,21 +310,26 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dgvShow;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.BindingSource tblContractBindingSource;
         private Data.ApartmentDB apartmentDB;
+        private System.Windows.Forms.BindingSource uvcontractBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContract_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContract_No;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRenter_ID;
-        private DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn colContract_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContract_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContract_Recognizance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContract_Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContract_Type;
-        private DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn colDate_Checkin;
-        private DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn colDate_Checkout;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPower_first;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colWater_first;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRemark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContract_TypeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate_Checkin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colroom_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRenter_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRenterFullname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRenter_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRenter_Tel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_floor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContract_StatusName;
     }
 }
