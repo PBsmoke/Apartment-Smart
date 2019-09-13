@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApartmentSmart", "Apartment-Smart\ApartmentSmart.csproj", "{263A1610-9919-409A-A0D6-4760DAC11222}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{75865A64-9CF7-460E-9CF8-265E2CCA7EB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{263A1610-9919-409A-A0D6-4760DAC11222}.Release|Any CPU.Build.0 = Release|Any CPU
 		{263A1610-9919-409A-A0D6-4760DAC11222}.Release|x86.ActiveCfg = Release|x86
 		{263A1610-9919-409A-A0D6-4760DAC11222}.Release|x86.Build.0 = Release|x86
+		{75865A64-9CF7-460E-9CF8-265E2CCA7EB0}.Debug|Any CPU.ActiveCfg = Debug
+		{75865A64-9CF7-460E-9CF8-265E2CCA7EB0}.Debug|x86.ActiveCfg = Debug
+		{75865A64-9CF7-460E-9CF8-265E2CCA7EB0}.Release|Any CPU.ActiveCfg = Release
+		{75865A64-9CF7-460E-9CF8-265E2CCA7EB0}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
