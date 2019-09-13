@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvRecordDT = new System.Windows.Forms.DataGridView();
-            this.tblRecordDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,20 +38,28 @@
             this.cboYear = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnPostPayment = new System.Windows.Forms.Button();
-            this.colRecordDT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apartmentDB1 = new ApartmentSmart.Data.ApartmentDB();
+            this.uvrecorddetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRenter_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoom_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoom_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNum_Water = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNum_Power = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRecordStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRecordDT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContract_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRecord_water = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRecord_power = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRecord_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colroom_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRenterFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBefore_Power = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNum_Power = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNum_Water = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecordDT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblRecordDTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.apartmentDB1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvrecorddetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -74,27 +81,27 @@
             this.dgvRecordDT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecordDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecordDT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colRecordDT_ID,
             this.colRecord_ID,
-            this.colRenter_Name,
-            this.colRoom_ID,
-            this.colRoom_Number,
-            this.colNum_Water,
-            this.colNum_Power,
+            this.colYear,
+            this.colMonth,
+            this.colRecordStatus,
+            this.colRecordDT_ID,
+            this.colContract_ID,
             this.colRecord_water,
             this.colRecord_power,
-            this.colRecord_date});
-            this.dgvRecordDT.DataSource = this.tblRecordDTBindingSource;
+            this.colRecord_date,
+            this.colroom_price,
+            this.colRenterFullname,
+            this.colRoom_number,
+            this.colBefore_Power,
+            this.colNum_Power,
+            this.colNum_Water});
+            this.dgvRecordDT.DataSource = this.uvrecorddetailBindingSource;
             this.dgvRecordDT.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvRecordDT.Location = new System.Drawing.Point(0, 113);
             this.dgvRecordDT.Name = "dgvRecordDT";
             this.dgvRecordDT.Size = new System.Drawing.Size(783, 169);
             this.dgvRecordDT.TabIndex = 126;
-            // 
-            // tblRecordDTBindingSource
-            // 
-            this.tblRecordDTBindingSource.DataMember = "tblRecordDT";
-            this.tblRecordDTBindingSource.DataSource = this.apartmentDB;
             // 
             // apartmentDB
             // 
@@ -144,8 +151,7 @@
             // 
             this.cboYear.FormattingEnabled = true;
             this.cboYear.Items.AddRange(new object[] {
-            "2561",
-            "2561",
+            "2562",
             "2563",
             "2564",
             "2565",
@@ -185,62 +191,63 @@
             this.btnPostPayment.UseVisualStyleBackColor = true;
             this.btnPostPayment.Click += new System.EventHandler(this.btnPostPayment_Click);
             // 
-            // colRecordDT_ID
+            // apartmentDB1
             // 
-            this.colRecordDT_ID.DataPropertyName = "RecordDT_ID";
-            this.colRecordDT_ID.HeaderText = "RecordDT_ID";
-            this.colRecordDT_ID.Name = "colRecordDT_ID";
-            this.colRecordDT_ID.ReadOnly = true;
-            this.colRecordDT_ID.Visible = false;
+            this.apartmentDB1.DataSetName = "ApartmentDB";
+            this.apartmentDB1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uvrecorddetailBindingSource
+            // 
+            this.uvrecorddetailBindingSource.DataMember = "uv_record_detail";
+            this.uvrecorddetailBindingSource.DataSource = this.apartmentDB1;
             // 
             // colRecord_ID
             // 
             this.colRecord_ID.DataPropertyName = "Record_ID";
             this.colRecord_ID.HeaderText = "Record_ID";
             this.colRecord_ID.Name = "colRecord_ID";
-            this.colRecord_ID.ReadOnly = true;
             this.colRecord_ID.Visible = false;
             // 
-            // colRenter_Name
+            // colYear
             // 
-            this.colRenter_Name.DataPropertyName = "Renter_Name";
-            this.colRenter_Name.HeaderText = "ชื่อผู้เช่า";
-            this.colRenter_Name.Name = "colRenter_Name";
-            this.colRenter_Name.ReadOnly = true;
+            this.colYear.DataPropertyName = "Year";
+            this.colYear.HeaderText = "Year";
+            this.colYear.Name = "colYear";
+            this.colYear.Visible = false;
             // 
-            // colRoom_ID
+            // colMonth
             // 
-            this.colRoom_ID.DataPropertyName = "Room_ID";
-            this.colRoom_ID.HeaderText = "Room_ID";
-            this.colRoom_ID.Name = "colRoom_ID";
-            this.colRoom_ID.ReadOnly = true;
-            this.colRoom_ID.Visible = false;
+            this.colMonth.DataPropertyName = "Month";
+            this.colMonth.HeaderText = "Month";
+            this.colMonth.Name = "colMonth";
+            this.colMonth.Visible = false;
             // 
-            // colRoom_Number
+            // colRecordStatus
             // 
-            this.colRoom_Number.DataPropertyName = "Room_Number";
-            this.colRoom_Number.HeaderText = "เลขที่ห้องพัก";
-            this.colRoom_Number.Name = "colRoom_Number";
-            this.colRoom_Number.ReadOnly = true;
+            this.colRecordStatus.DataPropertyName = "RecordStatus";
+            this.colRecordStatus.HeaderText = "RecordStatus";
+            this.colRecordStatus.Name = "colRecordStatus";
+            this.colRecordStatus.Visible = false;
             // 
-            // colNum_Water
+            // colRecordDT_ID
             // 
-            this.colNum_Water.DataPropertyName = "Num_Water";
-            this.colNum_Water.HeaderText = "ค่าน้ำปะปา";
-            this.colNum_Water.Name = "colNum_Water";
+            this.colRecordDT_ID.DataPropertyName = "RecordDT_ID";
+            this.colRecordDT_ID.HeaderText = "RecordDT_ID";
+            this.colRecordDT_ID.Name = "colRecordDT_ID";
+            this.colRecordDT_ID.Visible = false;
             // 
-            // colNum_Power
+            // colContract_ID
             // 
-            this.colNum_Power.DataPropertyName = "Num_Power";
-            this.colNum_Power.HeaderText = "ค่าไฟฟ้า";
-            this.colNum_Power.Name = "colNum_Power";
+            this.colContract_ID.DataPropertyName = "Contract_ID";
+            this.colContract_ID.HeaderText = "Contract_ID";
+            this.colContract_ID.Name = "colContract_ID";
+            this.colContract_ID.Visible = false;
             // 
             // colRecord_water
             // 
             this.colRecord_water.DataPropertyName = "Record_water";
             this.colRecord_water.HeaderText = "Record_water";
             this.colRecord_water.Name = "colRecord_water";
-            this.colRecord_water.ReadOnly = true;
             this.colRecord_water.Visible = false;
             // 
             // colRecord_power
@@ -248,7 +255,6 @@
             this.colRecord_power.DataPropertyName = "Record_power";
             this.colRecord_power.HeaderText = "Record_power";
             this.colRecord_power.Name = "colRecord_power";
-            this.colRecord_power.ReadOnly = true;
             this.colRecord_power.Visible = false;
             // 
             // colRecord_date
@@ -256,8 +262,46 @@
             this.colRecord_date.DataPropertyName = "Record_date";
             this.colRecord_date.HeaderText = "Record_date";
             this.colRecord_date.Name = "colRecord_date";
-            this.colRecord_date.ReadOnly = true;
             this.colRecord_date.Visible = false;
+            // 
+            // colroom_price
+            // 
+            this.colroom_price.DataPropertyName = "room_price";
+            this.colroom_price.HeaderText = "room_price";
+            this.colroom_price.Name = "colroom_price";
+            this.colroom_price.Visible = false;
+            // 
+            // colRenterFullname
+            // 
+            this.colRenterFullname.DataPropertyName = "RenterFullname";
+            this.colRenterFullname.FillWeight = 150F;
+            this.colRenterFullname.HeaderText = "ชื่อผู้เช่า";
+            this.colRenterFullname.Name = "colRenterFullname";
+            this.colRenterFullname.ReadOnly = true;
+            // 
+            // colRoom_number
+            // 
+            this.colRoom_number.DataPropertyName = "Room_number";
+            this.colRoom_number.HeaderText = "เลขที่ห้อง";
+            this.colRoom_number.Name = "colRoom_number";
+            // 
+            // colBefore_Power
+            // 
+            this.colBefore_Power.DataPropertyName = "Before_Power";
+            this.colBefore_Power.HeaderText = "หน่วยไฟฟ้าก่อนหน้า";
+            this.colBefore_Power.Name = "colBefore_Power";
+            // 
+            // colNum_Power
+            // 
+            this.colNum_Power.DataPropertyName = "Num_Power";
+            this.colNum_Power.HeaderText = "หน่วยไฟฟ้า";
+            this.colNum_Power.Name = "colNum_Power";
+            // 
+            // colNum_Water
+            // 
+            this.colNum_Water.DataPropertyName = "Num_Water";
+            this.colNum_Water.HeaderText = "น้ำปะปา";
+            this.colNum_Water.Name = "colNum_Water";
             // 
             // frmRecord
             // 
@@ -274,10 +318,11 @@
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.dgvRecordDT, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecordDT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblRecordDTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.apartmentDB1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvrecorddetailBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,19 +336,25 @@
         private System.Windows.Forms.ComboBox cboYear;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Data.ApartmentDB apartmentDB;
-        private System.Windows.Forms.BindingSource tblRecordDTBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn renterIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnPostPayment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRecordDT_ID;
+        private Data.ApartmentDB apartmentDB;
+        private System.Windows.Forms.BindingSource uvrecorddetailBindingSource;
+        private Data.ApartmentDB apartmentDB1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRecord_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRenter_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNum_Water;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNum_Power;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMonth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRecordStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRecordDT_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContract_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRecord_water;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRecord_power;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRecord_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colroom_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRenterFullname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBefore_Power;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNum_Power;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNum_Water;
     }
 }

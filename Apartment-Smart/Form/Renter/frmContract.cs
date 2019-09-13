@@ -144,7 +144,7 @@ namespace ApartmentSmart
                             dbConString.Com.Parameters.Add("@Contract_Status", SqlDbType.VarChar).Value = cboStatus.SelectedValue;
                             dbConString.Com.Parameters.Add("@Contract_Type", SqlDbType.VarChar).Value = cboContractType.SelectedValue;
                             dbConString.Com.Parameters.Add("@date_Checkin", SqlDbType.DateTime).Value = dtpcheckin.Value;
-                            dbConString.Com.Parameters.Add("@date_Checkout", SqlDbType.DateTime).Value = ((cboContractType.Text.Equals("รายเดือน")) ? DateTime.MaxValue.AddYears(-1) : dtpcheckout.Value); 
+                            dbConString.Com.Parameters.Add("@date_Checkout", SqlDbType.DateTime).Value = ((cboContractType.Text.Equals("รายเดือน")) ? DateTime.MaxValue.AddYears(-100) : dtpcheckout.Value); 
                             dbConString.Com.Parameters.Add("@power_first", SqlDbType.VarChar).Value = txt_power_first.Text;
                             dbConString.Com.Parameters.Add("@water_first", SqlDbType.VarChar).Value = txt_water_first.Text;
                             dbConString.Com.Parameters.Add("@room_price", SqlDbType.Decimal).Value = Convert.ToDecimal(txt_room_price.Text);

@@ -69,7 +69,8 @@ namespace ApartmentSmart
                 //dbConString.Transaction = new SqlTransaction();
                 string sqlTmp = string.Empty;
                 Record_ID = dgvShow.Rows[SelectRowIndex].Cells[colRecord_ID.Name].Value.ToString();
-                StringBd.Append("DELETE tblRoom WHERE Room_ID = @Room_ID;");
+                StringBd.Append("DELETE tblRecordDT WHERE Record_ID = @Record_ID;");
+                StringBd.Append("DELETE tblRecord WHERE Record_ID = @Record_ID;");
                 sqlTmp = "";
                 sqlTmp = StringBd.ToString();
                 dbConString.Com = new SqlCommand();
@@ -155,12 +156,10 @@ namespace ApartmentSmart
             {
                 Whereclause = string.Empty;
             }
-            sqlTmp = "select r.Room_ID,	r.Room_number, r.Room_floor, s.Name AS Room_Type, r.Room_Price_daily, r.Room_Price_monthly, ";
-            sqlTmp += "	s1.Name AS Room_status, r.Room_MetersNo, r.Room_Remark from tblRoom r INNER JOIN tblStatus s ON r.Room_Type = s.StatusID ";
-            sqlTmp += " INNER JOIN tblStatus s1 ON r.Room_status = s1.StatusID ";
+            sqlTmp = "select * from  uv_record ";
             if (!string.IsNullOrEmpty(Whereclause))
             {
-                sqlTmp += " WHERE r.Room_number LIKE '%" + Whereclause + "%' OR s.Name LIKE '%" + Whereclause + "%' ";
+                sqlTmp += " WHERE Year LIKE '%" + Whereclause + "%' OR Month LIKE '%" + Whereclause + "%' ";
             }
             DataSet Ds = new DataSet();
             dbConString.Com = new SqlCommand();
@@ -170,9 +169,9 @@ namespace ApartmentSmart
             SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             tblRecord.Clear();
-            da.Fill(tblRecord, "tblRecord");
+            da.Fill(tblRecord, "uv_record");
             da.Dispose();
-            dgvShow.DataSource = tblRecord.tblRecord;
+            dgvShow.DataSource = tblRecord.uv_record;
         }
     }
 }

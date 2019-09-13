@@ -112,7 +112,7 @@ namespace ApartmentSmart
         private void rbtReceiver_Click(object sender, EventArgs e)
         {
             CloseAllChildForm();
-            frmRecord fMenu = new frmRecord();
+            frmRecordList fMenu = new frmRecordList();
             fMenu.MdiParent = this;
             fMenu.StartPosition = FormStartPosition.CenterScreen;
             fMenu.Show();

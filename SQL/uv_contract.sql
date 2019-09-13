@@ -22,6 +22,7 @@ SELECT
     room.Room_number,
     room.Room_floor,
     room.RoomType,
+    room.Room_MetersNo,
     room.RoomStatus
 FROM tblContract c
 INNER JOIN tblStatus t ON c.Contract_Type = t.StatusID

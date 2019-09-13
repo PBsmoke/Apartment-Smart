@@ -1,4 +1,4 @@
-﻿CREATE VIEW uv_payment_print
+﻿ALTER VIEW uv_payment_print
 AS
 SELECT 
     uv.*,

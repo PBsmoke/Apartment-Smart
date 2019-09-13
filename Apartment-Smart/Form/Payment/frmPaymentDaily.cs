@@ -22,6 +22,7 @@ namespace ApartmentSmart
 
         #region Member
         public string Payment_ID = string.Empty;
+        private string Contract_TypeName = "";
         ApartmentDB tblPayment = new ApartmentDB();
         int RowIndex = 0;
         #endregion Member
@@ -101,6 +102,16 @@ namespace ApartmentSmart
                     txtRecognizance.Text = tblPayment.uv_payment[0].Contract_Recognizance.ToString("###0.00");
                     txtStatus.Text = tblPayment.uv_payment[0].PaymentStatus;
                     dgvPaymentDetail.DataSource = tblPayment.tblPaymentDT;
+                    Contract_TypeName = tblPayment.uv_payment[0].Contract_TypeName;
+
+                    if (Contract_TypeName.Equals("รายเดือน"))
+                    {
+                        txtDateCheckOut.Visible = true;
+                        txtNumberDay.Visible = true;
+                        label4.Visible = true;
+                        label5.Visible = true;
+                        label6.Visible = true;
+                    }
 
                     SumPrice();
 
@@ -289,6 +300,10 @@ namespace ApartmentSmart
         {
             frmrptPayment form = new frmrptPayment();
             form.Pay_ID = Payment_ID;
+            if (Contract_TypeName.Equals("รายเดือน"))
+            {
+                form.BillType = "M";
+            }
             form.ShowDialog();
         }
     }

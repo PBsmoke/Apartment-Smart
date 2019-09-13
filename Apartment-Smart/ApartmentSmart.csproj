@@ -299,6 +299,12 @@
     <Compile Include="Report\frmrptContract.Designer.cs">
       <DependentUpon>frmrptContract.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\rptReceiptMonthly.cs">
+      <DependentUpon>rptReceiptMonthly.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Report\rptReceipt.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -407,6 +413,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frmrptContract.resx">
       <DependentUpon>frmrptContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptReceiptMonthly.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReceiptMonthly.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptReceipt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

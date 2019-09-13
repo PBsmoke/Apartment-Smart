@@ -34,14 +34,18 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvShow = new System.Windows.Forms.DataGridView();
             this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
-            this.tblRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uvrecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRecordStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatusType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblRecordBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvrecordBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -85,8 +89,12 @@
             this.dgvShow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRecord_ID,
             this.colYear,
-            this.colMonth});
-            this.dgvShow.DataSource = this.tblRecordBindingSource;
+            this.colMonth,
+            this.colRecordStatus,
+            this.colStatusID,
+            this.colName,
+            this.colStatusType});
+            this.dgvShow.DataSource = this.uvrecordBindingSource;
             this.dgvShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShow.Location = new System.Drawing.Point(0, 95);
             this.dgvShow.Name = "dgvShow";
@@ -102,10 +110,10 @@
             this.apartmentDB.DataSetName = "ApartmentDB";
             this.apartmentDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tblRecordBindingSource
+            // uvrecordBindingSource
             // 
-            this.tblRecordBindingSource.DataMember = "tblRecord";
-            this.tblRecordBindingSource.DataSource = this.apartmentDB;
+            this.uvrecordBindingSource.DataMember = "uv_record";
+            this.uvrecordBindingSource.DataSource = this.apartmentDB;
             // 
             // colRecord_ID
             // 
@@ -129,6 +137,37 @@
             this.colMonth.Name = "colMonth";
             this.colMonth.ReadOnly = true;
             // 
+            // colRecordStatus
+            // 
+            this.colRecordStatus.DataPropertyName = "RecordStatus";
+            this.colRecordStatus.HeaderText = "RecordStatus";
+            this.colRecordStatus.Name = "colRecordStatus";
+            this.colRecordStatus.ReadOnly = true;
+            this.colRecordStatus.Visible = false;
+            // 
+            // colStatusID
+            // 
+            this.colStatusID.DataPropertyName = "StatusID";
+            this.colStatusID.HeaderText = "StatusID";
+            this.colStatusID.Name = "colStatusID";
+            this.colStatusID.ReadOnly = true;
+            this.colStatusID.Visible = false;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "สถานะ";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colStatusType
+            // 
+            this.colStatusType.DataPropertyName = "StatusType";
+            this.colStatusType.HeaderText = "StatusType";
+            this.colStatusType.Name = "colStatusType";
+            this.colStatusType.ReadOnly = true;
+            this.colStatusType.Visible = false;
+            // 
             // frmRecordList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -144,7 +183,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblRecordBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvrecordBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,7 +198,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRecord_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colYear;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMonth;
-        private System.Windows.Forms.BindingSource tblRecordBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRecordStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatusID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatusType;
+        private System.Windows.Forms.BindingSource uvrecordBindingSource;
         private Data.ApartmentDB apartmentDB;
     }
 }
