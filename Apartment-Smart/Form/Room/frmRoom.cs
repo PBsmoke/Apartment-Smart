@@ -169,7 +169,7 @@ namespace ApartmentSmart
                 try
                 {
                     string sqlTmp = "";
-                    sqlTmp = "SELECT * FROM tblRoom WHERE Room_ID = '" + Room_ID + "'";
+                    sqlTmp = "SELECT * FROM uv_room WHERE Room_ID = '" + Room_ID + "'";
                     DataSet Ds = new DataSet();
                     dbConString.Com = new SqlCommand();
                     dbConString.Com.CommandType = CommandType.Text;
@@ -180,7 +180,7 @@ namespace ApartmentSmart
                     SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     tblRoom.Clear();
-                    da.Fill(tblRoom, "tblRoom");
+                    da.Fill(tblRoom, "uv_room");
                     da.Dispose();
                 }
                 catch (Exception ex)
@@ -189,15 +189,16 @@ namespace ApartmentSmart
                 }
                 #endregion
 
-                if (tblRoom.tblRoom.Rows.Count > 0)
+                if (tblRoom.uv_room.Rows.Count > 0)
                 {
-                    txtRoom_number.Text = tblRoom.tblRoom[0].Room_number;
-                    txtRoom_floor.Text = tblRoom.tblRoom[0].Room_floor;
-                    cboRoomType.SelectedValue = tblRoom.tblRoom[0].Room_Type;
-                    txtPrice_daily.Text = tblRoom.tblRoom[0].Room_Price_daily.ToString("###0.00");
-                    txtPrice_monthly.Text = tblRoom.tblRoom[0].Room_Price_monthly.ToString("###0.00");
-                    txtMetersNo.Text = tblRoom.tblRoom[0].Room_MetersNo;
-                    txtRemark.Text = tblRoom.tblRoom[0].Room_Remark;
+                    txtRoom_number.Text = tblRoom.uv_room[0].Room_number;
+                    txtRoom_floor.Text = tblRoom.uv_room[0].Room_floor;
+                    cboRoomType.SelectedValue = tblRoom.uv_room[0].Room_Type;
+                    txtRoom_status.Text = tblRoom.uv_room[0].RoomStatus;
+                    txtPrice_daily.Text = tblRoom.uv_room[0].Room_Price_daily.ToString("###0.00");
+                    txtPrice_monthly.Text = tblRoom.uv_room[0].Room_Price_monthly.ToString("###0.00");
+                    txtMetersNo.Text = tblRoom.uv_room[0].Room_MetersNo;
+                    txtRemark.Text = tblRoom.uv_room[0].Room_Remark;
                 }
             }           
         }

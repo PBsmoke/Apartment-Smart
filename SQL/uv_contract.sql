@@ -1,4 +1,4 @@
-﻿CREATE VIEW uv_contract
+﻿ALTER VIEW uv_contract
 AS
 SELECT 
     c.Contract_ID,
@@ -10,11 +10,14 @@ SELECT
     c.Contract_Type,
     t.Name AS Contract_TypeName,
     c.Date_Checkin,
+    c.Date_Checkout,
     c.room_price,
     c.Renter_ID,
     rent.RenterFullname,
+    rent.Renter_Card,
     rent.Renter_Address,
     rent.Renter_Tel,
+    rent.Renter_Nationality,
     c.Room_ID,
     room.Room_number,
     room.Room_floor,

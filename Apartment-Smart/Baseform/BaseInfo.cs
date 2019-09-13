@@ -54,5 +54,17 @@ namespace ApartmentSmart
                 this.Close();
             }
         }
+
+        protected virtual void DoVisibleSave(bool VisibleStatus)
+        {
+            tsSave.Visible = VisibleStatus;
+            toolStripSeparator2.Visible = VisibleStatus;
+        }
+
+        protected virtual void DoVisibleClear(bool VisibleStatus)
+        {
+            tsClear.Visible = VisibleStatus;
+            toolStripSeparator5.Visible = VisibleStatus;
+        }
     }
 }

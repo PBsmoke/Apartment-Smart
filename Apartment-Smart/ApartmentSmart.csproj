@@ -165,11 +165,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form\Payment\frmPayment.cs">
+    <Compile Include="Form\Payment\frmPaymentDaily.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Payment\frmPayment.Designer.cs">
-      <DependentUpon>frmPayment.cs</DependentUpon>
+    <Compile Include="Form\Payment\frmPaymentDaily.Designer.cs">
+      <DependentUpon>frmPaymentDaily.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Payment\frmPaymentList.cs">
       <SubType>Form</SubType>
@@ -275,6 +275,12 @@
     <Compile Include="Form\Room\frmRoomList.Designer.cs">
       <DependentUpon>frmRoomList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\frmrptRenterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmrptRenterList.Designer.cs">
+      <DependentUpon>frmrptRenterList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\frmrptRoomList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +298,18 @@
     </Compile>
     <Compile Include="Report\frmrptContract.Designer.cs">
       <DependentUpon>frmrptContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptRenterList.cs">
+      <DependentUpon>rptRenterList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Report\rptRoomList.cs">
       <DependentUpon>rptRoomList.rpt</DependentUpon>
@@ -314,8 +332,8 @@
     <EmbeddedResource Include="Baseform\BaseList.resx">
       <DependentUpon>BaseList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Payment\frmPayment.resx">
-      <DependentUpon>frmPayment.cs</DependentUpon>
+    <EmbeddedResource Include="Form\Payment\frmPaymentDaily.resx">
+      <DependentUpon>frmPaymentDaily.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Payment\frmPaymentList.resx">
       <DependentUpon>frmPaymentList.cs</DependentUpon>
@@ -378,6 +396,9 @@
     <EmbeddedResource Include="Form\Room\frmRoomList.resx">
       <DependentUpon>frmRoomList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmrptRenterList.resx">
+      <DependentUpon>frmrptRenterList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\frmrptRoomList.resx">
       <DependentUpon>frmrptRoomList.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +407,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frmrptContract.resx">
       <DependentUpon>frmrptContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReceipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptRenterList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRenterList.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptRoomList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -455,6 +484,10 @@
     <None Include="Resources\icons8-search-64.png" />
     <None Include="Resources\icons8-search-50.png" />
     <None Include="Resources\document.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\repeat.png" />
+    <None Include="Resources\minus.png" />
     <Content Include="store.ico" />
   </ItemGroup>
   <ItemGroup>

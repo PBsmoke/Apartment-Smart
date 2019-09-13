@@ -84,7 +84,7 @@
             this.cboTitleName.Location = new System.Drawing.Point(136, 31);
             this.cboTitleName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTitleName.Name = "cboTitleName";
-            this.cboTitleName.Size = new System.Drawing.Size(52, 24);
+            this.cboTitleName.Size = new System.Drawing.Size(79, 24);
             this.cboTitleName.TabIndex = 165;
             // 
             // lblAddress
@@ -183,7 +183,7 @@
             // 
             // txtFirstname
             // 
-            this.txtFirstname.Location = new System.Drawing.Point(194, 31);
+            this.txtFirstname.Location = new System.Drawing.Point(221, 31);
             this.txtFirstname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(135, 24);
@@ -192,7 +192,7 @@
             // lblLastname
             // 
             this.lblLastname.AutoSize = true;
-            this.lblLastname.Location = new System.Drawing.Point(352, 31);
+            this.lblLastname.Location = new System.Drawing.Point(362, 34);
             this.lblLastname.Name = "lblLastname";
             this.lblLastname.Size = new System.Drawing.Size(58, 17);
             this.lblLastname.TabIndex = 11;

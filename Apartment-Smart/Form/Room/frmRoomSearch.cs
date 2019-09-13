@@ -73,12 +73,15 @@ namespace ApartmentSmart
             {
                 Whereclause = string.Empty;
             }
-            sqlTmp = "select r.Room_ID,	r.Room_number, r.Room_floor, s.Name AS Room_Type, r.Room_Price_daily, r.Room_Price_monthly, ";
-            sqlTmp += "	r.Room_status, r.Room_MetersNo, r.Room_Remark from tblRoom r INNER JOIN tblStatus s ON r.Room_Type = s.StatusID ";
+            sqlTmp = "select * from uv_room r WHERE Room_status = 'A6DEF890-61C9-44A3-91DD-DBA3BBE98327' ";
+
             if (!string.IsNullOrEmpty(Whereclause))
             {
-                sqlTmp += " WHERE r.Room_number LIKE '%" + Whereclause + "%' OR s.Name LIKE '%" + Whereclause + "%' ";
+                sqlTmp += " and ( r.Room_number LIKE '%" + Whereclause + "%' OR s.Name LIKE '%" + Whereclause + "%' )";
             }
+
+            sqlTmp += " ORDER BY Room_floor , Room_number ";
+
             DataSet Ds = new DataSet();
             dbConString.Com = new SqlCommand();
             dbConString.Com.CommandType = CommandType.Text;
@@ -87,9 +90,9 @@ namespace ApartmentSmart
             SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             tblRoom.Clear();
-            da.Fill(tblRoom, "tblRoom");
+            da.Fill(tblRoom, "uv_room");
             da.Dispose();
-            dgvProductSearch.DataSource = tblRoom.tblRoom;
+            dgvProductSearch.DataSource = tblRoom.uv_room;
         }
     }
 }

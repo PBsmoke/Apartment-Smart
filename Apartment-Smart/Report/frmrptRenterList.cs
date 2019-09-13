@@ -16,24 +16,23 @@ using ApartmentSmart.Report;
 
 namespace ApartmentSmart
 {
-    public partial class frmrptPayment : Form
+    public partial class frmrptRenterList : Form
     {
-        public frmrptPayment()
+        public frmrptRenterList()
         {
             InitializeComponent();
         }
-        public string BillType = "fullbill";
-        public string Pay_ID = string.Empty;
-        public string remake = string.Empty;
 
-        private void frmrptPayment_Load(object sender, EventArgs e)
+        public string ContractID = string.Empty;
+
+        private void frmrptRenterList_Load(object sender, EventArgs e)
         {
             ReportDS tblReport = new ReportDS();
             dbConString.Chk_ConnectionState();
+            rptRenterList fReportS = new rptRenterList();
 
             string sqlTmp = "";
-            sqlTmp = "SELECT * FROM uv_payment_print WHERE Pay_ID = '" + Pay_ID + "'";
-            rptReceipt fReportS = new rptReceipt();
+            sqlTmp = "SELECT * FROM uv_renter";
             DataSet Ds = new DataSet();
             dbConString.Com = new SqlCommand();
             dbConString.Com.CommandType = CommandType.Text;
@@ -42,19 +41,10 @@ namespace ApartmentSmart
             SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             tblReport.Clear();
-            da.Fill(tblReport, "uv_payment_print");
+            da.Fill(tblReport, "uv_renter");
             da.Dispose();
-            MoneyExt mne = new MoneyExt();
-            string xThaiWord = "";
-            double xNet = Convert.ToDouble(tblReport.uv_payment_print[0].Pay_Sum_amount);
-            xThaiWord = "(=" + mne.NumberToThaiWord(xNet) + "=)";
-
             fReportS.SetDataSource(tblReport);
-            fReportS.SetParameterValue("NumberToThai", xThaiWord);
-            fReportS.SetParameterValue("OrgName", dbConString.OrgName);
-            fReportS.SetParameterValue("Address", dbConString.Address + " โทร. " + dbConString.Tel);
-
-
+            fReportS.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
             crvShow.PrintMode = CrystalDecisions.Windows.Forms.PrintMode.PrintOutputController;
             crvShow.ReportSource = fReportS;
         }

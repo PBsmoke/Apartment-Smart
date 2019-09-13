@@ -79,6 +79,9 @@ namespace ApartmentSmart
             if (!string.IsNullOrEmpty(Contract_ID))
             {
                 ShowData(Contract_ID);
+
+                if(cboStatus.Text.Equals("หมดสัญญา"))
+                    Utilities.EnableAllControls(this);
             }
             else
             {
@@ -200,9 +203,70 @@ namespace ApartmentSmart
                     dbConString.Com.ExecuteNonQuery();
                     dbConString.Transaction.Commit();
 
-                    if (cboStatus.Text.Equals("หมดสัญญา") && (cboContractType.Text.Equals("รายวัน")))
+                    if (cboStatus.Text.Equals("เข้าพัก")) {
+
+                        // Update Status Room 
+                        updateStatusRoom(Room_ID, "ไม่ว่าง");
+
+                    }
+                    else if (cboStatus.Text.Equals("หมดสัญญา"))
                     {
+                        // Update Status Room 
+                        updateStatusRoom(Room_ID, "ว่าง");
+
                         // Save Payment รายวัน
+                        if (cboContractType.Text.Equals("รายวัน"))
+                        {
+                            // Perpare Data Payment
+                            double numDay = 0;
+                            double priceRoom = Convert.ToDouble(txt_room_price.Text);
+                            DateTime d1 = dtpcheckin.Value;
+                            DateTime d2 = dtpcheckout.Value;
+                            TimeSpan diffResult = d2.Date.Subtract(d1.Date);
+                            numDay = diffResult.Days;
+                            string PaymentID = Guid.NewGuid().ToString();
+
+                            //Save Data
+                            dbConString.Transaction = dbConString.mySQLConn.BeginTransaction();
+                            StringBd = new StringBuilder();
+                            sqlTmp = string.Empty;
+                            StringBd.Append(" INSERT INTO tblPayment(Pay_ID, Contract_ID, Pay_Sum_amount, Pay_status) ");
+                            StringBd.Append(" VALUES(@Pay_ID, @Contract_ID, @Pay_Sum_amount, (SELECT StatusID FROM tblStatus WHERE StatusType = 'PaymentStatus' AND Name = 'ค้างชำระ')); ");
+
+                            sqlTmp = "";
+                            sqlTmp = StringBd.ToString();
+                            dbConString.Com = new SqlCommand();
+                            dbConString.Com.CommandText = sqlTmp;
+                            dbConString.Com.CommandType = CommandType.Text;
+                            dbConString.Com.Connection = dbConString.mySQLConn;
+                            dbConString.Com.Transaction = dbConString.Transaction;
+                            dbConString.Com.Parameters.Clear();
+                            dbConString.Com.Parameters.Add("@Pay_ID", SqlDbType.VarChar).Value = PaymentID;
+                            dbConString.Com.Parameters.Add("@Contract_ID", SqlDbType.VarChar).Value = Contract_ID;
+                            dbConString.Com.Parameters.Add("@Pay_Sum_amount", SqlDbType.Decimal).Value = (priceRoom * numDay); 
+                            dbConString.Com.ExecuteNonQuery();
+
+                            StringBd = new StringBuilder();
+                            sqlTmp = string.Empty;
+                            StringBd.Append(" INSERT INTO tblPaymentDT(PayDT_ID, Pay_ID, Detail, Amount) ");
+                            StringBd.Append(" VALUES(@PayDT_ID, @Pay_ID, @Detail, @Amount) ");
+
+                            sqlTmp = "";
+                            sqlTmp = StringBd.ToString();
+                            dbConString.Com = new SqlCommand();
+                            dbConString.Com.CommandText = sqlTmp;
+                            dbConString.Com.CommandType = CommandType.Text;
+                            dbConString.Com.Connection = dbConString.mySQLConn;
+                            dbConString.Com.Transaction = dbConString.Transaction;
+                            dbConString.Com.Parameters.Clear();
+                            dbConString.Com.Parameters.Add("@Pay_ID", SqlDbType.VarChar).Value = PaymentID;
+                            dbConString.Com.Parameters.Add("@PayDT_ID", SqlDbType.VarChar).Value = Guid.NewGuid().ToString(); ;
+                            dbConString.Com.Parameters.Add("@Detail", SqlDbType.VarChar).Value = "ค่าห้องพัก";
+                            dbConString.Com.Parameters.Add("@Amount", SqlDbType.Decimal).Value = (priceRoom * numDay);
+                            dbConString.Com.ExecuteNonQuery();
+
+                            dbConString.Transaction.Commit();
+                        }
                     }
 
                     MessageBox.Show("บันทึกค่าเรียบร้อย", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -250,8 +314,8 @@ namespace ApartmentSmart
                     cboStatus.SelectedValue = tblContract.tblContract[0].Contract_Status;
                     dtpcheckin.Value = tblContract.tblContract[0].Date_Checkin;
                     dtpcheckout.Value = tblContract.tblContract[0].Date_Checkout;
-                    txt_power_first.Text = tblContract.tblContract[0].power_first.ToString("###0.00");
-                    txt_water_first.Text = tblContract.tblContract[0].water_first.ToString("###0.00");
+                    txt_power_first.Text = tblContract.tblContract[0].power_first.ToString("###0");
+                    txt_water_first.Text = tblContract.tblContract[0].water_first.ToString("###0");
                     txtRemark.Text = tblContract.tblContract[0].Remark;
                     Room_ID = tblContract.tblContract[0].Room_ID;
                     Renter_ID = tblContract.tblContract[0].Renter_ID;
@@ -456,6 +520,27 @@ namespace ApartmentSmart
             frmrptContract form = new frmrptContract();
             form.ContractID = Contract_ID;
             form.ShowDialog();
+        }
+
+        private void updateStatusRoom(string Room_ID, string Room_Status)
+        {
+            dbConString.Transaction = dbConString.mySQLConn.BeginTransaction();
+            StringBuilder StringBd = new StringBuilder();
+            //dbConString.Transaction = new SqlTransaction();
+            string sqlTmp = string.Empty;
+            StringBd.Append("UPDATE tblRoom SET Room_status = (SELECT  StatusID FROM tblStatus WHERE StatusType = 'RoomStatus' AND Name = @RoomStatus) WHERE Room_ID = @Room_ID;");
+            sqlTmp = "";
+            sqlTmp = StringBd.ToString();
+            dbConString.Com = new SqlCommand();
+            dbConString.Com.CommandText = sqlTmp;
+            dbConString.Com.CommandType = CommandType.Text;
+            dbConString.Com.Connection = dbConString.mySQLConn;
+            dbConString.Com.Transaction = dbConString.Transaction;
+            dbConString.Com.Parameters.Clear();
+            dbConString.Com.Parameters.Add("@Room_ID", SqlDbType.VarChar).Value = Room_ID;
+            dbConString.Com.Parameters.Add("@RoomStatus", SqlDbType.VarChar).Value = Room_Status;
+            dbConString.Com.ExecuteNonQuery();
+            dbConString.Transaction.Commit();
         }
     }
 }

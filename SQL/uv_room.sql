@@ -1,4 +1,4 @@
-﻿CREATE VIEW uv_room 
+﻿ALTER VIEW uv_room 
 AS
 SELECT  
     r.Room_ID,
@@ -9,7 +9,9 @@ SELECT
     r.Room_Price_daily,
     r.Room_Price_monthly,
     r.Room_status,
-    s.Name AS RoomStatus
+    s.Name AS RoomStatus,
+    r.Room_MetersNo,
+    r.Room_Remark
 FROM tblRoom r
 INNER JOIN tblStatus s ON r.Room_status = s.StatusID
 INNER JOIN tblStatus t ON r.Room_Type = t.StatusID

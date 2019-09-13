@@ -43,22 +43,20 @@ namespace ApartmentSmart
             tblReport.Clear();
             da.Fill(tblReport, "uv_contract");
             da.Dispose();
-            //MoneyExt mne = new MoneyExt();
-            //string xThaiWord = "";
-            //double xNet = Convert.ToDouble(tblReport.tblContract[0].Contract_Recognizance);
-            //xThaiWord = "(=" + mne.NumberToThaiWord(xNet) + "=)";
+            MoneyExt mne = new MoneyExt();
+            string RecognizaNumberToThai = "";
+            string RoomPrice = "";
+            double xNet = Convert.ToDouble(tblReport.uv_contract[0].Contract_Recognizance);
+            RecognizaNumberToThai = mne.NumberToThaiWord(xNet);
+            xNet = Convert.ToDouble(tblReport.uv_contract[0].room_price);
+            RoomPrice = mne.NumberToThaiWord(xNet);
 
             fReportS.SetDataSource(tblReport);
-            //fReportS.SetParameterValue("NumberToThai", xThaiWord);
-            //fReportS.SetParameterValue("OrgName", dbConString.OrgName);
-            //fReportS.SetParameterValue("Address", dbConString.Address + " โทร. " + dbConString.Tel);
-            //if (dbConString.TaxRate > 0)
-            //{
-            //    fReportS.SetParameterValue("TaxID", "เลขประจำตัวผู้เสียภาษี : " + dbConString.TaxID);
-            //} else
-            //{
-            //    fReportS.SetParameterValue("TaxID", "");
-            //}
+            fReportS.SetParameterValue("RecognizaNumberToThai", RecognizaNumberToThai);
+            fReportS.SetParameterValue("RoomPriceToThai", RoomPrice);
+            fReportS.SetParameterValue("OrgName", dbConString.OrgName);
+            fReportS.SetParameterValue("Water", dbConString.Water);
+            fReportS.SetParameterValue("Power", dbConString.Power);
 
             fReportS.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
             crvShow.PrintMode = CrystalDecisions.Windows.Forms.PrintMode.PrintOutputController;

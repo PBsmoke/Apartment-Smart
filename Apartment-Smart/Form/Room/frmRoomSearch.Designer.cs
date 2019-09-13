@@ -35,20 +35,22 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvProductSearch = new System.Windows.Forms.DataGridView();
             this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
-            this.tblRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uvroomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colRoom_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_Price_daily = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_Price_monthly = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_MetersNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbProductSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblRoomBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvroomBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbProductSearch
@@ -106,12 +108,14 @@
             this.colRoom_number,
             this.colRoom_floor,
             this.colRoom_Type,
+            this.colRoomType,
             this.colRoom_Price_daily,
             this.colRoom_Price_monthly,
             this.colRoom_status,
+            this.colRoomStatus,
             this.colRoom_MetersNo,
             this.colRoom_Remark});
-            this.dgvProductSearch.DataSource = this.tblRoomBindingSource;
+            this.dgvProductSearch.DataSource = this.uvroomBindingSource;
             this.dgvProductSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductSearch.Location = new System.Drawing.Point(0, 54);
             this.dgvProductSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -127,10 +131,10 @@
             this.apartmentDB.DataSetName = "ApartmentDB";
             this.apartmentDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tblRoomBindingSource
+            // uvroomBindingSource
             // 
-            this.tblRoomBindingSource.DataMember = "tblRoom";
-            this.tblRoomBindingSource.DataSource = this.apartmentDB;
+            this.uvroomBindingSource.DataMember = "uv_room";
+            this.uvroomBindingSource.DataSource = this.apartmentDB;
             // 
             // colRoom_ID
             // 
@@ -157,9 +161,17 @@
             // colRoom_Type
             // 
             this.colRoom_Type.DataPropertyName = "Room_Type";
-            this.colRoom_Type.HeaderText = "ประเภทห้อง";
+            this.colRoom_Type.HeaderText = "Room_Type";
             this.colRoom_Type.Name = "colRoom_Type";
             this.colRoom_Type.ReadOnly = true;
+            this.colRoom_Type.Visible = false;
+            // 
+            // colRoomType
+            // 
+            this.colRoomType.DataPropertyName = "RoomType";
+            this.colRoomType.HeaderText = "ประเภทห้องพัก";
+            this.colRoomType.Name = "colRoomType";
+            this.colRoomType.ReadOnly = true;
             // 
             // colRoom_Price_daily
             // 
@@ -182,6 +194,13 @@
             this.colRoom_status.Name = "colRoom_status";
             this.colRoom_status.ReadOnly = true;
             this.colRoom_status.Visible = false;
+            // 
+            // colRoomStatus
+            // 
+            this.colRoomStatus.DataPropertyName = "RoomStatus";
+            this.colRoomStatus.HeaderText = "สถานะ";
+            this.colRoomStatus.Name = "colRoomStatus";
+            this.colRoomStatus.ReadOnly = true;
             // 
             // colRoom_MetersNo
             // 
@@ -209,13 +228,13 @@
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmRoomSearch";
-            this.Text = "ค้นหาสินค้า";
+            this.Text = "ค้นหาห้องพัก";
             this.Load += new System.EventHandler(this.frmProductSearch_Load);
             this.gbProductSearch.ResumeLayout(false);
             this.gbProductSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblRoomBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvroomBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,16 +245,18 @@
         private System.Windows.Forms.DataGridView dgvProductSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
+        private Data.ApartmentDB apartmentDB;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_floor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_Price_daily;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_Price_monthly;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_MetersNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_Remark;
-        private System.Windows.Forms.BindingSource tblRoomBindingSource;
-        private Data.ApartmentDB apartmentDB;
+        private System.Windows.Forms.BindingSource uvroomBindingSource;
     }
 }

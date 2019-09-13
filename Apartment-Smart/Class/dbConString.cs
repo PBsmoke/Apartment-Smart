@@ -42,10 +42,15 @@ namespace ApartmentSmart.Class
         public static string EmpLevel = "";
         public static string EmpCode = "EMP001";
         public static string EmpId = "4fb62f4a-db39-41d9-b32a-b7a086f243ee";
-        public static string xMessage = "POS Smart";
+        public static string xMessage = "Apartment Smart";
+        public static string UserID = "";
+        public static string Username = "";
+        public static string Nameuser = "";
 
 
         public static string OrgName = "";
+        public static double Water = 0;
+        public static double Power = 0;
         public static string TraderName = "";
         public static string Address = "";
         public static string TaxID = "";
@@ -143,6 +148,107 @@ namespace ApartmentSmart.Class
             }
         }
 
+        public static void EnableAllControls(Control form)
+        {
+            foreach (Control control in form.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = (TextBox)control;
+                    textBox.Enabled = false;
+                }
+
+                if (control is ComboBox)
+                {
+                    ComboBox comboBox = (ComboBox)control;
+                    comboBox.Enabled = false;
+                }
+
+                if (control is CheckBox)
+                {
+                    CheckBox checkBox = (CheckBox)control;
+                    checkBox.Enabled = false;
+                }
+
+                if (control is ListBox)
+                {
+                    ListBox listBox = (ListBox)control;
+                    listBox.Enabled = false;
+                }
+
+                if (control is GroupBox)
+                {
+                    GroupBoxEnableAll((GroupBox)control);
+                }
+
+                if (control is DateTimePicker)
+                {
+                    DateTimePicker datetime = (DateTimePicker)control;
+                    datetime.Enabled = false;
+                }
+
+                if (control is Button)
+                {
+                    Button btn = (Button)control;
+                    btn.Enabled = false;
+                }
+
+                if (control is DataGridView)
+                {
+                    DataGridView datagrid = (DataGridView)control;
+                    datagrid.Enabled = false;
+                }
+            }
+        }
+
+        public static void GroupBoxEnableAll(GroupBox gbox)
+        {
+            foreach (Control ctrl in gbox.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    TextBox textBox = (TextBox)ctrl;
+                    textBox.Enabled = false;
+                }
+                if (ctrl is ComboBox)
+                {
+                    ComboBox comboBox = (ComboBox)ctrl;
+                    comboBox.Enabled = false;
+                }
+                if (ctrl is CheckBox)
+                {
+                    CheckBox checkBox = (CheckBox)ctrl;
+                    checkBox.Enabled = false;
+                }
+                if (ctrl is RadioButton)
+                {
+                    RadioButton radioButton = (RadioButton)ctrl;
+                    radioButton.Enabled = false;
+                }
+                if (ctrl is ListBox)
+                {
+                    ListBox listBox = (ListBox)ctrl;
+                    listBox.Enabled = false;
+                }
+                if (ctrl is DataGridView)
+                {
+                    DataGridView DataGrid = (DataGridView)ctrl;
+                    DataGrid.Enabled = false;
+                }
+                if (ctrl is DateTimePicker)
+                {
+                    DateTimePicker datetime = (DateTimePicker)ctrl;
+                    datetime.Enabled = false;
+                }
+
+
+                if (ctrl is Button)
+                {
+                    Button btn = (Button)ctrl;
+                    btn.Enabled = false;
+                }
+            }
+        }
         public static void GroupBoxResetAll(GroupBox gbox)
         {
             foreach (Control ctrl in gbox.Controls)
@@ -150,12 +256,13 @@ namespace ApartmentSmart.Class
                 if (ctrl is TextBox)
                 {
                     TextBox textBox = (TextBox)ctrl;
-                    textBox.Text = null;
+                    textBox.Text = String.Empty;
                 }
                 if (ctrl is ComboBox)
                 {
                     ComboBox comboBox = (ComboBox)ctrl;
-                    comboBox.SelectedIndex = -1;
+                    if (comboBox.Items.Count > 0)
+                        comboBox.SelectedIndex = 0;
                 }
                 if (ctrl is CheckBox)
                 {
@@ -179,7 +286,6 @@ namespace ApartmentSmart.Class
                 }
             }
         }
-
         public static bool CheckDuplicate(string TableName, string columnName, string Value)
         { 
             bool Duplicate = true;

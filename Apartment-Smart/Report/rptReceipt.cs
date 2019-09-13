@@ -16,14 +16,14 @@ namespace ApartmentSmart.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptContract : ReportClass {
+    public class rptReceipt : ReportClass {
         
-        public rptContract() {
+        public rptReceipt() {
         }
         
         public override string ResourceName {
             get {
-                return "rptContract.rpt";
+                return "rptReceipt.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ApartmentSmart.Report {
         
         public override string FullResourceName {
             get {
-                return "ApartmentSmart.Report.rptContract.rpt";
+                return "ApartmentSmart.Report.rptReceipt.rpt";
             }
             set {
                 // Do nothing
@@ -74,7 +74,7 @@ namespace ApartmentSmart.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -90,7 +90,7 @@ namespace ApartmentSmart.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_RecognizaNumberToThai {
+        public CrystalDecisions.Shared.IParameterField Parameter_OrgName {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,7 +98,7 @@ namespace ApartmentSmart.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_RoomPriceToThai {
+        public CrystalDecisions.Shared.IParameterField Parameter_NumberToThai {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,33 +106,17 @@ namespace ApartmentSmart.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_OrgName {
+        public CrystalDecisions.Shared.IParameterField Parameter_Address {
             get {
                 return this.DataDefinition.ParameterFields[2];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Water {
-            get {
-                return this.DataDefinition.ParameterFields[3];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Power {
-            get {
-                return this.DataDefinition.ParameterFields[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptContract : Component, ICachedReport {
+    public class CachedrptReceipt : Component, ICachedReport {
         
-        public CachedrptContract() {
+        public CachedrptReceipt() {
         }
         
         [Browsable(false)]
@@ -169,7 +153,7 @@ namespace ApartmentSmart.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptContract rpt = new rptContract();
+            rptReceipt rpt = new rptReceipt();
             rpt.Site = this.Site;
             return rpt;
         }

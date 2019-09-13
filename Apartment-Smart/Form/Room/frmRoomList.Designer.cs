@@ -33,8 +33,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvShow = new System.Windows.Forms.DataGridView();
-            this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
-            this.tblRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colRoom_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +42,12 @@
             this.colRoom_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_MetersNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblRoomBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -108,16 +108,6 @@
             this.dgvShow.TabIndex = 124;
             this.dgvShow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShow_CellClick);
             this.dgvShow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShow_CellDoubleClick);
-            // 
-            // apartmentDB
-            // 
-            this.apartmentDB.DataSetName = "ApartmentDB";
-            this.apartmentDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblRoomBindingSource
-            // 
-            this.tblRoomBindingSource.DataMember = "tblRoom";
-            this.tblRoomBindingSource.DataSource = this.apartmentDB;
             // 
             // colRoom_ID
             // 
@@ -185,22 +175,32 @@
             this.colRoom_Remark.ReadOnly = true;
             this.colRoom_Remark.Visible = false;
             // 
-            // frmProductList
+            // tblRoomBindingSource
+            // 
+            this.tblRoomBindingSource.DataMember = "tblRoom";
+            this.tblRoomBindingSource.DataSource = this.apartmentDB;
+            // 
+            // apartmentDB
+            // 
+            this.apartmentDB.DataSetName = "ApartmentDB";
+            this.apartmentDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // frmRoomList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(812, 510);
             this.Controls.Add(this.dgvShow);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Name = "frmProductList";
-            this.Text = "ข้อมูลสินค้า";
+            this.Name = "frmRoomList";
+            this.Text = "ข้อมูลห้องพัก";
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.dgvShow, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblRoomBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

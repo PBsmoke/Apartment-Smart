@@ -21,7 +21,7 @@ namespace ApartmentSmart
         }
 
         #region Member
-        ApartmentDB tblRoom = new ApartmentDB();
+        ApartmentDB tblPayment = new ApartmentDB();
         bool Success = true;
         string Pay_ID = string.Empty;
         int SelectRowIndex = 0;
@@ -29,15 +29,8 @@ namespace ApartmentSmart
 
         protected override void DoLoadForm()
         {
-            ShowData();
-        }
-
-        protected override void DoNew()
-        {
-            frmPayment mForm = new frmPayment();
-            //mForm.FormState = "NEW";
-            //mForm.ShowDialog();
-            btnStatus(true);
+            DoVisibleSave(false);
+            DoVisibleDeleted(false);
             ShowData();
         }
 
@@ -45,10 +38,9 @@ namespace ApartmentSmart
         {
             if (dgvShow.RowCount > 0)
             {
-                frmPayment mForm = new frmPayment();
-                //mForm.FormState = "EDIT";
-                //mForm.Room_ID = dgvShow.Rows[SelectRowIndex].Cells[colPay_ID.Name].Value.ToString();
-                //mForm.ShowDialog();
+                frmPaymentDaily mForm = new frmPaymentDaily();
+                mForm.Payment_ID = dgvShow.Rows[SelectRowIndex].Cells[colPay_ID.Name].Value.ToString();
+                mForm.ShowDialog();
                 btnStatus(true);
             }
             txtSearch.Text = string.Empty;
@@ -66,7 +58,6 @@ namespace ApartmentSmart
             {
                 dbConString.Transaction = dbConString.mySQLConn.BeginTransaction();
                 StringBuilder StringBd = new StringBuilder();
-                //dbConString.Transaction = new SqlTransaction();
                 string sqlTmp = string.Empty;
                 Pay_ID = dgvShow.Rows[SelectRowIndex].Cells[colPay_ID.Name].Value.ToString();
                 StringBd.Append("DELETE tblPayment WHERE Pay_ID = @Pay_ID;");
@@ -95,7 +86,7 @@ namespace ApartmentSmart
 
         private void ShowData()
         {
-            searchRoom();
+            searchPayment();
         }
 
         private void dgvShow_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -106,7 +97,7 @@ namespace ApartmentSmart
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            searchRoom();
+            searchPayment();
             SelectRowIndex = -1;
             btnStatus(true);
         }
@@ -115,7 +106,7 @@ namespace ApartmentSmart
         {
             if (e.KeyCode == Keys.Enter)
             {
-                searchRoom();
+                searchPayment();
                 SelectRowIndex = -1;
                 btnStatus(true);
             }
@@ -123,7 +114,7 @@ namespace ApartmentSmart
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            searchRoom();
+            searchPayment();
             SelectRowIndex = -1;
             btnStatus(true);
         }
@@ -132,9 +123,8 @@ namespace ApartmentSmart
         {
             if (dgvShow.RowCount > 0)
             {
-                frmPayment mForm = new frmPayment();
-                //mForm.FormState = "EDIT";
-                //mForm.Room_ID = dgvShow.Rows[SelectRowIndex].Cells[colRoom_ID.Name].Value.ToString();
+                frmPaymentDaily mForm = new frmPaymentDaily();
+                mForm.Payment_ID = dgvShow.Rows[SelectRowIndex].Cells[colPay_ID.Name].Value.ToString();
                 mForm.ShowDialog();
                 btnStatus(true);
             }
@@ -143,36 +133,34 @@ namespace ApartmentSmart
             ShowData();
         }
 
-        private void searchRoom()
+        private void searchPayment()
         {
-            //string sqlTmp = string.Empty;
-            //string Whereclause = string.Empty;
-            //if (!string.IsNullOrEmpty(txtSearch.Text))
-            //{
-            //    Whereclause = txtSearch.Text;
-            //}
-            //else
-            //{
-            //    Whereclause = string.Empty;
-            //}
-            //sqlTmp = "select r.Room_ID,	r.Room_number, r.Room_floor, s.Name AS Room_Type, r.Room_Price_daily, r.Room_Price_monthly, ";
-            //sqlTmp += "	s1.Name AS Room_status, r.Room_MetersNo, r.Room_Remark from tblRoom r INNER JOIN tblStatus s ON r.Room_Type = s.StatusID ";
-            //sqlTmp += " INNER JOIN tblStatus s1 ON r.Room_status = s1.StatusID ";
-            //if (!string.IsNullOrEmpty(Whereclause))
-            //{
-            //    sqlTmp += " WHERE r.Room_number LIKE '%" + Whereclause + "%' OR s.Name LIKE '%" + Whereclause + "%' ";
-            //}
-            //DataSet Ds = new DataSet();
-            //dbConString.Com = new SqlCommand();
-            //dbConString.Com.CommandType = CommandType.Text;
-            //dbConString.Com.CommandText = sqlTmp;
-            //dbConString.Com.Connection = dbConString.mySQLConn;
-            //SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //tblRoom.Clear();
-            //da.Fill(tblRoom, "tblRoom");
-            //da.Dispose();
-            //dgvShow.DataSource = tblRoom.tblRoom;
+            string sqlTmp = string.Empty;
+            string Whereclause = string.Empty;
+            if (!string.IsNullOrEmpty(txtSearch.Text))
+            {
+                Whereclause = txtSearch.Text;
+            }
+            else
+            {
+                Whereclause = string.Empty;
+            }
+            sqlTmp = "SELECT * FROM uv_payment  ";
+            if (!string.IsNullOrEmpty(Whereclause))
+            {
+                sqlTmp += " WHERE Room_number LIKE '%" + Whereclause + "%' OR RenterFullname LIKE '%" + Whereclause + "%' ";
+            }
+            DataSet Ds = new DataSet();
+            dbConString.Com = new SqlCommand();
+            dbConString.Com.CommandType = CommandType.Text;
+            dbConString.Com.CommandText = sqlTmp;
+            dbConString.Com.Connection = dbConString.mySQLConn;
+            SqlCommand cmd = new SqlCommand(sqlTmp, dbConString.mySQLConn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            tblPayment.Clear();
+            da.Fill(tblPayment, "uv_payment");
+            da.Dispose();
+            dgvShow.DataSource = tblPayment.uv_payment;
         }
     }
 }

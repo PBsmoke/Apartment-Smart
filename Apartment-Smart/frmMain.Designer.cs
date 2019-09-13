@@ -38,6 +38,10 @@
             this.radialMenuItem6 = new DevComponents.DotNetBar.RadialMenuItem();
             this.radialMenuItem7 = new DevComponents.DotNetBar.RadialMenuItem();
             this.rbMenu = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
+            this.rbaReport = new DevComponents.DotNetBar.RibbonBar();
+            this.btnRptRoomList = new DevComponents.DotNetBar.ButtonItem();
+            this.btnRptRenterLists = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.rbaTenant = new DevComponents.DotNetBar.RibbonBar();
             this.rbtTenant = new DevComponents.DotNetBar.ButtonItem();
@@ -52,9 +56,6 @@
             this.rbaSetup = new DevComponents.DotNetBar.RibbonBar();
             this.rbtOrg = new DevComponents.DotNetBar.ButtonItem();
             this.btnPayment = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
-            this.rbaReport = new DevComponents.DotNetBar.RibbonBar();
-            this.btnRptRoomList = new DevComponents.DotNetBar.ButtonItem();
             this.rttFiles = new DevComponents.DotNetBar.RibbonTabItem();
             this.rttRoom = new DevComponents.DotNetBar.RibbonTabItem();
             this.rttTenant = new DevComponents.DotNetBar.RibbonTabItem();
@@ -63,10 +64,10 @@
             this.rbtSetup_Exit = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.rbMenu.SuspendLayout();
+            this.ribbonPanel4.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
-            this.ribbonPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // radialMenu1
@@ -129,10 +130,10 @@
             // 
             // 
             this.rbMenu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rbMenu.Controls.Add(this.ribbonPanel1);
             this.rbMenu.Controls.Add(this.ribbonPanel4);
             this.rbMenu.Controls.Add(this.ribbonPanel3);
             this.rbMenu.Controls.Add(this.ribbonPanel2);
-            this.rbMenu.Controls.Add(this.ribbonPanel1);
             this.rbMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.rbMenu.ForeColor = System.Drawing.Color.Black;
             this.rbMenu.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -165,6 +166,76 @@
             this.rbMenu.TabGroupHeight = 14;
             this.rbMenu.TabIndex = 3;
             this.rbMenu.Text = "rbHome";
+            // 
+            // ribbonPanel4
+            // 
+            this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel4.Controls.Add(this.rbaReport);
+            this.ribbonPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel4.Location = new System.Drawing.Point(0, 27);
+            this.ribbonPanel4.Name = "ribbonPanel4";
+            this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel4.Size = new System.Drawing.Size(798, 64);
+            // 
+            // 
+            // 
+            this.ribbonPanel4.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel4.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel4.TabIndex = 4;
+            this.ribbonPanel4.Visible = false;
+            // 
+            // rbaReport
+            // 
+            this.rbaReport.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.rbaReport.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rbaReport.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rbaReport.ContainerControlProcessDialogKey = true;
+            this.rbaReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbaReport.DragDropSupport = true;
+            this.rbaReport.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnRptRoomList,
+            this.btnRptRenterLists});
+            this.rbaReport.Location = new System.Drawing.Point(3, 0);
+            this.rbaReport.Name = "rbaReport";
+            this.rbaReport.Size = new System.Drawing.Size(792, 61);
+            this.rbaReport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.rbaReport.TabIndex = 0;
+            this.rbaReport.Text = "รายงาน";
+            // 
+            // 
+            // 
+            this.rbaReport.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rbaReport.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnRptRoomList
+            // 
+            this.btnRptRoomList.Name = "btnRptRoomList";
+            this.btnRptRoomList.SubItemsExpandWidth = 14;
+            this.btnRptRoomList.Text = "รายงานห้อง";
+            this.btnRptRoomList.Click += new System.EventHandler(this.btnRptRoomList_Click);
+            // 
+            // btnRptRenterLists
+            // 
+            this.btnRptRenterLists.Name = "btnRptRenterLists";
+            this.btnRptRenterLists.SubItemsExpandWidth = 14;
+            this.btnRptRenterLists.Text = "รายงานผู้เช่า";
+            this.btnRptRenterLists.Click += new System.EventHandler(this.btnRptRenterLists_Click);
             // 
             // ribbonPanel3
             // 
@@ -345,7 +416,6 @@
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // rbaSetup
             // 
@@ -393,69 +463,9 @@
             this.btnPayment.Text = "ชำระเงิน";
             this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
-            // ribbonPanel4
-            // 
-            this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel4.Controls.Add(this.rbaReport);
-            this.ribbonPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel4.Location = new System.Drawing.Point(0, 27);
-            this.ribbonPanel4.Name = "ribbonPanel4";
-            this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel4.Size = new System.Drawing.Size(798, 64);
-            // 
-            // 
-            // 
-            this.ribbonPanel4.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel4.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel4.TabIndex = 4;
-            // 
-            // rbaReport
-            // 
-            this.rbaReport.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.rbaReport.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rbaReport.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.rbaReport.ContainerControlProcessDialogKey = true;
-            this.rbaReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbaReport.DragDropSupport = true;
-            this.rbaReport.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnRptRoomList});
-            this.rbaReport.Location = new System.Drawing.Point(3, 0);
-            this.rbaReport.Name = "rbaReport";
-            this.rbaReport.Size = new System.Drawing.Size(792, 61);
-            this.rbaReport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.rbaReport.TabIndex = 0;
-            this.rbaReport.Text = "รายงาน";
-            // 
-            // 
-            // 
-            this.rbaReport.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rbaReport.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btnRptRoomList
-            // 
-            this.btnRptRoomList.Name = "btnRptRoomList";
-            this.btnRptRoomList.SubItemsExpandWidth = 14;
-            this.btnRptRoomList.Text = "รายงานห้อง";
-            this.btnRptRoomList.Click += new System.EventHandler(this.btnRptRoomList_Click);
-            // 
             // rttFiles
             // 
+            this.rttFiles.Checked = true;
             this.rttFiles.Name = "rttFiles";
             this.rttFiles.Panel = this.ribbonPanel1;
             this.rttFiles.Text = "ข้อมูลพื้นฐาน";
@@ -474,7 +484,6 @@
             // 
             // rttReport
             // 
-            this.rttReport.Checked = true;
             this.rttReport.Name = "rttReport";
             this.rttReport.Panel = this.ribbonPanel4;
             this.rttReport.Text = "รายงาน";
@@ -541,10 +550,10 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.rbMenu.ResumeLayout(false);
             this.rbMenu.PerformLayout();
+            this.ribbonPanel4.ResumeLayout(false);
             this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel1.ResumeLayout(false);
-            this.ribbonPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -587,6 +596,7 @@
         private DevComponents.DotNetBar.ButtonItem btnPayment;
         private DevComponents.DotNetBar.ButtonItem btnCheckIn;
         private DevComponents.DotNetBar.ButtonItem btnCheckOut;
+        private DevComponents.DotNetBar.ButtonItem btnRptRenterLists;
     }
 }
 

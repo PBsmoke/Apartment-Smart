@@ -1,6 +1,6 @@
 ﻿namespace ApartmentSmart
 {
-    partial class frmrptPayment
+    partial class frmrptRenterList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmrptPayment));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmrptContract));
             this.crvShow = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.Controls.Add(this.crvShow);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmrptPayment";
-            this.Load += new System.EventHandler(this.frmrptPayment_Load);
+            this.Load += new System.EventHandler(this.frmrptRenterList_Load);
             this.ResumeLayout(false);
 
         }

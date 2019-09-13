@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -39,6 +40,7 @@
             this.colContract_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContract_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContract_Recognizance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRenterFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContract_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContract_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +48,6 @@
             this.colDate_Checkin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colroom_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRenter_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRenterFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRenter_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRenter_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +104,7 @@
             this.colContract_No,
             this.colContract_Date,
             this.colContract_Recognizance,
+            this.colRenterFullname,
             this.colRoom_number,
             this.colContract_Status,
             this.colContract_Type,
@@ -110,7 +112,6 @@
             this.colDate_Checkin,
             this.colroom_price,
             this.colRenter_ID,
-            this.colRenterFullname,
             this.colRenter_Address,
             this.colRenter_Tel,
             this.colRoom_ID,
@@ -150,7 +151,7 @@
             // colContract_No
             // 
             this.colContract_No.DataPropertyName = "Contract_No";
-            this.colContract_No.HeaderText = "เลขที่สํญญา";
+            this.colContract_No.HeaderText = "เลขที่สัญญา";
             this.colContract_No.Name = "colContract_No";
             this.colContract_No.ReadOnly = true;
             // 
@@ -168,6 +169,14 @@
             this.colContract_Recognizance.Name = "colContract_Recognizance";
             this.colContract_Recognizance.ReadOnly = true;
             this.colContract_Recognizance.Visible = false;
+            // 
+            // colRenterFullname
+            // 
+            this.colRenterFullname.DataPropertyName = "RenterFullname";
+            this.colRenterFullname.FillWeight = 150F;
+            this.colRenterFullname.HeaderText = "ชื่อผู้เช่า";
+            this.colRenterFullname.Name = "colRenterFullname";
+            this.colRenterFullname.ReadOnly = true;
             // 
             // colRoom_number
             // 
@@ -209,6 +218,8 @@
             // colroom_price
             // 
             this.colroom_price.DataPropertyName = "room_price";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colroom_price.DefaultCellStyle = dataGridViewCellStyle1;
             this.colroom_price.HeaderText = "ราคาห้อง";
             this.colroom_price.Name = "colroom_price";
             this.colroom_price.ReadOnly = true;
@@ -220,13 +231,6 @@
             this.colRenter_ID.Name = "colRenter_ID";
             this.colRenter_ID.ReadOnly = true;
             this.colRenter_ID.Visible = false;
-            // 
-            // colRenterFullname
-            // 
-            this.colRenterFullname.DataPropertyName = "RenterFullname";
-            this.colRenterFullname.HeaderText = "ชื่อผู้เช่า";
-            this.colRenterFullname.Name = "colRenterFullname";
-            this.colRenterFullname.ReadOnly = true;
             // 
             // colRenter_Address
             // 
@@ -316,6 +320,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colContract_No;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContract_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContract_Recognizance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRenterFullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContract_Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn colContract_Type;
@@ -323,7 +328,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate_Checkin;
         private System.Windows.Forms.DataGridViewTextBoxColumn colroom_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRenter_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRenterFullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRenter_Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRenter_Tel;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_ID;

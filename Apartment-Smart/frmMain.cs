@@ -155,5 +155,14 @@ namespace ApartmentSmart
             fMenu.StartPosition = FormStartPosition.CenterScreen;
             fMenu.Show();
         }
+
+        private void btnRptRenterLists_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            frmrptRenterList fMenu = new frmrptRenterList();
+            fMenu.MdiParent = this;
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show();
+        }
     }
 }

@@ -80,6 +80,7 @@
             this.txtRoom_status.Location = new System.Drawing.Point(406, 63);
             this.txtRoom_status.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRoom_status.Name = "txtRoom_status";
+            this.txtRoom_status.ReadOnly = true;
             this.txtRoom_status.Size = new System.Drawing.Size(130, 24);
             this.txtRoom_status.TabIndex = 37;
             // 

@@ -34,19 +34,26 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvShow = new System.Windows.Forms.DataGridView();
+            this.uvpaymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
-            this.tblPaymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colPay_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRenter_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRecord_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPay_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPay_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContract_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContract_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom_floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRenterFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colroom_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContract_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContract_TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate_Checkin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate_Checkout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPay_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPay_Sum_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaymentStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvpaymentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPaymentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -89,13 +96,20 @@
             this.dgvShow.ColumnHeadersHeight = 26;
             this.dgvShow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPay_ID,
-            this.colRenter_ID,
-            this.colRecord_ID,
-            this.colPay_date,
-            this.colPay_amount,
+            this.colContract_ID,
+            this.colContract_No,
+            this.colRoom_number,
+            this.colRoom_floor,
+            this.colRenterFullname,
+            this.colroom_price,
+            this.colContract_Type,
+            this.colContract_TypeName,
+            this.colDate_Checkin,
+            this.colDate_Checkout,
             this.colPay_status,
-            this.colUserID});
-            this.dgvShow.DataSource = this.tblPaymentBindingSource;
+            this.colPay_Sum_amount,
+            this.colPaymentStatus});
+            this.dgvShow.DataSource = this.uvpaymentBindingSource;
             this.dgvShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShow.Location = new System.Drawing.Point(0, 95);
             this.dgvShow.Name = "dgvShow";
@@ -106,15 +120,15 @@
             this.dgvShow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShow_CellClick);
             this.dgvShow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShow_CellDoubleClick);
             // 
+            // uvpaymentBindingSource
+            // 
+            this.uvpaymentBindingSource.DataMember = "uv_payment";
+            this.uvpaymentBindingSource.DataSource = this.apartmentDB;
+            // 
             // apartmentDB
             // 
             this.apartmentDB.DataSetName = "ApartmentDB";
             this.apartmentDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblPaymentBindingSource
-            // 
-            this.tblPaymentBindingSource.DataMember = "tblPayment";
-            this.tblPaymentBindingSource.DataSource = this.apartmentDB;
             // 
             // colPay_ID
             // 
@@ -124,49 +138,103 @@
             this.colPay_ID.ReadOnly = true;
             this.colPay_ID.Visible = false;
             // 
-            // colRenter_ID
+            // colContract_ID
             // 
-            this.colRenter_ID.DataPropertyName = "Renter_ID";
-            this.colRenter_ID.HeaderText = "ผู้เช่า";
-            this.colRenter_ID.Name = "colRenter_ID";
-            this.colRenter_ID.ReadOnly = true;
+            this.colContract_ID.DataPropertyName = "Contract_ID";
+            this.colContract_ID.HeaderText = "Contract_ID";
+            this.colContract_ID.Name = "colContract_ID";
+            this.colContract_ID.ReadOnly = true;
+            this.colContract_ID.Visible = false;
             // 
-            // colRecord_ID
+            // colContract_No
             // 
-            this.colRecord_ID.DataPropertyName = "Record_ID";
-            this.colRecord_ID.HeaderText = "Record_ID";
-            this.colRecord_ID.Name = "colRecord_ID";
-            this.colRecord_ID.ReadOnly = true;
-            this.colRecord_ID.Visible = false;
+            this.colContract_No.DataPropertyName = "Contract_No";
+            this.colContract_No.HeaderText = "เลขที่สัญญา";
+            this.colContract_No.Name = "colContract_No";
+            this.colContract_No.ReadOnly = true;
             // 
-            // colPay_date
+            // colRoom_number
             // 
-            this.colPay_date.DataPropertyName = "Pay_date";
-            this.colPay_date.HeaderText = "วันที่ชำระ";
-            this.colPay_date.Name = "colPay_date";
-            this.colPay_date.ReadOnly = true;
+            this.colRoom_number.DataPropertyName = "Room_number";
+            this.colRoom_number.HeaderText = "เลขที่ห้อง";
+            this.colRoom_number.Name = "colRoom_number";
+            this.colRoom_number.ReadOnly = true;
             // 
-            // colPay_amount
+            // colRoom_floor
             // 
-            this.colPay_amount.DataPropertyName = "Pay_amount";
-            this.colPay_amount.HeaderText = "ยอดชำระ";
-            this.colPay_amount.Name = "colPay_amount";
-            this.colPay_amount.ReadOnly = true;
+            this.colRoom_floor.DataPropertyName = "Room_floor";
+            this.colRoom_floor.HeaderText = "ชั้น";
+            this.colRoom_floor.Name = "colRoom_floor";
+            this.colRoom_floor.ReadOnly = true;
+            // 
+            // colRenterFullname
+            // 
+            this.colRenterFullname.DataPropertyName = "RenterFullname";
+            this.colRenterFullname.HeaderText = "ชื่อ - สกุล";
+            this.colRenterFullname.Name = "colRenterFullname";
+            this.colRenterFullname.ReadOnly = true;
+            // 
+            // colroom_price
+            // 
+            this.colroom_price.DataPropertyName = "room_price";
+            this.colroom_price.HeaderText = "room_price";
+            this.colroom_price.Name = "colroom_price";
+            this.colroom_price.ReadOnly = true;
+            this.colroom_price.Visible = false;
+            // 
+            // colContract_Type
+            // 
+            this.colContract_Type.DataPropertyName = "Contract_Type";
+            this.colContract_Type.HeaderText = "Contract_Type";
+            this.colContract_Type.Name = "colContract_Type";
+            this.colContract_Type.ReadOnly = true;
+            this.colContract_Type.Visible = false;
+            // 
+            // colContract_TypeName
+            // 
+            this.colContract_TypeName.DataPropertyName = "Contract_TypeName";
+            this.colContract_TypeName.HeaderText = "ปรระเภทสัญญา";
+            this.colContract_TypeName.Name = "colContract_TypeName";
+            this.colContract_TypeName.ReadOnly = true;
+            // 
+            // colDate_Checkin
+            // 
+            this.colDate_Checkin.DataPropertyName = "Date_Checkin";
+            this.colDate_Checkin.HeaderText = "Date_Checkin";
+            this.colDate_Checkin.Name = "colDate_Checkin";
+            this.colDate_Checkin.ReadOnly = true;
+            this.colDate_Checkin.Visible = false;
+            // 
+            // colDate_Checkout
+            // 
+            this.colDate_Checkout.DataPropertyName = "Date_Checkout";
+            this.colDate_Checkout.HeaderText = "Date_Checkout";
+            this.colDate_Checkout.Name = "colDate_Checkout";
+            this.colDate_Checkout.ReadOnly = true;
+            this.colDate_Checkout.Visible = false;
             // 
             // colPay_status
             // 
             this.colPay_status.DataPropertyName = "Pay_status";
-            this.colPay_status.HeaderText = "สถานะ";
+            this.colPay_status.HeaderText = "Pay_status";
             this.colPay_status.Name = "colPay_status";
             this.colPay_status.ReadOnly = true;
+            this.colPay_status.Visible = false;
             // 
-            // colUserID
+            // colPay_Sum_amount
             // 
-            this.colUserID.DataPropertyName = "UserID";
-            this.colUserID.HeaderText = "UserID";
-            this.colUserID.Name = "colUserID";
-            this.colUserID.ReadOnly = true;
-            this.colUserID.Visible = false;
+            this.colPay_Sum_amount.DataPropertyName = "Pay_Sum_amount";
+            this.colPay_Sum_amount.HeaderText = "Pay_Sum_amount";
+            this.colPay_Sum_amount.Name = "colPay_Sum_amount";
+            this.colPay_Sum_amount.ReadOnly = true;
+            this.colPay_Sum_amount.Visible = false;
+            // 
+            // colPaymentStatus
+            // 
+            this.colPaymentStatus.DataPropertyName = "PaymentStatus";
+            this.colPaymentStatus.HeaderText = "สถานะ";
+            this.colPaymentStatus.Name = "colPaymentStatus";
+            this.colPaymentStatus.ReadOnly = true;
             // 
             // frmPaymentList
             // 
@@ -183,8 +251,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvpaymentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPaymentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,14 +264,23 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dgvShow;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPay_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRenter_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRecord_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPay_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPay_amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPay_status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUserID;
-        private System.Windows.Forms.BindingSource tblPaymentBindingSource;
+        private System.Windows.Forms.BindingSource uvpaymentBindingSource;
         private Data.ApartmentDB apartmentDB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPay_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContract_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContract_No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_floor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRenterFullname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colroom_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContract_Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContract_TypeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate_Checkin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate_Checkout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPay_status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPay_Sum_amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentStatus;
     }
 }
