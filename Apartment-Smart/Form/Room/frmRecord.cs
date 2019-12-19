@@ -51,6 +51,9 @@ namespace ApartmentSmart
 
         protected override void DoSave()
         {
+            dgvRecordDT.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
+            //dgvRecordDT.Update();
             if (FormState == "NEW")
             {
                 #region Save
@@ -121,7 +124,7 @@ namespace ApartmentSmart
                 }
                 #endregion
             }
-            else if (FormState == "edit")
+            else if (FormState == "EDIT")
             {
                 #region Edit
                 if (Success)
@@ -152,8 +155,8 @@ namespace ApartmentSmart
                         #endregion
 
 
-                        dgvRecordDT.RefreshEdit();
-                        foreach (ApartmentDB.tblRecordDTRow dr in tblRecord.tblRecordDT)
+                        //dgvRecordDT.RefreshEdit();
+                        foreach (ApartmentDB.uv_record_detailRow dr in tblRecord.uv_record_detail)
                         {
                             //dbConString.Transaction = dbConString.mySQLConn.BeginTransaction();
                             StringBd.Clear();
@@ -195,6 +198,8 @@ namespace ApartmentSmart
                 }
                 #endregion
             }
+
+            ShowData(Record_ID);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -210,6 +215,8 @@ namespace ApartmentSmart
             sqlTmp += " WHERE c.Contract_Type = (SELECT StatusID FROM tblStatus WHERE Name = 'รายเดือน')  ";
             sqlTmp += " AND c.Contract_Status = (SELECT StatusID FROM tblStatus WHERE Name = 'เข้าพัก' ) ";
             sqlTmp += " AND c.Date_Checkout > DATEFROMPARTS (" + (Convert.ToInt32(cboYear.Text) - 543) + ", " + GetMonthNumberByName(cboMonth.Text) + ", 01) ";
+            sqlTmp += " AND c.Contract_ID NOT IN (SELECT Contract_ID FROM tblRecordDT dt INNER JOIN tblRecord hd ON dt.Record_ID = hd.Record_ID ";
+            sqlTmp += " WHERE Year = '" + cboYear.Text + "' AND hd.Month = '" + cboMonth.Text + "')";
 
             DataSet Ds = new DataSet();
             dbConString.Com = new SqlCommand();
@@ -222,7 +229,7 @@ namespace ApartmentSmart
             da.Fill(tblRecord, "uv_contract");
             da.Dispose();
 
-            foreach(ApartmentDB.uv_contractRow dr in tblRecord.uv_contract)
+            foreach (ApartmentDB.uv_contractRow dr in tblRecord.uv_contract)
             {
                 ApartmentDB.uv_record_detailRow drTemp = tblRecord.uv_record_detail.Newuv_record_detailRow();
                 drTemp.RenterFullname = dr.RenterFullname;
@@ -242,6 +249,11 @@ namespace ApartmentSmart
         {
             foreach (ApartmentDB.uv_record_detailRow dr in tblRecord.uv_record_detail)
             {
+                if (string.IsNullOrEmpty(dr.RecordDT_ID))
+                {
+                    MessageBox.Show("กรุณาบันทึกข้อมูล", "คำเตือน", MessageBoxButtons.OK);
+                    return;
+                }
                 // Update Power in tbl Room
                 updateBeforePowerRoom(dr.Contract_ID, dr.Num_Power);
 
@@ -351,7 +363,7 @@ namespace ApartmentSmart
                 try
                 {
                     sqlTmp = "";
-                    sqlTmp = "SELECT * FROM uv_record_detail WHERE Record_ID = '" + Record_ID   + "'";
+                    sqlTmp = "SELECT * FROM uv_record_detail WHERE Record_ID = '" + Record_ID + "' order by Room_number";
                     DataSet Ds = new DataSet();
                     dbConString.Com = new SqlCommand();
                     dbConString.Com.CommandType = CommandType.Text;
@@ -378,7 +390,7 @@ namespace ApartmentSmart
 
                     if (tblRecord.uv_record_detail[0].RecordStatus.Equals("69093347-B007-409A-8D86-6B9D44F1D990"))
                         btnPostPayment.Enabled = false;
-                }                
+                }
             }
 
 
@@ -405,7 +417,8 @@ namespace ApartmentSmart
                 dbConString.Com.Parameters.Add("@before_power", SqlDbType.Float).Value = before_power;
                 dbConString.Com.ExecuteNonQuery();
                 dbConString.Transaction.Commit();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

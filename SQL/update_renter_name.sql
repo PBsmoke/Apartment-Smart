@@ -1,0 +1,2 @@
+--update tblRenter set Renter_Name = Renter_TitleName + ' ' + Renter_Name + ' ' + Renter_Lastname
+--update tblRenter set Renter_TitleName = '' , Renter_Lastname = ''

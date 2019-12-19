@@ -219,13 +219,13 @@ namespace ApartmentSmart
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtLastname.Text))
-            {
-                MessageBox.Show("กรุณากรอกนามสกุล", "คำเตือน", MessageBoxButtons.OK);
-                Success = false;
-                txtLastname.Focus();
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtLastname.Text))
+            //{
+            //    MessageBox.Show("กรุณากรอกนามสกุล", "คำเตือน", MessageBoxButtons.OK);
+            //    Success = false;
+            //    txtLastname.Focus();
+            //    return;
+            //}
 
             if (string.IsNullOrEmpty(txtCradID.Text))
             {

@@ -7849,11 +7849,17 @@ namespace ApartmentSmart.Data
                 this.columnRecordDT_ID.MaxLength = 36;
                 this.columnContract_ID.DefaultValue = ((string)(""));
                 this.columnContract_ID.MaxLength = 36;
+                this.columnNum_Water.DefaultValue = ((double)(0D));
+                this.columnNum_Power.DefaultValue = ((double)(0D));
+                this.columnRecord_water.DefaultValue = ((double)(0D));
+                this.columnRecord_power.DefaultValue = ((double)(0D));
+                this.columnroom_price.DefaultValue = ((decimal)(0m));
                 this.columnRenterFullname.ReadOnly = true;
                 this.columnRenterFullname.DefaultValue = ((string)(""));
                 this.columnRenterFullname.MaxLength = 422;
                 this.columnRoom_number.DefaultValue = ((string)(""));
                 this.columnRoom_number.MaxLength = 50;
+                this.columnBefore_Power.DefaultValue = ((double)(0D));
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

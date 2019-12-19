@@ -90,7 +90,7 @@
             this.txtMetersNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMetersNo.Name = "txtMetersNo";
             this.txtMetersNo.Size = new System.Drawing.Size(130, 24);
-            this.txtMetersNo.TabIndex = 35;
+            this.txtMetersNo.TabIndex = 6;
             // 
             // lblRoom_MetersNo
             // 
@@ -118,7 +118,7 @@
             this.cboRoomType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboRoomType.Name = "cboRoomType";
             this.cboRoomType.Size = new System.Drawing.Size(130, 24);
-            this.cboRoomType.TabIndex = 4;
+            this.cboRoomType.TabIndex = 3;
             // 
             // lblRoom_Type
             // 
@@ -135,7 +135,7 @@
             this.txtPrice_monthly.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrice_monthly.Name = "txtPrice_monthly";
             this.txtPrice_monthly.Size = new System.Drawing.Size(130, 24);
-            this.txtPrice_monthly.TabIndex = 6;
+            this.txtPrice_monthly.TabIndex = 4;
             this.txtPrice_monthly.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrice_monthly.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_monthly_KeyPress);
             // 
@@ -154,7 +154,7 @@
             this.txtPrice_daily.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrice_daily.Name = "txtPrice_daily";
             this.txtPrice_daily.Size = new System.Drawing.Size(130, 24);
-            this.txtPrice_daily.TabIndex = 7;
+            this.txtPrice_daily.TabIndex = 5;
             this.txtPrice_daily.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrice_daily.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_daily_KeyPress);
             // 
@@ -174,7 +174,7 @@
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(383, 67);
-            this.txtRemark.TabIndex = 8;
+            this.txtRemark.TabIndex = 7;
             // 
             // lblRemark
             // 

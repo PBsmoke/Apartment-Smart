@@ -66,11 +66,18 @@ namespace ApartmentSmart
 
                 dbConString.OrgName = txtOwnerName.Text.Trim();
                 dbConString.TraderName = txtTraderName.Text.Trim();
-                dbConString.Address = txtAddress.Text.Trim();
                 dbConString.TaxID = txtTax.Text.Trim();
-                //dbConString.TaxRate = Convert.ToDouble(txtTaxRate.Text);
                 dbConString.Tel = txtTel.Text.Trim();
-                //dbConString.Fax = txtFax.Text.Trim();
+                string Address = "";
+                Address += txtAddress.Text.Trim() + " ";
+                Address += " หมู่ " + txtMoo.Text.Trim() + " ";
+                Address += " ตำบล " + txtTambon.Text.Trim() + " ";
+                Address += " อำเภอ " + txtAmphur.Text.Trim() + " ";
+                Address += " จังหวัด " + txtProvince.Text.Trim() + " ";
+                Address += txtZipcode.Text.Trim();
+                dbConString.Address = Address;
+                dbConString.Power = Convert.ToDouble(txtPower.Text);
+                dbConString.Water = Convert.ToDouble(txtWater.Text);
             }
             catch
             {

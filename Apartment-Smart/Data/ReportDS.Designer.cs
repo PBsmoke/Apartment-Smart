@@ -1771,6 +1771,8 @@ namespace ApartmentSmart.Data {
             
             private global::System.Data.DataColumn columnAmount;
             
+            private global::System.Data.DataColumn columnRenter_Card;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public uv_payment_printDataTable() {
@@ -1950,6 +1952,14 @@ namespace ApartmentSmart.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Renter_CardColumn {
+                get {
+                    return this.columnRenter_Card;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2003,7 +2013,8 @@ namespace ApartmentSmart.Data {
                         string PaymentStatus, 
                         string PayDT_ID, 
                         string Detail, 
-                        decimal Amount) {
+                        decimal Amount, 
+                        string Renter_Card) {
                 uv_payment_printRow rowuv_payment_printRow = ((uv_payment_printRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Pay_ID,
@@ -2023,7 +2034,8 @@ namespace ApartmentSmart.Data {
                         PaymentStatus,
                         PayDT_ID,
                         Detail,
-                        Amount};
+                        Amount,
+                        Renter_Card};
                 rowuv_payment_printRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowuv_payment_printRow);
                 return rowuv_payment_printRow;
@@ -2064,6 +2076,7 @@ namespace ApartmentSmart.Data {
                 this.columnPayDT_ID = base.Columns["PayDT_ID"];
                 this.columnDetail = base.Columns["Detail"];
                 this.columnAmount = base.Columns["Amount"];
+                this.columnRenter_Card = base.Columns["Renter_Card"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2105,6 +2118,8 @@ namespace ApartmentSmart.Data {
                 base.Columns.Add(this.columnDetail);
                 this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
+                this.columnRenter_Card = new global::System.Data.DataColumn("Renter_Card", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRenter_Card);
                 this.columnPay_ID.AllowDBNull = false;
                 this.columnPay_ID.DefaultValue = ((string)(""));
                 this.columnPay_ID.MaxLength = 36;
@@ -2131,6 +2146,7 @@ namespace ApartmentSmart.Data {
                 this.columnPayDT_ID.MaxLength = 36;
                 this.columnDetail.DefaultValue = ((string)(""));
                 this.columnDetail.MaxLength = 500;
+                this.columnRenter_Card.DefaultValue = ((string)(""));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3671,6 +3687,22 @@ namespace ApartmentSmart.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Renter_Card {
+                get {
+                    if (this.IsRenter_CardNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableuv_payment_print.Renter_CardColumn]));
+                    }
+                }
+                set {
+                    this[this.tableuv_payment_print.Renter_CardColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsContract_IDNull() {
                 return this.IsNull(this.tableuv_payment_print.Contract_IDColumn);
             }
@@ -3871,6 +3903,18 @@ namespace ApartmentSmart.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAmountNull() {
                 this[this.tableuv_payment_print.AmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRenter_CardNull() {
+                return this.IsNull(this.tableuv_payment_print.Renter_CardColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRenter_CardNull() {
+                this[this.tableuv_payment_print.Renter_CardColumn] = global::System.Convert.DBNull;
             }
         }
         

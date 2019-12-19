@@ -42,7 +42,6 @@
             this.lblRemark = new System.Windows.Forms.Label();
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.txtFirstname = new System.Windows.Forms.TextBox();
-            this.lblLastname = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.gbProduct.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +61,6 @@
             this.gbProduct.Controls.Add(this.lblRemark);
             this.gbProduct.Controls.Add(this.txtLastname);
             this.gbProduct.Controls.Add(this.txtFirstname);
-            this.gbProduct.Controls.Add(this.lblLastname);
             this.gbProduct.Controls.Add(this.lblName);
             this.gbProduct.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbProduct.Location = new System.Drawing.Point(0, 39);
@@ -81,11 +79,12 @@
             "นาย",
             "นาง",
             "นางสาว"});
-            this.cboTitleName.Location = new System.Drawing.Point(136, 31);
+            this.cboTitleName.Location = new System.Drawing.Point(404, 127);
             this.cboTitleName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTitleName.Name = "cboTitleName";
             this.cboTitleName.Size = new System.Drawing.Size(79, 24);
             this.cboTitleName.TabIndex = 165;
+            this.cboTitleName.Visible = false;
             // 
             // lblAddress
             // 
@@ -102,7 +101,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(480, 77);
-            this.txtAddress.TabIndex = 154;
+            this.txtAddress.TabIndex = 5;
             // 
             // txtTel
             // 
@@ -110,7 +109,7 @@
             this.txtTel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(252, 24);
-            this.txtTel.TabIndex = 37;
+            this.txtTel.TabIndex = 4;
             // 
             // lblTel
             // 
@@ -127,7 +126,7 @@
             this.txtCradID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCradID.Name = "txtCradID";
             this.txtCradID.Size = new System.Drawing.Size(252, 24);
-            this.txtCradID.TabIndex = 35;
+            this.txtCradID.TabIndex = 2;
             // 
             // lblCardID
             // 
@@ -144,7 +143,7 @@
             this.txtNationality.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.Size = new System.Drawing.Size(252, 24);
-            this.txtNationality.TabIndex = 6;
+            this.txtNationality.TabIndex = 3;
             // 
             // lblNationality
             // 
@@ -162,7 +161,7 @@
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(480, 55);
-            this.txtRemark.TabIndex = 8;
+            this.txtRemark.TabIndex = 6;
             // 
             // lblRemark
             // 
@@ -175,28 +174,20 @@
             // 
             // txtLastname
             // 
-            this.txtLastname.Location = new System.Drawing.Point(426, 31);
+            this.txtLastname.Location = new System.Drawing.Point(498, 127);
             this.txtLastname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(190, 24);
+            this.txtLastname.Size = new System.Drawing.Size(118, 24);
             this.txtLastname.TabIndex = 2;
+            this.txtLastname.Visible = false;
             // 
             // txtFirstname
             // 
-            this.txtFirstname.Location = new System.Drawing.Point(221, 31);
+            this.txtFirstname.Location = new System.Drawing.Point(136, 31);
             this.txtFirstname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(135, 24);
+            this.txtFirstname.Size = new System.Drawing.Size(480, 24);
             this.txtFirstname.TabIndex = 1;
-            // 
-            // lblLastname
-            // 
-            this.lblLastname.AutoSize = true;
-            this.lblLastname.Location = new System.Drawing.Point(362, 34);
-            this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(58, 17);
-            this.lblLastname.TabIndex = 11;
-            this.lblLastname.Text = "นามสกุล";
             // 
             // lblName
             // 
@@ -233,7 +224,6 @@
         private System.Windows.Forms.Label lblRemark;
         private System.Windows.Forms.TextBox txtLastname;
         private System.Windows.Forms.TextBox txtFirstname;
-        private System.Windows.Forms.Label lblLastname;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtNationality;
         private System.Windows.Forms.Label lblNationality;

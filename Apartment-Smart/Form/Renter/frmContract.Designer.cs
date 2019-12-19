@@ -181,7 +181,7 @@
             this.txt_room_price.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_room_price.Name = "txt_room_price";
             this.txt_room_price.Size = new System.Drawing.Size(190, 24);
-            this.txt_room_price.TabIndex = 182;
+            this.txt_room_price.TabIndex = 2;
             this.txt_room_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_room_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_room_price_KeyPress);
             // 
@@ -200,7 +200,7 @@
             this.txt_water_first.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_water_first.Name = "txt_water_first";
             this.txt_water_first.Size = new System.Drawing.Size(190, 24);
-            this.txt_water_first.TabIndex = 180;
+            this.txt_water_first.TabIndex = 4;
             this.txt_water_first.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
@@ -218,7 +218,7 @@
             this.txt_power_first.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_power_first.Name = "txt_power_first";
             this.txt_power_first.Size = new System.Drawing.Size(190, 24);
-            this.txt_power_first.TabIndex = 178;
+            this.txt_power_first.TabIndex = 3;
             this.txt_power_first.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
@@ -362,7 +362,7 @@
             this.txtRecognizance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRecognizance.Name = "txtRecognizance";
             this.txtRecognizance.Size = new System.Drawing.Size(190, 24);
-            this.txtRecognizance.TabIndex = 35;
+            this.txtRecognizance.TabIndex = 1;
             this.txtRecognizance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRecognizance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecognizance_KeyPress);
             // 
@@ -409,7 +409,7 @@
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(480, 55);
-            this.txtRemark.TabIndex = 8;
+            this.txtRemark.TabIndex = 5;
             // 
             // lblRemark
             // 

@@ -123,6 +123,7 @@ namespace ApartmentSmart
             CloseAllChildForm();
             frmPaymentList fMenu = new frmPaymentList();
             fMenu.MdiParent = this;
+            fMenu.Type_Form = "ALL";
             fMenu.StartPosition = FormStartPosition.CenterScreen;
             fMenu.Show();
         }
@@ -161,6 +162,16 @@ namespace ApartmentSmart
             CloseAllChildForm();
             frmrptRenterList fMenu = new frmrptRenterList();
             fMenu.MdiParent = this;
+            fMenu.StartPosition = FormStartPosition.CenterScreen;
+            fMenu.Show();
+        }
+
+        private void btnPaymentAccrued_Click(object sender, EventArgs e)
+        {
+            CloseAllChildForm();
+            frmPaymentList fMenu = new frmPaymentList();
+            fMenu.MdiParent = this;
+            fMenu.Type_Form = "Accrued";
             fMenu.StartPosition = FormStartPosition.CenterScreen;
             fMenu.Show();
         }

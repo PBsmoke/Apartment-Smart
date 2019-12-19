@@ -24,6 +24,7 @@ namespace ApartmentSmart
         ApartmentDB tblPayment = new ApartmentDB();
         bool Success = true;
         string Pay_ID = string.Empty;
+        public string Type_Form = "ALL";
         int SelectRowIndex = 0;
         #endregion Member
 
@@ -146,9 +147,18 @@ namespace ApartmentSmart
                 Whereclause = string.Empty;
             }
             sqlTmp = "SELECT * FROM uv_payment  ";
+            if (Type_Form.ToUpper().Equals("ALL"))
+            {
+                sqlTmp += " WHERE 1=1 ";
+            }
+            else
+            {
+                sqlTmp += " WHERE PaymentStatus = 'ค้างชำระ' ";
+            }
+
             if (!string.IsNullOrEmpty(Whereclause))
             {
-                sqlTmp += " WHERE Room_number LIKE '%" + Whereclause + "%' OR RenterFullname LIKE '%" + Whereclause + "%' ";
+                sqlTmp += " and (Room_number LIKE '%" + Whereclause + "%' OR RenterFullname LIKE '%" + Whereclause + "%')";
             }
             DataSet Ds = new DataSet();
             dbConString.Com = new SqlCommand();

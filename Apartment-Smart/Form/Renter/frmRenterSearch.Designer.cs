@@ -34,8 +34,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvProductSearch = new System.Windows.Forms.DataGridView();
-            this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
             this.tblRenterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
             this.colRenter_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRenter_TitleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRenter_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,8 +48,8 @@
             this.colRenter_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbProductSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblRenterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).BeginInit();
             this.SuspendLayout();
             // 
             // gbProductSearch
@@ -124,15 +124,15 @@
             this.dgvProductSearch.TabIndex = 2;
             this.dgvProductSearch.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductSearch_CellDoubleClick);
             // 
-            // apartmentDB
-            // 
-            this.apartmentDB.DataSetName = "ApartmentDB";
-            this.apartmentDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tblRenterBindingSource
             // 
             this.tblRenterBindingSource.DataMember = "tblRenter";
             this.tblRenterBindingSource.DataSource = this.apartmentDB;
+            // 
+            // apartmentDB
+            // 
+            this.apartmentDB.DataSetName = "ApartmentDB";
+            this.apartmentDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // colRenter_ID
             // 
@@ -148,10 +148,12 @@
             this.colRenter_TitleName.HeaderText = "คำนำหน้าชื่อ";
             this.colRenter_TitleName.Name = "colRenter_TitleName";
             this.colRenter_TitleName.ReadOnly = true;
+            this.colRenter_TitleName.Visible = false;
             // 
             // colRenter_Name
             // 
             this.colRenter_Name.DataPropertyName = "Renter_Name";
+            this.colRenter_Name.FillWeight = 150F;
             this.colRenter_Name.HeaderText = "ชื่อ";
             this.colRenter_Name.Name = "colRenter_Name";
             this.colRenter_Name.ReadOnly = true;
@@ -162,6 +164,7 @@
             this.colRenter_Lastname.HeaderText = "นามสกุล";
             this.colRenter_Lastname.Name = "colRenter_Lastname";
             this.colRenter_Lastname.ReadOnly = true;
+            this.colRenter_Lastname.Visible = false;
             // 
             // colRenter_Nationality
             // 
@@ -225,8 +228,8 @@
             this.gbProductSearch.ResumeLayout(false);
             this.gbProductSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblRenterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apartmentDB)).EndInit();
             this.ResumeLayout(false);
 
         }

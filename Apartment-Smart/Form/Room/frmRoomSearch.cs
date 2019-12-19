@@ -47,7 +47,7 @@ namespace ApartmentSmart
         {
             Room_ID = dgvProductSearch.Rows[e.RowIndex].Cells[colRoom_ID.Name].Value.ToString();
             Room_Number = dgvProductSearch.Rows[e.RowIndex].Cells[colRoom_number.Name].Value.ToString();
-            Room_Type = dgvProductSearch.Rows[e.RowIndex].Cells[colRoom_Type.Name].Value.ToString();
+            Room_Type = dgvProductSearch.Rows[e.RowIndex].Cells[colRoomType.Name].Value.ToString();
             Price_daily = Convert.ToDecimal(dgvProductSearch.Rows[e.RowIndex].Cells[colRoom_Price_daily.Name].Value.ToString());
             Price_monthly = Convert.ToDecimal(dgvProductSearch.Rows[e.RowIndex].Cells[colRoom_Price_monthly.Name].Value.ToString());
             this.Close();

@@ -115,6 +115,17 @@ namespace ApartmentSmart
                         if (tblUser.tblOwner.Rows.Count > 0)
                         {
                             dbConString.OrgName = tblUser.tblOwner[0].Owner_Name;
+                            string Address = "";
+                            Address += tblUser.tblOwner[0].Owner_Address + " ";
+                            Address += " หมู่ " + tblUser.tblOwner[0].Owner_Moo + " ";
+                            Address += " ตำบล " + tblUser.tblOwner[0].Owner_Tambon + " ";
+                            Address += " อำเภอ " + tblUser.tblOwner[0].Owner_Amphur + " ";
+                            Address += " จังหวัด " + tblUser.tblOwner[0].Owner_Province + " ";
+                            Address += tblUser.tblOwner[0].Owner_Zip;
+
+
+                            dbConString.Address = Address;
+                            dbConString.Tel = tblUser.tblOwner[0].Owner_Tel;
                             dbConString.Power = tblUser.tblOwner[0].Record_power;
                             dbConString.Water = tblUser.tblOwner[0].Record_water;
 

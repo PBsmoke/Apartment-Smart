@@ -35,6 +35,16 @@ namespace ApartmentSmart
             btnPrint.Enabled = true;
         }
 
+        protected override void DoSave()
+        {
+            if (MessageBox.Show("คุณต้องการบันทึกรายการชำระเงิน ใช่หรือไม่ ?", dbConString.xMessage, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+            {
+                return;
+            }
+
+            Save_Payment(false);
+        }
+
         private void ShowData(string Payment_ID)
         {
             if (!string.IsNullOrEmpty(Payment_ID))
@@ -160,6 +170,7 @@ namespace ApartmentSmart
             if (drTmp.Length > 0)
             {
                 drTmp[0].Amount = Convert.ToDecimal(txtAmount.Text);
+                SumPrice();
             }
             else
             {
@@ -225,8 +236,12 @@ namespace ApartmentSmart
                 return;
             }
 
+            Save_Payment(true);
+        }
+
+        private void Save_Payment(bool IsChangeStstus)
+        {
             #region Save
-            string SaleID = Guid.NewGuid().ToString();
             try
             {
                 #region HD
@@ -241,8 +256,14 @@ namespace ApartmentSmart
 
 
                 StringBd.Clear();
-
-                StringBd.Append("UPDATE tblPayment SET UserID = @UserID , Pay_Sum_amount = @Pay_Sum_amount, Pay_date = GETDATE(), Pay_status = (SELECT StatusID FROM tblStatus WHERE StatusType = 'PaymentStatus' AND Name = 'ชำระเรียบร้อย') WHERE Pay_ID = @Pay_ID;");
+                if (IsChangeStstus)
+                {
+                    StringBd.Append("UPDATE tblPayment SET UserID = @UserID , Pay_Sum_amount = @Pay_Sum_amount, Pay_date = GETDATE(), Pay_status = (SELECT StatusID FROM tblStatus WHERE StatusType = 'PaymentStatus' AND Name = 'ชำระเรียบร้อย') WHERE Pay_ID = @Pay_ID;");
+                }
+                else
+                {
+                    StringBd.Append("UPDATE tblPayment SET UserID = @UserID , Pay_Sum_amount = @Pay_Sum_amount WHERE Pay_ID = @Pay_ID;");
+                }
                 StringBd.Append("DELETE tblPaymentDT WHERE Pay_ID = @Pay_ID;");
 
 

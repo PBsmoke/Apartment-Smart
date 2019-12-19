@@ -33,6 +33,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvShow = new System.Windows.Forms.DataGridView();
+            this.tblRenterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
             this.colRenter_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRenter_TitleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRenter_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,8 +45,6 @@
             this.colRenter_Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRenter_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRenter_Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblRenterBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.apartmentDB = new ApartmentSmart.Data.ApartmentDB();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblRenterBindingSource)).BeginInit();
@@ -111,6 +111,16 @@
             this.dgvShow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShow_CellClick);
             this.dgvShow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShow_CellDoubleClick);
             // 
+            // tblRenterBindingSource
+            // 
+            this.tblRenterBindingSource.DataMember = "tblRenter";
+            this.tblRenterBindingSource.DataSource = this.apartmentDB;
+            // 
+            // apartmentDB
+            // 
+            this.apartmentDB.DataSetName = "ApartmentDB";
+            this.apartmentDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // colRenter_ID
             // 
             this.colRenter_ID.DataPropertyName = "Renter_ID";
@@ -125,6 +135,7 @@
             this.colRenter_TitleName.HeaderText = "คำนำหน้าชื่อ";
             this.colRenter_TitleName.Name = "colRenter_TitleName";
             this.colRenter_TitleName.ReadOnly = true;
+            this.colRenter_TitleName.Visible = false;
             // 
             // colRenter_Name
             // 
@@ -139,6 +150,7 @@
             this.colRenter_Lastname.HeaderText = "นามสกุล";
             this.colRenter_Lastname.Name = "colRenter_Lastname";
             this.colRenter_Lastname.ReadOnly = true;
+            this.colRenter_Lastname.Visible = false;
             // 
             // colRenter_Nationality
             // 
@@ -186,16 +198,6 @@
             this.colRenter_Remark.Name = "colRenter_Remark";
             this.colRenter_Remark.ReadOnly = true;
             this.colRenter_Remark.Visible = false;
-            // 
-            // tblRenterBindingSource
-            // 
-            this.tblRenterBindingSource.DataMember = "tblRenter";
-            this.tblRenterBindingSource.DataSource = this.apartmentDB;
-            // 
-            // apartmentDB
-            // 
-            this.apartmentDB.DataSetName = "ApartmentDB";
-            this.apartmentDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frmRenterList
             // 

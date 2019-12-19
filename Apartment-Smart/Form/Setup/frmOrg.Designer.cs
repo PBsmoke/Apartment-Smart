@@ -70,7 +70,7 @@
             this.txtOwnerName.Location = new System.Drawing.Point(230, 17);
             this.txtOwnerName.Name = "txtOwnerName";
             this.txtOwnerName.Size = new System.Drawing.Size(393, 24);
-            this.txtOwnerName.TabIndex = 123;
+            this.txtOwnerName.TabIndex = 1;
             // 
             // gbOrg
             // 
@@ -101,7 +101,7 @@
             this.gbOrg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbOrg.Location = new System.Drawing.Point(0, 39);
             this.gbOrg.Name = "gbOrg";
-            this.gbOrg.Size = new System.Drawing.Size(673, 394);
+            this.gbOrg.Size = new System.Drawing.Size(673, 414);
             this.gbOrg.TabIndex = 124;
             this.gbOrg.TabStop = false;
             // 
@@ -110,7 +110,7 @@
             this.txtZipcode.Location = new System.Drawing.Point(230, 257);
             this.txtZipcode.Name = "txtZipcode";
             this.txtZipcode.Size = new System.Drawing.Size(260, 24);
-            this.txtZipcode.TabIndex = 152;
+            this.txtZipcode.TabIndex = 8;
             // 
             // lblZipcode
             // 
@@ -126,7 +126,7 @@
             this.txtProvince.Location = new System.Drawing.Point(230, 227);
             this.txtProvince.Name = "txtProvince";
             this.txtProvince.Size = new System.Drawing.Size(260, 24);
-            this.txtProvince.TabIndex = 150;
+            this.txtProvince.TabIndex = 7;
             // 
             // lblProvince
             // 
@@ -142,7 +142,7 @@
             this.txtAmphur.Location = new System.Drawing.Point(230, 197);
             this.txtAmphur.Name = "txtAmphur";
             this.txtAmphur.Size = new System.Drawing.Size(260, 24);
-            this.txtAmphur.TabIndex = 148;
+            this.txtAmphur.TabIndex = 6;
             // 
             // lblAmphur
             // 
@@ -158,7 +158,7 @@
             this.txtTambon.Location = new System.Drawing.Point(230, 167);
             this.txtTambon.Name = "txtTambon";
             this.txtTambon.Size = new System.Drawing.Size(260, 24);
-            this.txtTambon.TabIndex = 146;
+            this.txtTambon.TabIndex = 5;
             // 
             // lblTambon
             // 
@@ -174,7 +174,7 @@
             this.txtMoo.Location = new System.Drawing.Point(230, 137);
             this.txtMoo.Name = "txtMoo";
             this.txtMoo.Size = new System.Drawing.Size(260, 24);
-            this.txtMoo.TabIndex = 144;
+            this.txtMoo.TabIndex = 4;
             // 
             // lblMoo
             // 
@@ -199,7 +199,7 @@
             this.txtWater.Location = new System.Drawing.Point(230, 347);
             this.txtWater.Name = "txtWater";
             this.txtWater.Size = new System.Drawing.Size(260, 24);
-            this.txtWater.TabIndex = 142;
+            this.txtWater.TabIndex = 11;
             this.txtWater.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtWater.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWater_KeyPress);
             // 
@@ -217,7 +217,7 @@
             this.txtPower.Location = new System.Drawing.Point(230, 317);
             this.txtPower.Name = "txtPower";
             this.txtPower.Size = new System.Drawing.Size(260, 24);
-            this.txtPower.TabIndex = 140;
+            this.txtPower.TabIndex = 10;
             this.txtPower.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPower_KeyPress);
             // 
@@ -235,7 +235,7 @@
             this.txtTel.Location = new System.Drawing.Point(230, 287);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(260, 24);
-            this.txtTel.TabIndex = 133;
+            this.txtTel.TabIndex = 9;
             // 
             // lblTax
             // 
@@ -251,7 +251,7 @@
             this.txtTax.Location = new System.Drawing.Point(230, 47);
             this.txtTax.Name = "txtTax";
             this.txtTax.Size = new System.Drawing.Size(260, 24);
-            this.txtTax.TabIndex = 129;
+            this.txtTax.TabIndex = 2;
             // 
             // lblAddress
             // 
@@ -268,7 +268,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(393, 54);
-            this.txtAddress.TabIndex = 127;
+            this.txtAddress.TabIndex = 3;
             // 
             // label2
             // 
@@ -285,14 +285,14 @@
             this.txtTraderName.Location = new System.Drawing.Point(230, 377);
             this.txtTraderName.Name = "txtTraderName";
             this.txtTraderName.Size = new System.Drawing.Size(393, 24);
-            this.txtTraderName.TabIndex = 125;
+            this.txtTraderName.TabIndex = 12;
             this.txtTraderName.Visible = false;
             // 
             // frmOrg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 433);
+            this.ClientSize = new System.Drawing.Size(673, 453);
             this.Controls.Add(this.gbOrg);
             this.Name = "frmOrg";
             this.Text = "ข้อมูลหอพัก";

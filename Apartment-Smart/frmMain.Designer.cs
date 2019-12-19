@@ -38,6 +38,10 @@
             this.radialMenuItem6 = new DevComponents.DotNetBar.RadialMenuItem();
             this.radialMenuItem7 = new DevComponents.DotNetBar.RadialMenuItem();
             this.rbMenu = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
+            this.rbaRoom = new DevComponents.DotNetBar.RibbonBar();
+            this.rbtProduct = new DevComponents.DotNetBar.ButtonItem();
+            this.rbtReceiver = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.rbaSetup = new DevComponents.DotNetBar.RibbonBar();
             this.rbtOrg = new DevComponents.DotNetBar.ButtonItem();
@@ -52,10 +56,6 @@
             this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             this.btnCheckIn = new DevComponents.DotNetBar.ButtonItem();
             this.btnCheckOut = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
-            this.rbaRoom = new DevComponents.DotNetBar.RibbonBar();
-            this.rbtProduct = new DevComponents.DotNetBar.ButtonItem();
-            this.rbtReceiver = new DevComponents.DotNetBar.ButtonItem();
             this.rttFiles = new DevComponents.DotNetBar.RibbonTabItem();
             this.rttRoom = new DevComponents.DotNetBar.RibbonTabItem();
             this.rttTenant = new DevComponents.DotNetBar.RibbonTabItem();
@@ -63,11 +63,12 @@
             this.ribbonBar9 = new DevComponents.DotNetBar.RibbonBar();
             this.rbtSetup_Exit = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
+            this.btnPaymentAccrued = new DevComponents.DotNetBar.ButtonItem();
             this.rbMenu.SuspendLayout();
+            this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
-            this.ribbonPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // radialMenu1
@@ -130,8 +131,8 @@
             // 
             // 
             this.rbMenu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.rbMenu.Controls.Add(this.ribbonPanel2);
             this.rbMenu.Controls.Add(this.ribbonPanel1);
+            this.rbMenu.Controls.Add(this.ribbonPanel2);
             this.rbMenu.Controls.Add(this.ribbonPanel4);
             this.rbMenu.Controls.Add(this.ribbonPanel3);
             this.rbMenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -167,6 +168,76 @@
             this.rbMenu.TabIndex = 3;
             this.rbMenu.Text = "rbHome";
             // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel2.Controls.Add(this.rbaRoom);
+            this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 27);
+            this.ribbonPanel2.Name = "ribbonPanel2";
+            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel2.Size = new System.Drawing.Size(798, 64);
+            // 
+            // 
+            // 
+            this.ribbonPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel2.TabIndex = 2;
+            this.ribbonPanel2.Visible = false;
+            // 
+            // rbaRoom
+            // 
+            this.rbaRoom.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.rbaRoom.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rbaRoom.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.rbaRoom.ContainerControlProcessDialogKey = true;
+            this.rbaRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbaRoom.DragDropSupport = true;
+            this.rbaRoom.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.rbtProduct,
+            this.rbtReceiver});
+            this.rbaRoom.Location = new System.Drawing.Point(3, 0);
+            this.rbaRoom.Name = "rbaRoom";
+            this.rbaRoom.Size = new System.Drawing.Size(792, 61);
+            this.rbaRoom.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.rbaRoom.TabIndex = 0;
+            this.rbaRoom.Text = "Room";
+            // 
+            // 
+            // 
+            this.rbaRoom.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.rbaRoom.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // rbtProduct
+            // 
+            this.rbtProduct.Name = "rbtProduct";
+            this.rbtProduct.SubItemsExpandWidth = 14;
+            this.rbtProduct.Text = "ข้อมูลห้องพัก";
+            this.rbtProduct.Click += new System.EventHandler(this.rbtProduct_Click);
+            // 
+            // rbtReceiver
+            // 
+            this.rbtReceiver.Name = "rbtReceiver";
+            this.rbtReceiver.SubItemsExpandWidth = 14;
+            this.rbtReceiver.Text = "บันทึกค่าน้ำ / ค่าไฟ";
+            this.rbtReceiver.Click += new System.EventHandler(this.rbtReceiver_Click);
+            // 
             // ribbonPanel1
             // 
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -190,7 +261,6 @@
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // rbaSetup
             // 
@@ -208,7 +278,8 @@
             this.rbaSetup.DragDropSupport = true;
             this.rbaSetup.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.rbtOrg,
-            this.btnPayment});
+            this.btnPayment,
+            this.btnPaymentAccrued});
             this.rbaSetup.Location = new System.Drawing.Point(0, 0);
             this.rbaSetup.Name = "rbaSetup";
             this.rbaSetup.Size = new System.Drawing.Size(798, 61);
@@ -235,7 +306,7 @@
             // 
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.SubItemsExpandWidth = 14;
-            this.btnPayment.Text = "ชำระเงิน";
+            this.btnPayment.Text = "รายการชำระเงิน";
             this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // ribbonPanel4
@@ -394,84 +465,15 @@
             this.btnCheckOut.Text = "บันทึกแจ้งออก";
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
-            // ribbonPanel2
-            // 
-            this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel2.Controls.Add(this.rbaRoom);
-            this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 27);
-            this.ribbonPanel2.Name = "ribbonPanel2";
-            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(798, 64);
-            // 
-            // 
-            // 
-            this.ribbonPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel2.TabIndex = 2;
-            // 
-            // rbaRoom
-            // 
-            this.rbaRoom.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.rbaRoom.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rbaRoom.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.rbaRoom.ContainerControlProcessDialogKey = true;
-            this.rbaRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbaRoom.DragDropSupport = true;
-            this.rbaRoom.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.rbtProduct,
-            this.rbtReceiver});
-            this.rbaRoom.Location = new System.Drawing.Point(3, 0);
-            this.rbaRoom.Name = "rbaRoom";
-            this.rbaRoom.Size = new System.Drawing.Size(792, 61);
-            this.rbaRoom.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.rbaRoom.TabIndex = 0;
-            this.rbaRoom.Text = "Room";
-            // 
-            // 
-            // 
-            this.rbaRoom.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.rbaRoom.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // rbtProduct
-            // 
-            this.rbtProduct.Name = "rbtProduct";
-            this.rbtProduct.SubItemsExpandWidth = 14;
-            this.rbtProduct.Text = "ข้อมูลห้องพัก";
-            this.rbtProduct.Click += new System.EventHandler(this.rbtProduct_Click);
-            // 
-            // rbtReceiver
-            // 
-            this.rbtReceiver.Name = "rbtReceiver";
-            this.rbtReceiver.SubItemsExpandWidth = 14;
-            this.rbtReceiver.Text = "บันทึกค่าน้ำ / ค่าไฟ";
-            this.rbtReceiver.Click += new System.EventHandler(this.rbtReceiver_Click);
-            // 
             // rttFiles
             // 
+            this.rttFiles.Checked = true;
             this.rttFiles.Name = "rttFiles";
             this.rttFiles.Panel = this.ribbonPanel1;
             this.rttFiles.Text = "ข้อมูลพื้นฐาน";
             // 
             // rttRoom
             // 
-            this.rttRoom.Checked = true;
             this.rttRoom.Name = "rttRoom";
             this.rttRoom.Panel = this.ribbonPanel2;
             this.rttRoom.Text = "ห้องพัก";
@@ -535,6 +537,13 @@
             this.ribbonTabItem1.Panel = this.ribbonPanel1;
             this.ribbonTabItem1.Text = "ข้อมูลตั้งต้น";
             // 
+            // btnPaymentAccrued
+            // 
+            this.btnPaymentAccrued.Name = "btnPaymentAccrued";
+            this.btnPaymentAccrued.SubItemsExpandWidth = 14;
+            this.btnPaymentAccrued.Text = "รายการค้างชำระเงิน";
+            this.btnPaymentAccrued.Click += new System.EventHandler(this.btnPaymentAccrued_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -550,10 +559,10 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.rbMenu.ResumeLayout(false);
             this.rbMenu.PerformLayout();
+            this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel1.ResumeLayout(false);
             this.ribbonPanel4.ResumeLayout(false);
             this.ribbonPanel3.ResumeLayout(false);
-            this.ribbonPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -597,6 +606,7 @@
         private DevComponents.DotNetBar.ButtonItem btnCheckIn;
         private DevComponents.DotNetBar.ButtonItem btnCheckOut;
         private DevComponents.DotNetBar.ButtonItem btnRptRenterLists;
+        private DevComponents.DotNetBar.ButtonItem btnPaymentAccrued;
     }
 }
 
